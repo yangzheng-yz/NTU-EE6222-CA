@@ -1,0 +1,56 @@
+2022-11-09 08:08:20 INFO: Start evaluation with args:
+{
+    "batch_size": 1,
+    "brighten_method": "lime",
+    "brighten_method2": "lime_canny_50_150",
+    "clip_length": 16,
+    "dataset": "ARID",
+    "debug_mode": true,
+    "frame_interval": 2,
+    "fusion_mode": "0",
+    "gpus": "0",
+    "is_dark": false,
+    "list_file": "ARID_split1_test.txt",
+    "load_epoch": 50,
+    "log_file": "../exps/logs_test",
+    "mode": "test",
+    "model2_path": "/media/mldadmin/home/s122mdg36_01/arid/assignment1/solutions/ARID_v1/exps/tidy-logs-models/models/best-model_lime-canny-thresh-50-150_resnet3d_MGsampler.pth",
+    "model_dir": "./",
+    "model_path": "/media/mldadmin/home/s122mdg36_01/arid/assignment1/solutions/ARID_v1/exps/tidy-logs-models/models/best-model_yingcaip_resnet3d_MGSampler.pth",
+    "model_prefix": "./test_fusion0",
+    "network": "resnet",
+    "save_result": true,
+    "task_name": "test_fusion0",
+    "test_rounds": 0,
+    "train": true,
+    "workers": 4
+}
+2022-11-09 08:08:20 DEBUG: Target dataset: 'ARID', configs: {'num_classes': 10}
+2022-11-09 08:08:20 WARNING: Initializer:: 'BasicStem' is uninitialized.
+2022-11-09 08:08:20 WARNING: Initializer:: 'AdaptiveAvgPool3d' is uninitialized.
+2022-11-09 08:08:20 WARNING: Initializer:: 'VideoResNet' is uninitialized.
+2022-11-09 08:08:20 INFO: Network:: graph initialized, loading pretrained model: `/media/mldadmin/home/s122mdg36_01/arid/assignment1/solutions/ARID_v1/network/pretrained/r3d_18-b3b3357e.pth'
+2022-11-09 08:08:21 INFO: There are layers in current network not initialized by pretrained
+2022-11-09 08:08:21 WARNING: >> Failed to load: ['fc.weight', 'fc.bias']
+2022-11-09 08:08:21 DEBUG: loading network configs of: RESNET
+2022-11-09 08:08:21 INFO: Preprocessing:: using default mean & std from Kinetics original.
+2022-11-09 08:08:21 INFO: data:: {'mean': [0.43216, 0.394666, 0.37645], 'std': [0.22803, 0.22145, 0.216989]}
+2022-11-09 08:08:24 INFO: Only model state resumed from: `/media/mldadmin/home/s122mdg36_01/arid/assignment1/solutions/ARID_v1/exps/tidy-logs-models/models/best-model_yingcaip_resnet3d_MGSampler.pth'
+2022-11-09 08:08:24 WARNING: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-11-09 08:08:24 INFO: VideoIter:: found 450 videos in `../dataset/ARID/test.txt'
+2022-11-09 08:08:24 INFO: VideoIter:: iterator initialized (phase: 'test', num: 450)
+2022-11-09 08:08:24 WARNING: Initializer:: 'BasicStem' is uninitialized.
+2022-11-09 08:08:25 WARNING: Initializer:: 'AdaptiveAvgPool3d' is uninitialized.
+2022-11-09 08:08:25 WARNING: Initializer:: 'VideoResNet' is uninitialized.
+2022-11-09 08:08:25 INFO: Network:: graph initialized, loading pretrained model: `/media/mldadmin/home/s122mdg36_01/arid/assignment1/solutions/ARID_v1/network/pretrained/r3d_18-b3b3357e.pth'
+2022-11-09 08:08:26 INFO: There are layers in current network not initialized by pretrained
+2022-11-09 08:08:26 WARNING: >> Failed to load: ['fc.weight', 'fc.bias']
+2022-11-09 08:08:26 DEBUG: loading network configs of: RESNET
+2022-11-09 08:08:26 INFO: Preprocessing:: using default mean & std from Kinetics original.
+2022-11-09 08:08:26 INFO: data:: {'mean': [0.43216, 0.394666, 0.37645], 'std': [0.22803, 0.22145, 0.216989]}
+2022-11-09 08:08:26 INFO: Only model state resumed from: `/media/mldadmin/home/s122mdg36_01/arid/assignment1/solutions/ARID_v1/exps/tidy-logs-models/models/best-model_lime-canny-thresh-50-150_resnet3d_MGsampler.pth'
+2022-11-09 08:08:26 WARNING: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-11-09 08:08:26 INFO: VideoIter:: found 450 videos in `../dataset/ARID/test.txt'
+2022-11-09 08:08:26 INFO: VideoIter:: iterator initialized (phase: 'test', num: 450)
+2022-11-09 08:10:54 INFO: top 1 accuracy_fusion is 0.4888888888888889
+2022-11-09 08:10:54 INFO: Evaluation Finished!

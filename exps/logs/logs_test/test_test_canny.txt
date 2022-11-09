@@ -1,0 +1,43 @@
+2022-11-09 06:19:32 INFO: Start evaluation with args:
+{
+    "batch_size": 1,
+    "brighten_method": "lime_canny",
+    "brighten_method2": null,
+    "clip_length": 16,
+    "dataset": "ARID",
+    "debug_mode": true,
+    "frame_interval": 2,
+    "fusion_mode": null,
+    "gpus": "0",
+    "is_dark": false,
+    "list_file": "ARID_split1_test.txt",
+    "load_epoch": 50,
+    "log_file": "../exps/logs_test",
+    "mode": "test",
+    "model2_path": "",
+    "model_dir": "./",
+    "model_path": "/media/mldadmin/home/s122mdg36_01/arid/assignment1/solutions/ARID_v1/exps/tidy-logs-models/models/best-model_lime-canny-thresh-50-150_resnet3d_MGsampler.pth",
+    "model_prefix": "./test_canny",
+    "network": "resnet",
+    "save_result": true,
+    "task_name": "test_canny",
+    "test_rounds": 0,
+    "train": false,
+    "workers": 4
+}
+2022-11-09 06:19:32 DEBUG: Target dataset: 'ARID', configs: {'num_classes': 10}
+2022-11-09 06:19:33 WARNING: Initializer:: 'BasicStem' is uninitialized.
+2022-11-09 06:19:33 WARNING: Initializer:: 'AdaptiveAvgPool3d' is uninitialized.
+2022-11-09 06:19:33 WARNING: Initializer:: 'VideoResNet' is uninitialized.
+2022-11-09 06:19:33 INFO: Network:: graph initialized, loading pretrained model: `/media/mldadmin/home/s122mdg36_01/arid/assignment1/solutions/ARID_v1/network/pretrained/r3d_18-b3b3357e.pth'
+2022-11-09 06:19:34 INFO: There are layers in current network not initialized by pretrained
+2022-11-09 06:19:34 WARNING: >> Failed to load: ['fc.weight', 'fc.bias']
+2022-11-09 06:19:34 DEBUG: loading network configs of: RESNET
+2022-11-09 06:19:34 INFO: Preprocessing:: using default mean & std from Kinetics original.
+2022-11-09 06:19:34 INFO: data:: {'mean': [0.43216, 0.394666, 0.37645], 'std': [0.22803, 0.22145, 0.216989]}
+2022-11-09 06:19:35 INFO: Only model state resumed from: `/media/mldadmin/home/s122mdg36_01/arid/assignment1/solutions/ARID_v1/exps/tidy-logs-models/models/best-model_lime-canny-thresh-50-150_resnet3d_MGsampler.pth'
+2022-11-09 06:19:35 WARNING: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-11-09 06:19:35 INFO: VideoIter:: found 450 videos in `../dataset/ARID/test.txt'
+2022-11-09 06:19:35 INFO: VideoIter:: iterator initialized (phase: 'test', num: 450)
+2022-11-09 06:21:11 INFO: top 1 accuracy is 0.39555555555555555
+2022-11-09 06:21:11 INFO: Evaluation Finished!
