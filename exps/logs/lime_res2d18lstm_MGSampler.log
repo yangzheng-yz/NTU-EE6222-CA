@@ -1,0 +1,412 @@
+2022-10-25 09:10:57: Using pytorch 1.12.0+cu113 (['/media/mldadmin/home/s122mdg36_01/anaconda3/envs/torchgpu/lib/python3.7/site-packages/torch'])
+2022-10-25 09:10:57: Start training with args:
+{
+    "backend": "nccl",
+    "batch_size": 8,
+    "brighten_method": "lime",
+    "clip_length": 16,
+    "dataset": "ARID",
+    "debug_mode": true,
+    "dist_url": "tcp://192.168.0.11:23456",
+    "end_epoch": 50,
+    "fine_tune": true,
+    "gpus": "0,1,2,3,4,5,6,7",
+    "is_dark": false,
+    "log_file": "./exps/logs/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_at-gpu36.log",
+    "lr_base": 0.01,
+    "lr_factor": 0.1,
+    "lr_steps": [
+        20000,
+        40000,
+        80000
+    ],
+    "model_dir": "./exps/models/archive",
+    "model_prefix": "./exps/models/archive/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark",
+    "network": "resnet18lstm",
+    "pretrained_2d": true,
+    "pretrained_3d": null,
+    "random_seed": 3407,
+    "resume_epoch": -1,
+    "save_frequency": 2,
+    "segments": 1,
+    "task_name": "lime_arid-res2d18lstm-ori_mgsampler-is_not_dark",
+    "train_frame_interval": 2,
+    "use_flow": false,
+    "use_segments": false,
+    "val_frame_interval": 2,
+    "world_size": 1
+}
+2022-10-25 09:10:57: Target dataset: 'ARID', configs: {'num_classes': 10}
+2022-10-25 09:10:58: loading network configs of: RESNET18LSTM
+2022-10-25 09:10:58: Preprocessing:: using default mean & std from Kinetics original.
+2022-10-25 09:10:58: data:: {'mean': [0.43216, 0.394666, 0.37645], 'std': [0.22803, 0.22145, 0.216989]}
+2022-10-25 09:10:58: VideoIter:: clip_length = 16, interval = [train: 2, val: 2], seed = 3507
+2022-10-25 09:10:58: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-10-25 09:10:58: VideoIter:: found 750 videos in `./dataset/ARID/train.txt'
+2022-10-25 09:10:58: VideoIter:: iterator initialized (phase: 'train', num: 750)
+2022-10-25 09:10:58: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-10-25 09:10:58: VideoIter:: found 320 videos in `./dataset/ARID/val.txt'
+2022-10-25 09:10:58: VideoIter:: iterator initialized (phase: 'test', num: 320)
+2022-10-25 09:11:00: Optimizer:: >> recuding the learning rate of 66 params: ['baseModel.conv1.weight', 'baseModel.bn1.weight', 'baseModel.bn1.bias', 'baseModel.layer1.0.conv1.weight', 'baseModel.layer1.0.bn1.weight', 'baseMode ... r4.1.bn2.weight', 'baseModel.layer4.1.bn2.bias', 'rnn.weight_ih_l0', 'rnn.weight_hh_l0', 'rnn.bias_ih_l0', 'rnn.bias_hh_l0', 'fc1.weight', 'fc1.bias']
+2022-10-25 09:11:00: Iter 0: start with learning rate: 1.00000e-02 (next lr step: 2500)
+2022-10-25 09:11:00: Start epoch 0:
+2022-10-25 09:11:19: Epoch [0]   Batch [0]    Speed   0.4 (+ 2) sample/sec  loss-ce = 2.41192, top1 = 0.00000, top5 = 0.12500  
+2022-10-25 09:12:16: Epoch [0]   Batch [50]   Speed   7.1 (+ 2) sample/sec  loss-ce = 2.30111, top1 = 0.13500, top5 = 0.52250  
+2022-10-25 09:13:06: Epoch [0]   time cost: 125.56 sec (0.03 h)
+2022-10-25 09:13:06: mkdir ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark
+2022-10-25 09:13:06: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0001.pth
+2022-10-25 09:13:06: Start evaluating epoch 0:
+2022-10-25 09:13:36: Epoch [0]   Batch [159]  Speed  10.7 (+10) sample/sec  loss-ce = 2.30526, top1 = 0.10625, top5 = 0.58125  
+2022-10-25 09:13:36: Current best epoch found with top5 accuracy 0.58125 at epoch 1, saved
+2022-10-25 09:13:37: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0001.pth
+2022-10-25 09:13:38: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0001.pth
+2022-10-25 09:13:38: Current best epoch found with top1 accuracy 0.10625 at epoch 1, saved
+2022-10-25 09:13:38: Start epoch 1:
+2022-10-25 09:14:06: Epoch [1]   Batch [0]    Speed   0.3 (+ 7) sample/sec  loss-ce = 2.30629, top1 = 0.00000, top5 = 0.50000  
+2022-10-25 09:15:29: Epoch [1]   Batch [50]   Speed   4.8 (+ 1) sample/sec  loss-ce = 2.25341, top1 = 0.14000, top5 = 0.63250  
+2022-10-25 09:16:35: Epoch [1]   time cost: 177.49 sec (0.05 h)
+2022-10-25 09:16:35: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0002.pth
+2022-10-25 09:16:35: Start evaluating epoch 1:
+2022-10-25 09:17:40: Epoch [1]   Batch [159]  Speed   5.0 (+ 4) sample/sec  loss-ce = 2.29024, top1 = 0.11250, top5 = 0.57500  
+2022-10-25 09:17:40: Current best epoch found with top1 accuracy 0.11250 at epoch 2, saved
+2022-10-25 09:17:40: Start epoch 2:
+2022-10-25 09:18:13: Epoch [2]   Batch [0]    Speed   0.2 (+ 5) sample/sec  loss-ce = 2.23076, top1 = 0.00000, top5 = 0.87500  
+2022-10-25 09:19:35: Epoch [2]   Batch [50]   Speed   4.9 (+ 0) sample/sec  loss-ce = 2.17827, top1 = 0.23000, top5 = 0.66250  
+2022-10-25 09:20:49: Epoch [2]   time cost: 188.73 sec (0.05 h)
+2022-10-25 09:20:49: Start evaluating epoch 2:
+2022-10-25 09:21:31: Epoch [2]   Batch [159]  Speed   7.7 (+ 6) sample/sec  loss-ce = 2.21561, top1 = 0.22187, top5 = 0.64062  
+2022-10-25 09:21:31: Current best epoch found with top5 accuracy 0.64062 at epoch 3, saved
+2022-10-25 09:21:31: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0003.pth
+2022-10-25 09:21:31: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0003.pth
+2022-10-25 09:21:31: Current best epoch found with top1 accuracy 0.22187 at epoch 3, saved
+2022-10-25 09:21:31: Start epoch 3:
+2022-10-25 09:21:59: Epoch [3]   Batch [0]    Speed   0.3 (+ 5) sample/sec  loss-ce = 2.08384, top1 = 0.37500, top5 = 0.75000  
+2022-10-25 09:23:14: Epoch [3]   Batch [50]   Speed   5.4 (+ 1) sample/sec  loss-ce = 2.07890, top1 = 0.28000, top5 = 0.77250  
+2022-10-25 09:24:33: Epoch [3]   time cost: 182.40 sec (0.05 h)
+2022-10-25 09:24:34: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0004.pth
+2022-10-25 09:24:34: Start evaluating epoch 3:
+2022-10-25 09:25:25: Epoch [3]   Batch [159]  Speed   6.2 (+ 5) sample/sec  loss-ce = 2.15622, top1 = 0.23125, top5 = 0.67188  
+2022-10-25 09:25:25: Current best epoch found with top5 accuracy 0.67188 at epoch 4, saved
+2022-10-25 09:25:25: Current best epoch found with top1 accuracy 0.23125 at epoch 4, saved
+2022-10-25 09:25:25: Start epoch 4:
+2022-10-25 09:25:41: Epoch [4]   Batch [0]    Speed   0.5 (+ 5) sample/sec  loss-ce = 1.81245, top1 = 0.37500, top5 = 1.00000  
+2022-10-25 09:27:11: Epoch [4]   Batch [50]   Speed   4.5 (+ 1) sample/sec  loss-ce = 1.95165, top1 = 0.40500, top5 = 0.85000  
+2022-10-25 09:28:19: Epoch [4]   time cost: 173.95 sec (0.05 h)
+2022-10-25 09:28:19: Start evaluating epoch 4:
+2022-10-25 09:29:21: Epoch [4]   Batch [159]  Speed   5.2 (+ 4) sample/sec  loss-ce = 2.04917, top1 = 0.29688, top5 = 0.76250  
+2022-10-25 09:29:21: Current best epoch found with top5 accuracy 0.76250 at epoch 5, saved
+2022-10-25 09:29:21: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0005.pth
+2022-10-25 09:29:22: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0005.pth
+2022-10-25 09:29:22: Current best epoch found with top1 accuracy 0.29688 at epoch 5, saved
+2022-10-25 09:29:22: Start epoch 5:
+2022-10-25 09:29:51: Epoch [5]   Batch [0]    Speed   0.3 (+ 4) sample/sec  loss-ce = 1.55259, top1 = 0.75000, top5 = 1.00000  
+2022-10-25 09:31:11: Epoch [5]   Batch [50]   Speed   5.0 (+ 0) sample/sec  loss-ce = 1.78534, top1 = 0.45000, top5 = 0.87500  
+2022-10-25 09:32:06: Epoch [5]   time cost: 164.59 sec (0.05 h)
+2022-10-25 09:32:06: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0006.pth
+2022-10-25 09:32:06: Start evaluating epoch 5:
+2022-10-25 09:33:07: Epoch [5]   Batch [159]  Speed   5.3 (+ 5) sample/sec  loss-ce = 1.95208, top1 = 0.30312, top5 = 0.79063  
+2022-10-25 09:33:07: Current best epoch found with top5 accuracy 0.79063 at epoch 6, saved
+2022-10-25 09:33:07: Current best epoch found with top1 accuracy 0.30312 at epoch 6, saved
+2022-10-25 09:33:07: Start epoch 6:
+2022-10-25 09:33:38: Epoch [6]   Batch [0]    Speed   0.3 (+ 4) sample/sec  loss-ce = 1.77059, top1 = 0.50000, top5 = 0.87500  
+2022-10-25 09:35:00: Epoch [6]   Batch [50]   Speed   4.8 (+ 0) sample/sec  loss-ce = 1.64241, top1 = 0.49750, top5 = 0.91500  
+2022-10-25 09:36:01: Epoch [6]   time cost: 173.99 sec (0.05 h)
+2022-10-25 09:36:01: Start evaluating epoch 6:
+2022-10-25 09:37:09: Epoch [6]   Batch [159]  Speed   4.7 (+ 5) sample/sec  loss-ce = 1.87493, top1 = 0.31562, top5 = 0.80312  
+2022-10-25 09:37:09: Current best epoch found with top5 accuracy 0.80312 at epoch 7, saved
+2022-10-25 09:37:10: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0007.pth
+2022-10-25 09:37:10: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0007.pth
+2022-10-25 09:37:10: Current best epoch found with top1 accuracy 0.31562 at epoch 7, saved
+2022-10-25 09:37:10: Start epoch 7:
+2022-10-25 09:37:47: Epoch [7]   Batch [0]    Speed   0.2 (+ 4) sample/sec  loss-ce = 1.64674, top1 = 0.62500, top5 = 0.87500  
+2022-10-25 09:39:14: Epoch [7]   Batch [50]   Speed   4.6 (+ 0) sample/sec  loss-ce = 1.49147, top1 = 0.55250, top5 = 0.94750  
+2022-10-25 09:39:59: Epoch [7]   time cost: 168.51 sec (0.05 h)
+2022-10-25 09:39:59: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0008.pth
+2022-10-25 09:39:59: Start evaluating epoch 7:
+2022-10-25 09:41:15: Epoch [7]   Batch [159]  Speed   4.3 (+ 4) sample/sec  loss-ce = 1.89925, top1 = 0.32812, top5 = 0.78125  
+2022-10-25 09:41:15: Current best epoch found with top1 accuracy 0.32812 at epoch 8, saved
+2022-10-25 09:41:15: Start epoch 8:
+2022-10-25 09:41:42: Epoch [8]   Batch [0]    Speed   0.3 (+ 4) sample/sec  loss-ce = 0.88042, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 09:43:12: Epoch [8]   Batch [50]   Speed   4.4 (+ 0) sample/sec  loss-ce = 1.24336, top1 = 0.65250, top5 = 0.98500  
+2022-10-25 09:44:03: Epoch [8]   time cost: 168.77 sec (0.05 h)
+2022-10-25 09:44:03: Start evaluating epoch 8:
+2022-10-25 09:45:08: Epoch [8]   Batch [159]  Speed   5.0 (+ 5) sample/sec  loss-ce = 1.78953, top1 = 0.36562, top5 = 0.85625  
+2022-10-25 09:45:08: Current best epoch found with top5 accuracy 0.85625 at epoch 9, saved
+2022-10-25 09:45:09: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0009.pth
+2022-10-25 09:45:09: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0009.pth
+2022-10-25 09:45:09: Current best epoch found with top1 accuracy 0.36562 at epoch 9, saved
+2022-10-25 09:45:09: Start epoch 9:
+2022-10-25 09:45:38: Epoch [9]   Batch [0]    Speed   0.3 (+ 5) sample/sec  loss-ce = 0.76190, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 09:47:05: Epoch [9]   Batch [50]   Speed   4.6 (+ 0) sample/sec  loss-ce = 1.11483, top1 = 0.70250, top5 = 0.97000  
+2022-10-25 09:48:08: Epoch [9]   time cost: 178.48 sec (0.05 h)
+2022-10-25 09:48:08: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0010.pth
+2022-10-25 09:48:08: Start evaluating epoch 9:
+2022-10-25 09:49:05: Epoch [9]   Batch [159]  Speed   5.6 (+ 5) sample/sec  loss-ce = 1.75638, top1 = 0.36562, top5 = 0.85313  
+2022-10-25 09:49:05: Current best epoch found with top1 accuracy 0.36562 at epoch 10, saved
+2022-10-25 09:49:05: Start epoch 10:
+2022-10-25 09:49:41: Epoch [10]  Batch [0]    Speed   0.2 (+ 5) sample/sec  loss-ce = 1.37945, top1 = 0.50000, top5 = 1.00000  
+2022-10-25 09:51:08: Epoch [10]  Batch [50]   Speed   4.6 (+ 0) sample/sec  loss-ce = 0.96288, top1 = 0.73250, top5 = 0.99500  
+2022-10-25 09:52:15: Epoch [10]   time cost: 190.09 sec (0.05 h)
+2022-10-25 09:52:15: Start evaluating epoch 10:
+2022-10-25 09:53:22: Epoch [10]  Batch [159]  Speed   4.8 (+ 5) sample/sec  loss-ce = 1.81526, top1 = 0.37500, top5 = 0.87500  
+2022-10-25 09:53:22: Current best epoch found with top5 accuracy 0.87500 at epoch 11, saved
+2022-10-25 09:53:23: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0011.pth
+2022-10-25 09:53:24: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0011.pth
+2022-10-25 09:53:24: Current best epoch found with top1 accuracy 0.37500 at epoch 11, saved
+2022-10-25 09:53:24: Start epoch 11:
+2022-10-25 09:53:53: Epoch [11]  Batch [0]    Speed   0.3 (+ 5) sample/sec  loss-ce = 1.54707, top1 = 0.50000, top5 = 0.75000  
+2022-10-25 09:55:07: Epoch [11]  Batch [50]   Speed   5.4 (+ 0) sample/sec  loss-ce = 0.90079, top1 = 0.75500, top5 = 0.98250  
+2022-10-25 09:56:17: Epoch [11]   time cost: 173.06 sec (0.05 h)
+2022-10-25 09:56:17: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0012.pth
+2022-10-25 09:56:17: Start evaluating epoch 11:
+2022-10-25 09:57:14: Epoch [11]  Batch [159]  Speed   5.6 (+ 5) sample/sec  loss-ce = 2.01320, top1 = 0.34063, top5 = 0.79375  
+2022-10-25 09:57:15: Start epoch 12:
+2022-10-25 09:57:35: Epoch [12]  Batch [0]    Speed   0.4 (+ 4) sample/sec  loss-ce = 0.83287, top1 = 0.62500, top5 = 1.00000  
+2022-10-25 09:58:52: Epoch [12]  Batch [50]   Speed   5.2 (+ 1) sample/sec  loss-ce = 0.82316, top1 = 0.77500, top5 = 0.99000  
+2022-10-25 10:00:13: Epoch [12]   time cost: 178.75 sec (0.05 h)
+2022-10-25 10:00:13: Start evaluating epoch 12:
+2022-10-25 10:00:53: Epoch [12]  Batch [159]  Speed   8.0 (+ 5) sample/sec  loss-ce = 2.33117, top1 = 0.29688, top5 = 0.72813  
+2022-10-25 10:00:53: Start epoch 13:
+2022-10-25 10:01:11: Epoch [13]  Batch [0]    Speed   0.4 (+ 7) sample/sec  loss-ce = 0.53378, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 10:02:29: Epoch [13]  Batch [50]   Speed   5.2 (+ 1) sample/sec  loss-ce = 0.80293, top1 = 0.76000, top5 = 0.98750  
+2022-10-25 10:03:46: Epoch [13]   time cost: 172.50 sec (0.05 h)
+2022-10-25 10:03:46: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0014.pth
+2022-10-25 10:03:46: Start evaluating epoch 13:
+2022-10-25 10:04:18: Epoch [13]  Batch [159]  Speed  10.1 (+ 3) sample/sec  loss-ce = 1.94099, top1 = 0.30000, top5 = 0.87813  
+2022-10-25 10:04:18: Current best epoch found with top5 accuracy 0.87813 at epoch 14, saved
+2022-10-25 10:04:18: Start epoch 14:
+2022-10-25 10:04:37: Epoch [14]  Batch [0]    Speed   0.4 (+ 4) sample/sec  loss-ce = 0.34576, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:05:49: Epoch [14]  Batch [50]   Speed   5.6 (+ 0) sample/sec  loss-ce = 0.66479, top1 = 0.82000, top5 = 0.98750  
+2022-10-25 10:06:55: Epoch [14]   time cost: 156.80 sec (0.04 h)
+2022-10-25 10:06:55: Start evaluating epoch 14:
+2022-10-25 10:07:53: Epoch [14]  Batch [159]  Speed   5.5 (+ 5) sample/sec  loss-ce = 2.12085, top1 = 0.32812, top5 = 0.79688  
+2022-10-25 10:07:53: Start epoch 15:
+2022-10-25 10:08:26: Epoch [15]  Batch [0]    Speed   0.2 (+ 5) sample/sec  loss-ce = 0.47066, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 10:09:44: Epoch [15]  Batch [50]   Speed   5.2 (+ 0) sample/sec  loss-ce = 0.58728, top1 = 0.85000, top5 = 0.99500  
+2022-10-25 10:10:43: Epoch [15]   time cost: 169.68 sec (0.05 h)
+2022-10-25 10:10:44: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0016.pth
+2022-10-25 10:10:44: Start evaluating epoch 15:
+2022-10-25 10:11:50: Epoch [15]  Batch [159]  Speed   4.9 (+ 4) sample/sec  loss-ce = 2.02971, top1 = 0.35625, top5 = 0.81875  
+2022-10-25 10:11:50: Start epoch 16:
+2022-10-25 10:12:25: Epoch [16]  Batch [0]    Speed   0.2 (+ 5) sample/sec  loss-ce = 0.32768, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:13:49: Epoch [16]  Batch [50]   Speed   4.7 (+ 0) sample/sec  loss-ce = 0.47854, top1 = 0.86500, top5 = 1.00000  
+2022-10-25 10:14:36: Epoch [16]   time cost: 165.97 sec (0.05 h)
+2022-10-25 10:14:36: Start evaluating epoch 16:
+2022-10-25 10:15:51: Epoch [16]  Batch [159]  Speed   4.3 (+ 3) sample/sec  loss-ce = 2.01776, top1 = 0.35625, top5 = 0.80312  
+2022-10-25 10:15:51: Start epoch 17:
+2022-10-25 10:16:20: Epoch [17]  Batch [0]    Speed   0.3 (+ 4) sample/sec  loss-ce = 0.59109, top1 = 0.75000, top5 = 1.00000  
+2022-10-25 10:17:49: Epoch [17]  Batch [50]   Speed   4.5 (+ 0) sample/sec  loss-ce = 0.46699, top1 = 0.86500, top5 = 0.99750  
+2022-10-25 10:18:42: Epoch [17]   time cost: 171.15 sec (0.05 h)
+2022-10-25 10:18:43: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0018.pth
+2022-10-25 10:18:43: Start evaluating epoch 17:
+2022-10-25 10:19:41: Epoch [17]  Batch [159]  Speed   5.5 (+ 5) sample/sec  loss-ce = 2.39221, top1 = 0.30312, top5 = 0.76250  
+2022-10-25 10:19:41: Start epoch 18:
+2022-10-25 10:20:12: Epoch [18]  Batch [0]    Speed   0.3 (+ 4) sample/sec  loss-ce = 0.27122, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:21:29: Epoch [18]  Batch [50]   Speed   5.2 (+ 0) sample/sec  loss-ce = 0.50856, top1 = 0.85750, top5 = 0.99500  
+2022-10-25 10:22:43: Epoch [18]   time cost: 181.78 sec (0.05 h)
+2022-10-25 10:22:43: Start evaluating epoch 18:
+2022-10-25 10:23:39: Epoch [18]  Batch [159]  Speed   5.7 (+ 5) sample/sec  loss-ce = 2.23981, top1 = 0.34375, top5 = 0.80000  
+2022-10-25 10:23:39: Start epoch 19:
+2022-10-25 10:24:08: Epoch [19]  Batch [0]    Speed   0.3 (+ 6) sample/sec  loss-ce = 0.76407, top1 = 0.62500, top5 = 1.00000  
+2022-10-25 10:25:34: Epoch [19]  Batch [50]   Speed   4.6 (+ 1) sample/sec  loss-ce = 0.38932, top1 = 0.88500, top5 = 0.99750  
+2022-10-25 10:26:48: Epoch [19]   time cost: 188.54 sec (0.05 h)
+2022-10-25 10:26:48: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0020.pth
+2022-10-25 10:26:48: Start evaluating epoch 19:
+2022-10-25 10:27:38: Epoch [19]  Batch [159]  Speed   6.4 (+ 5) sample/sec  loss-ce = 2.45974, top1 = 0.34063, top5 = 0.77500  
+2022-10-25 10:27:38: Start epoch 20:
+2022-10-25 10:28:05: Epoch [20]  Batch [0]    Speed   0.3 (+ 7) sample/sec  loss-ce = 0.13413, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:29:22: Epoch [20]  Batch [50]   Speed   5.2 (+ 1) sample/sec  loss-ce = 0.41619, top1 = 0.89250, top5 = 0.99500  
+2022-10-25 10:30:39: Epoch [20]   time cost: 180.14 sec (0.05 h)
+2022-10-25 10:30:39: Start evaluating epoch 20:
+2022-10-25 10:31:32: Epoch [20]  Batch [159]  Speed   6.0 (+ 5) sample/sec  loss-ce = 2.42457, top1 = 0.30625, top5 = 0.81563  
+2022-10-25 10:31:32: Start epoch 21:
+2022-10-25 10:31:50: Epoch [21]  Batch [0]    Speed   0.5 (+ 4) sample/sec  loss-ce = 0.68026, top1 = 0.75000, top5 = 1.00000  
+2022-10-25 10:32:54: Epoch [21]  Batch [50]   Speed   6.2 (+ 0) sample/sec  loss-ce = 0.29671, top1 = 0.93500, top5 = 0.99750  
+2022-10-25 10:33:58: Epoch [21]   time cost: 145.77 sec (0.04 h)
+2022-10-25 10:33:58: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0022.pth
+2022-10-25 10:33:58: Start evaluating epoch 21:
+2022-10-25 10:35:01: Epoch [21]  Batch [159]  Speed   5.1 (+ 4) sample/sec  loss-ce = 2.84086, top1 = 0.26250, top5 = 0.73750  
+2022-10-25 10:35:01: Start epoch 22:
+2022-10-25 10:35:23: Epoch [22]  Batch [0]    Speed   0.4 (+ 4) sample/sec  loss-ce = 0.10341, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:36:36: Epoch [22]  Batch [50]   Speed   5.5 (+ 0) sample/sec  loss-ce = 0.28013, top1 = 0.93750, top5 = 1.00000  
+2022-10-25 10:37:31: Epoch [22]   time cost: 149.83 sec (0.04 h)
+2022-10-25 10:37:31: Start evaluating epoch 22:
+2022-10-25 10:38:27: Epoch [22]  Batch [159]  Speed   5.7 (+ 5) sample/sec  loss-ce = 2.61862, top1 = 0.30938, top5 = 0.77812  
+2022-10-25 10:38:27: Start epoch 23:
+2022-10-25 10:38:58: Epoch [23]  Batch [0]    Speed   0.3 (+ 5) sample/sec  loss-ce = 0.21696, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 10:40:22: Epoch [23]  Batch [50]   Speed   4.8 (+ 0) sample/sec  loss-ce = 0.35674, top1 = 0.90500, top5 = 0.99750  
+2022-10-25 10:41:21: Epoch [23]   time cost: 173.27 sec (0.05 h)
+2022-10-25 10:41:21: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0024.pth
+2022-10-25 10:41:21: Start evaluating epoch 23:
+2022-10-25 10:42:23: Epoch [23]  Batch [159]  Speed   5.3 (+ 4) sample/sec  loss-ce = 2.52257, top1 = 0.35313, top5 = 0.82500  
+2022-10-25 10:42:23: Start epoch 24:
+2022-10-25 10:42:58: Epoch [24]  Batch [0]    Speed   0.2 (+ 6) sample/sec  loss-ce = 0.05431, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:44:31: Epoch [24]  Batch [50]   Speed   4.3 (+ 1) sample/sec  loss-ce = 0.29544, top1 = 0.90750, top5 = 1.00000  
+2022-10-25 10:45:31: Epoch [24]   time cost: 188.16 sec (0.05 h)
+2022-10-25 10:45:31: Start evaluating epoch 24:
+2022-10-25 10:46:38: Epoch [24]  Batch [159]  Speed   4.8 (+ 5) sample/sec  loss-ce = 2.54124, top1 = 0.30625, top5 = 0.82500  
+2022-10-25 10:46:38: Start epoch 25:
+2022-10-25 10:47:08: Epoch [25]  Batch [0]    Speed   0.3 (+ 4) sample/sec  loss-ce = 0.25891, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 10:48:30: Epoch [25]  Batch [50]   Speed   4.9 (+ 0) sample/sec  loss-ce = 0.39573, top1 = 0.89500, top5 = 0.99500  
+2022-10-25 10:49:23: Epoch [25]   time cost: 165.30 sec (0.05 h)
+2022-10-25 10:49:23: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0026.pth
+2022-10-25 10:49:23: Start evaluating epoch 25:
+2022-10-25 10:50:16: Epoch [25]  Batch [159]  Speed   6.1 (+ 6) sample/sec  loss-ce = 2.53651, top1 = 0.33750, top5 = 0.76562  
+2022-10-25 10:50:16: Start epoch 26:
+2022-10-25 10:50:39: Epoch [26]  Batch [0]    Speed   0.3 (+ 6) sample/sec  loss-ce = 0.56701, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 10:51:44: Epoch [26]  Batch [50]   Speed   6.2 (+ 1) sample/sec  loss-ce = 0.24689, top1 = 0.93000, top5 = 1.00000  
+2022-10-25 10:51:50: Iter: 2500, change learning rate to 1.00000e-03 for step [2500:5000)
+2022-10-25 10:52:52: Epoch [26]   time cost: 155.75 sec (0.04 h)
+2022-10-25 10:52:52: Start evaluating epoch 26:
+2022-10-25 10:53:29: Epoch [26]  Batch [159]  Speed   8.6 (+ 8) sample/sec  loss-ce = 2.56203, top1 = 0.30625, top5 = 0.80625  
+2022-10-25 10:53:29: Start epoch 27:
+2022-10-25 10:53:51: Epoch [27]  Batch [0]    Speed   0.4 (+ 9) sample/sec  loss-ce = 0.03698, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:55:03: Epoch [27]  Batch [50]   Speed   5.6 (+ 2) sample/sec  loss-ce = 0.20232, top1 = 0.96250, top5 = 1.00000  
+2022-10-25 10:56:12: Epoch [27]   time cost: 163.36 sec (0.05 h)
+2022-10-25 10:56:12: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0028.pth
+2022-10-25 10:56:12: Start evaluating epoch 27:
+2022-10-25 10:56:45: Epoch [27]  Batch [159]  Speed   9.9 (+ 6) sample/sec  loss-ce = 2.50864, top1 = 0.29688, top5 = 0.83750  
+2022-10-25 10:56:45: Start epoch 28:
+2022-10-25 10:57:07: Epoch [28]  Batch [0]    Speed   0.4 (+ 6) sample/sec  loss-ce = 0.13140, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:58:17: Epoch [28]  Batch [50]   Speed   5.7 (+ 2) sample/sec  loss-ce = 0.20367, top1 = 0.96250, top5 = 1.00000  
+2022-10-25 10:59:23: Epoch [28]   time cost: 158.38 sec (0.04 h)
+2022-10-25 10:59:23: Start evaluating epoch 28:
+2022-10-25 11:00:02: Epoch [28]  Batch [159]  Speed   8.4 (+ 6) sample/sec  loss-ce = 2.81991, top1 = 0.30000, top5 = 0.74687  
+2022-10-25 11:00:02: Start epoch 29:
+2022-10-25 11:00:17: Epoch [29]  Batch [0]    Speed   0.5 (+ 5) sample/sec  loss-ce = 0.19198, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:01:12: Epoch [29]  Batch [50]   Speed   7.2 (+ 1) sample/sec  loss-ce = 0.21824, top1 = 0.94500, top5 = 0.99750  
+2022-10-25 11:02:19: Epoch [29]   time cost: 136.88 sec (0.04 h)
+2022-10-25 11:02:19: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0030.pth
+2022-10-25 11:02:19: Start evaluating epoch 29:
+2022-10-25 11:03:13: Epoch [29]  Batch [159]  Speed   5.9 (+ 5) sample/sec  loss-ce = 2.53440, top1 = 0.28750, top5 = 0.80625  
+2022-10-25 11:03:13: Start epoch 30:
+2022-10-25 11:03:28: Epoch [30]  Batch [0]    Speed   0.5 (+ 5) sample/sec  loss-ce = 0.16363, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:04:21: Epoch [30]  Batch [50]   Speed   7.5 (+ 0) sample/sec  loss-ce = 0.24672, top1 = 0.94250, top5 = 0.99750  
+2022-10-25 11:05:15: Epoch [30]   time cost: 122.22 sec (0.03 h)
+2022-10-25 11:05:15: Start evaluating epoch 30:
+2022-10-25 11:06:09: Epoch [30]  Batch [159]  Speed   6.0 (+ 5) sample/sec  loss-ce = 2.51445, top1 = 0.30938, top5 = 0.80937  
+2022-10-25 11:06:09: Start epoch 31:
+2022-10-25 11:06:29: Epoch [31]  Batch [0]    Speed   0.4 (+ 5) sample/sec  loss-ce = 0.14004, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:07:29: Epoch [31]  Batch [50]   Speed   6.6 (+ 0) sample/sec  loss-ce = 0.17182, top1 = 0.95750, top5 = 1.00000  
+2022-10-25 11:08:20: Epoch [31]   time cost: 131.47 sec (0.04 h)
+2022-10-25 11:08:21: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0032.pth
+2022-10-25 11:08:21: Start evaluating epoch 31:
+2022-10-25 11:09:09: Epoch [31]  Batch [159]  Speed   6.7 (+ 6) sample/sec  loss-ce = 2.85752, top1 = 0.25938, top5 = 0.78750  
+2022-10-25 11:09:09: Start epoch 32:
+2022-10-25 11:09:34: Epoch [32]  Batch [0]    Speed   0.3 (+ 5) sample/sec  loss-ce = 0.08102, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:10:40: Epoch [32]  Batch [50]   Speed   6.0 (+ 0) sample/sec  loss-ce = 0.20580, top1 = 0.94250, top5 = 0.99750  
+2022-10-25 11:11:37: Epoch [32]   time cost: 148.68 sec (0.04 h)
+2022-10-25 11:11:37: Start evaluating epoch 32:
+2022-10-25 11:12:31: Epoch [32]  Batch [159]  Speed   6.0 (+ 5) sample/sec  loss-ce = 2.40124, top1 = 0.33750, top5 = 0.80312  
+2022-10-25 11:12:31: Start epoch 33:
+2022-10-25 11:12:55: Epoch [33]  Batch [0]    Speed   0.3 (+ 6) sample/sec  loss-ce = 0.29273, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:13:57: Epoch [33]  Batch [50]   Speed   6.4 (+ 0) sample/sec  loss-ce = 0.18734, top1 = 0.95500, top5 = 0.99750  
+2022-10-25 11:15:01: Epoch [33]   time cost: 149.87 sec (0.04 h)
+2022-10-25 11:15:01: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0034.pth
+2022-10-25 11:15:01: Start evaluating epoch 33:
+2022-10-25 11:15:38: Epoch [33]  Batch [159]  Speed   8.8 (+ 7) sample/sec  loss-ce = 2.50248, top1 = 0.32188, top5 = 0.79688  
+2022-10-25 11:15:38: Start epoch 34:
+2022-10-25 11:15:57: Epoch [34]  Batch [0]    Speed   0.4 (+ 7) sample/sec  loss-ce = 0.27870, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:16:55: Epoch [34]  Batch [50]   Speed   6.9 (+ 2) sample/sec  loss-ce = 0.20481, top1 = 0.94750, top5 = 0.99750  
+2022-10-25 11:18:06: Epoch [34]   time cost: 147.88 sec (0.04 h)
+2022-10-25 11:18:06: Start evaluating epoch 34:
+2022-10-25 11:18:47: Epoch [34]  Batch [159]  Speed   7.7 (+ 5) sample/sec  loss-ce = 2.50744, top1 = 0.32812, top5 = 0.84375  
+2022-10-25 11:18:47: Start epoch 35:
+2022-10-25 11:18:57: Epoch [35]  Batch [0]    Speed   0.8 (+ 4) sample/sec  loss-ce = 0.09799, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:19:53: Epoch [35]  Batch [50]   Speed   7.2 (+ 0) sample/sec  loss-ce = 0.23622, top1 = 0.93750, top5 = 1.00000  
+2022-10-25 11:20:41: Epoch [35]   time cost: 113.54 sec (0.03 h)
+2022-10-25 11:20:41: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0036.pth
+2022-10-25 11:20:41: Start evaluating epoch 35:
+2022-10-25 11:21:30: Epoch [35]  Batch [159]  Speed   6.6 (+ 6) sample/sec  loss-ce = 2.68113, top1 = 0.35313, top5 = 0.76562  
+2022-10-25 11:21:30: Start epoch 36:
+2022-10-25 11:21:58: Epoch [36]  Batch [0]    Speed   0.3 (+ 8) sample/sec  loss-ce = 0.05701, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:23:05: Epoch [36]  Batch [50]   Speed   6.0 (+ 0) sample/sec  loss-ce = 0.18885, top1 = 0.95750, top5 = 0.99500  
+2022-10-25 11:23:48: Epoch [36]   time cost: 138.71 sec (0.04 h)
+2022-10-25 11:23:48: Start evaluating epoch 36:
+2022-10-25 11:24:43: Epoch [36]  Batch [159]  Speed   5.9 (+ 6) sample/sec  loss-ce = 2.76875, top1 = 0.36250, top5 = 0.73438  
+2022-10-25 11:24:43: Start epoch 37:
+2022-10-25 11:25:13: Epoch [37]  Batch [0]    Speed   0.3 (+ 5) sample/sec  loss-ce = 0.12685, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:26:28: Epoch [37]  Batch [50]   Speed   5.3 (+ 0) sample/sec  loss-ce = 0.19663, top1 = 0.95500, top5 = 1.00000  
+2022-10-25 11:27:15: Epoch [37]   time cost: 152.47 sec (0.04 h)
+2022-10-25 11:27:15: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0038.pth
+2022-10-25 11:27:15: Start evaluating epoch 37:
+2022-10-25 11:28:14: Epoch [37]  Batch [159]  Speed   5.5 (+ 5) sample/sec  loss-ce = 2.49956, top1 = 0.31250, top5 = 0.80937  
+2022-10-25 11:28:14: Start epoch 38:
+2022-10-25 11:28:35: Epoch [38]  Batch [0]    Speed   0.4 (+ 5) sample/sec  loss-ce = 0.28017, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:29:33: Epoch [38]  Batch [50]   Speed   6.9 (+ 0) sample/sec  loss-ce = 0.19197, top1 = 0.95750, top5 = 1.00000  
+2022-10-25 11:30:31: Epoch [38]   time cost: 137.17 sec (0.04 h)
+2022-10-25 11:30:31: Start evaluating epoch 38:
+2022-10-25 11:31:20: Epoch [38]  Batch [159]  Speed   6.5 (+ 7) sample/sec  loss-ce = 2.70644, top1 = 0.27813, top5 = 0.80937  
+2022-10-25 11:31:20: Start epoch 39:
+2022-10-25 11:31:41: Epoch [39]  Batch [0]    Speed   0.4 (+ 7) sample/sec  loss-ce = 0.16576, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:32:56: Epoch [39]  Batch [50]   Speed   5.4 (+ 2) sample/sec  loss-ce = 0.18530, top1 = 0.96000, top5 = 0.99500  
+2022-10-25 11:34:02: Epoch [39]   time cost: 161.26 sec (0.04 h)
+2022-10-25 11:34:02: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0040.pth
+2022-10-25 11:34:02: Start evaluating epoch 39:
+2022-10-25 11:34:38: Epoch [39]  Batch [159]  Speed   9.0 (+ 5) sample/sec  loss-ce = 2.71086, top1 = 0.27500, top5 = 0.83750  
+2022-10-25 11:34:38: Start epoch 40:
+2022-10-25 11:35:01: Epoch [40]  Batch [0]    Speed   0.4 (+ 6) sample/sec  loss-ce = 0.08425, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:36:08: Epoch [40]  Batch [50]   Speed   6.0 (+ 2) sample/sec  loss-ce = 0.19732, top1 = 0.96750, top5 = 0.99500  
+2022-10-25 11:37:05: Epoch [40]   time cost: 147.41 sec (0.04 h)
+2022-10-25 11:37:05: Start evaluating epoch 40:
+2022-10-25 11:37:58: Epoch [40]  Batch [159]  Speed   6.1 (+ 6) sample/sec  loss-ce = 2.65295, top1 = 0.31562, top5 = 0.81563  
+2022-10-25 11:37:58: Start epoch 41:
+2022-10-25 11:38:08: Epoch [41]  Batch [0]    Speed   0.8 (+ 5) sample/sec  loss-ce = 0.27131, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:39:02: Epoch [41]  Batch [50]   Speed   7.4 (+ 1) sample/sec  loss-ce = 0.20612, top1 = 0.95500, top5 = 1.00000  
+2022-10-25 11:39:49: Epoch [41]   time cost: 111.45 sec (0.03 h)
+2022-10-25 11:39:49: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0042.pth
+2022-10-25 11:39:49: Start evaluating epoch 41:
+2022-10-25 11:40:36: Epoch [41]  Batch [159]  Speed   6.9 (+ 6) sample/sec  loss-ce = 2.91399, top1 = 0.28437, top5 = 0.78125  
+2022-10-25 11:40:36: Start epoch 42:
+2022-10-25 11:40:56: Epoch [42]  Batch [0]    Speed   0.4 (+ 8) sample/sec  loss-ce = 0.63655, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:41:45: Epoch [42]  Batch [50]   Speed   8.2 (+ 2) sample/sec  loss-ce = 0.18393, top1 = 0.95000, top5 = 0.99750  
+2022-10-25 11:42:31: Epoch [42]   time cost: 114.28 sec (0.03 h)
+2022-10-25 11:42:31: Start evaluating epoch 42:
+2022-10-25 11:43:18: Epoch [42]  Batch [159]  Speed   6.8 (+ 8) sample/sec  loss-ce = 2.73145, top1 = 0.30938, top5 = 0.76250  
+2022-10-25 11:43:18: Start epoch 43:
+2022-10-25 11:43:36: Epoch [43]  Batch [0]    Speed   0.4 (+11) sample/sec  loss-ce = 0.35341, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:44:31: Epoch [43]  Batch [50]   Speed   7.2 (+ 2) sample/sec  loss-ce = 0.15100, top1 = 0.96750, top5 = 1.00000  
+2022-10-25 11:45:13: Epoch [43]   time cost: 114.75 sec (0.03 h)
+2022-10-25 11:45:13: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0044.pth
+2022-10-25 11:45:13: Start evaluating epoch 43:
+2022-10-25 11:45:58: Epoch [43]  Batch [159]  Speed   7.2 (+ 8) sample/sec  loss-ce = 2.41278, top1 = 0.34375, top5 = 0.83125  
+2022-10-25 11:45:58: Start epoch 44:
+2022-10-25 11:46:15: Epoch [44]  Batch [0]    Speed   0.5 (+ 6) sample/sec  loss-ce = 0.29094, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:47:14: Epoch [44]  Batch [50]   Speed   6.8 (+ 3) sample/sec  loss-ce = 0.16909, top1 = 0.95500, top5 = 1.00000  
+2022-10-25 11:48:06: Epoch [44]   time cost: 128.21 sec (0.04 h)
+2022-10-25 11:48:06: Start evaluating epoch 44:
+2022-10-25 11:48:43: Epoch [44]  Batch [159]  Speed   8.6 (+ 8) sample/sec  loss-ce = 2.63481, top1 = 0.31875, top5 = 0.78750  
+2022-10-25 11:48:43: Start epoch 45:
+2022-10-25 11:49:00: Epoch [45]  Batch [0]    Speed   0.5 (+12) sample/sec  loss-ce = 0.15647, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:49:59: Epoch [45]  Batch [50]   Speed   6.8 (+ 4) sample/sec  loss-ce = 0.17459, top1 = 0.97000, top5 = 0.99750  
+2022-10-25 11:50:53: Epoch [45]   time cost: 129.48 sec (0.04 h)
+2022-10-25 11:50:53: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0046.pth
+2022-10-25 11:50:53: Start evaluating epoch 45:
+2022-10-25 11:51:26: Epoch [45]  Batch [159]  Speed   9.7 (+ 8) sample/sec  loss-ce = 2.50164, top1 = 0.33125, top5 = 0.80937  
+2022-10-25 11:51:26: Start epoch 46:
+2022-10-25 11:51:42: Epoch [46]  Batch [0]    Speed   0.5 (+ 8) sample/sec  loss-ce = 0.16637, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:52:38: Epoch [46]  Batch [50]   Speed   7.1 (+ 5) sample/sec  loss-ce = 0.14436, top1 = 0.98250, top5 = 0.99750  
+2022-10-25 11:53:28: Epoch [46]   time cost: 121.83 sec (0.03 h)
+2022-10-25 11:53:28: Start evaluating epoch 46:
+2022-10-25 11:54:11: Epoch [46]  Batch [159]  Speed   7.4 (+ 7) sample/sec  loss-ce = 2.98633, top1 = 0.31250, top5 = 0.71250  
+2022-10-25 11:54:11: Start epoch 47:
+2022-10-25 11:54:29: Epoch [47]  Batch [0]    Speed   0.4 (+12) sample/sec  loss-ce = 0.03965, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:55:20: Epoch [47]  Batch [50]   Speed   7.8 (+ 4) sample/sec  loss-ce = 0.17647, top1 = 0.95500, top5 = 1.00000  
+2022-10-25 11:56:06: Epoch [47]   time cost: 115.30 sec (0.03 h)
+2022-10-25 11:56:07: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0048.pth
+2022-10-25 11:56:07: Start evaluating epoch 47:
+2022-10-25 11:56:50: Epoch [47]  Batch [159]  Speed   7.4 (+ 8) sample/sec  loss-ce = 2.69728, top1 = 0.28437, top5 = 0.79688  
+2022-10-25 11:56:50: Start epoch 48:
+2022-10-25 11:57:09: Epoch [48]  Batch [0]    Speed   0.4 (+ 8) sample/sec  loss-ce = 0.05478, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:58:04: Epoch [48]  Batch [50]   Speed   7.3 (+ 2) sample/sec  loss-ce = 0.17927, top1 = 0.97000, top5 = 0.99750  
+2022-10-25 11:58:49: Epoch [48]   time cost: 118.47 sec (0.03 h)
+2022-10-25 11:58:49: Start evaluating epoch 48:
+2022-10-25 11:59:30: Epoch [48]  Batch [159]  Speed   7.8 (+10) sample/sec  loss-ce = 2.64994, top1 = 0.32500, top5 = 0.81875  
+2022-10-25 11:59:30: Start epoch 49:
+2022-10-25 11:59:49: Epoch [49]  Batch [0]    Speed   0.4 (+ 9) sample/sec  loss-ce = 0.05281, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 12:00:50: Epoch [49]  Batch [50]   Speed   6.5 (+ 4) sample/sec  loss-ce = 0.11825, top1 = 0.98500, top5 = 0.99750  
+2022-10-25 12:01:37: Epoch [49]   time cost: 126.66 sec (0.04 h)
+2022-10-25 12:01:37: Checkpoint (model & optimizer) saved to: ./exps/models/archive_lime_arid-res2d18lstm-ori_mgsampler-is_not_dark/lime_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0050.pth
+2022-10-25 12:01:37: Start evaluating epoch 49:
+2022-10-25 12:02:16: Epoch [49]  Batch [159]  Speed   8.3 (+10) sample/sec  loss-ce = 2.73686, top1 = 0.29063, top5 = 0.82500  
+2022-10-25 12:02:16: Optimization done!

@@ -1,0 +1,369 @@
+2022-10-20 09:12:17: Using pytorch 1.12.0+cu113 (['/media/mldadmin/home/s122mdg36_01/anaconda3/envs/torchgpu/lib/python3.7/site-packages/torch'])
+2022-10-20 09:12:17: Start training with args:
+{
+    "backend": "nccl",
+    "batch_size": 16,
+    "clip_length": 16,
+    "dataset": "ARID",
+    "debug_mode": true,
+    "dist_url": "tcp://192.168.0.11:23456",
+    "end_epoch": 50,
+    "fine_tune": true,
+    "gpus": "0,1,2,3,4,5,6,7",
+    "is_dark": true,
+    "log_file": "./exps/logs/ARID_v1_at-gpu36.log",
+    "lr_base": 0.01,
+    "lr_factor": 0.1,
+    "lr_steps": [
+        20000,
+        40000,
+        80000
+    ],
+    "model_dir": "./exps/models/archive",
+    "model_prefix": "./exps/models/archive/ARID_v1",
+    "network": "resnet",
+    "pretrained_2d": true,
+    "pretrained_3d": null,
+    "random_seed": 3407,
+    "resume_epoch": -1,
+    "save_frequency": 3,
+    "segments": 1,
+    "task_name": "ARID_v1",
+    "train_frame_interval": 2,
+    "use_flow": false,
+    "use_segments": false,
+    "val_frame_interval": 2,
+    "world_size": 1
+}
+2022-10-20 09:12:17: Target dataset: 'ARID', configs: {'num_classes': 10}
+2022-10-20 09:12:17: Initializer:: 'BasicStem' is uninitialized.
+2022-10-20 09:12:17: Initializer:: 'AdaptiveAvgPool3d' is uninitialized.
+2022-10-20 09:12:17: Initializer:: 'VideoResNet' is uninitialized.
+2022-10-20 09:12:17: Network:: graph initialized, loading pretrained model: `/media/mldadmin/home/s122mdg36_01/arid/assignment1/solutions/ARID_v1/network/pretrained/r3d_18-b3b3357e.pth'
+2022-10-20 09:12:17: There are layers in current network not initialized by pretrained
+2022-10-20 09:12:17: >> Failed to load: ['fc.weight', 'fc.bias']
+2022-10-20 09:12:17: loading network configs of: RESNET
+2022-10-20 09:12:17: Preprocessing:: using default mean & std from dark dataset.
+2022-10-20 09:12:17: data:: {'mean': [0.079612, 0.073888, 0.072454], 'std': [0.100459, 0.0970497, 0.089911]}
+2022-10-20 09:12:17: VideoIter:: clip_length = 16, interval = [train: 2, val: 2], seed = 3507
+2022-10-20 09:12:17: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-10-20 09:12:17: VideoIter:: found 750 videos in `./dataset/ARID/train.txt'
+2022-10-20 09:12:17: VideoIter:: iterator initialized (phase: 'train', num: 750)
+2022-10-20 09:12:17: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-10-20 09:12:17: VideoIter:: found 320 videos in `./dataset/ARID/val.txt'
+2022-10-20 09:12:17: VideoIter:: iterator initialized (phase: 'test', num: 320)
+2022-10-20 09:12:19: Optimizer:: >> recuding the learning rate of 62 params: ['resnet.stem.0.weight', 'resnet.stem.1.weight', 'resnet.stem.1.bias', 'resnet.layer1.0.conv1.0.weight', 'resnet.layer1.0.conv1.1.weight', 'resnet.lay ... nv1.1.bias', 'resnet.layer4.1.conv2.0.weight', 'resnet.layer4.1.conv2.1.weight', 'resnet.layer4.1.conv2.1.bias', 'resnet.fc.weight', 'resnet.fc.bias']
+2022-10-20 09:12:19: Iter 0: start with learning rate: 1.00000e-02 (next lr step: 1250)
+2022-10-20 09:12:19: Start epoch 0:
+2022-10-20 09:12:37: Epoch [0]   Batch [0]    Speed   0.9 (+ 5) sample/sec  loss-ce = 2.47223, top1 = 0.18750, top5 = 0.62500  
+2022-10-20 09:14:04: Epoch [0]   time cost: 105.83 sec (0.03 h)
+2022-10-20 09:14:06: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0001.pth
+2022-10-20 09:14:06: Start evaluating epoch 0:
+2022-10-20 09:14:23: Epoch [0]   Batch [159]  Speed  18.4 (+11) sample/sec  loss-ce = 2.27572, top1 = 0.16562, top5 = 0.62813  
+2022-10-20 09:14:23: Current best epoch found with top5 accuracy 0.62813 at epoch 1, saved
+2022-10-20 09:14:25: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0001.pth
+2022-10-20 09:14:26: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0001.pth
+2022-10-20 09:14:26: Current best epoch found with top1 accuracy 0.16562 at epoch 1, saved
+2022-10-20 09:14:26: Start epoch 1:
+2022-10-20 09:14:44: Epoch [1]   Batch [0]    Speed   0.9 (+ 8) sample/sec  loss-ce = 2.04284, top1 = 0.31250, top5 = 0.75000  
+2022-10-20 09:16:12: Epoch [1]   time cost: 106.17 sec (0.03 h)
+2022-10-20 09:16:12: Start evaluating epoch 1:
+2022-10-20 09:16:30: Epoch [1]   Batch [159]  Speed  18.4 (+12) sample/sec  loss-ce = 2.18124, top1 = 0.22500, top5 = 0.72188  
+2022-10-20 09:16:30: Current best epoch found with top5 accuracy 0.72188 at epoch 2, saved
+2022-10-20 09:16:31: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0002.pth
+2022-10-20 09:16:33: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0002.pth
+2022-10-20 09:16:33: Current best epoch found with top1 accuracy 0.22500 at epoch 2, saved
+2022-10-20 09:16:33: Start epoch 2:
+2022-10-20 09:16:49: Epoch [2]   Batch [0]    Speed   1.0 (+ 8) sample/sec  loss-ce = 2.00437, top1 = 0.18750, top5 = 0.81250  
+2022-10-20 09:18:17: Epoch [2]   time cost: 104.14 sec (0.03 h)
+2022-10-20 09:18:19: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0003.pth
+2022-10-20 09:18:19: Start evaluating epoch 2:
+2022-10-20 09:18:36: Epoch [2]   Batch [159]  Speed  18.8 (+11) sample/sec  loss-ce = 2.13756, top1 = 0.23750, top5 = 0.81875  
+2022-10-20 09:18:36: Current best epoch found with top5 accuracy 0.81875 at epoch 3, saved
+2022-10-20 09:18:36: Current best epoch found with top1 accuracy 0.23750 at epoch 3, saved
+2022-10-20 09:18:36: Start epoch 3:
+2022-10-20 09:18:54: Epoch [3]   Batch [0]    Speed   0.9 (+ 8) sample/sec  loss-ce = 1.39288, top1 = 0.50000, top5 = 0.87500  
+2022-10-20 09:20:21: Epoch [3]   time cost: 105.72 sec (0.03 h)
+2022-10-20 09:20:21: Start evaluating epoch 3:
+2022-10-20 09:20:39: Epoch [3]   Batch [159]  Speed  18.0 (+12) sample/sec  loss-ce = 2.08693, top1 = 0.28750, top5 = 0.82812  
+2022-10-20 09:20:39: Current best epoch found with top5 accuracy 0.82812 at epoch 4, saved
+2022-10-20 09:20:41: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0004.pth
+2022-10-20 09:20:43: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0004.pth
+2022-10-20 09:20:43: Current best epoch found with top1 accuracy 0.28750 at epoch 4, saved
+2022-10-20 09:20:43: Start epoch 4:
+2022-10-20 09:20:59: Epoch [4]   Batch [0]    Speed   1.0 (+ 8) sample/sec  loss-ce = 1.15079, top1 = 0.68750, top5 = 0.93750  
+2022-10-20 09:22:28: Epoch [4]   time cost: 105.39 sec (0.03 h)
+2022-10-20 09:22:28: Start evaluating epoch 4:
+2022-10-20 09:22:46: Epoch [4]   Batch [159]  Speed  18.2 (+12) sample/sec  loss-ce = 2.01424, top1 = 0.32812, top5 = 0.85313  
+2022-10-20 09:22:46: Current best epoch found with top5 accuracy 0.85313 at epoch 5, saved
+2022-10-20 09:22:46: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0005.pth
+2022-10-20 09:22:47: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0005.pth
+2022-10-20 09:22:47: Current best epoch found with top1 accuracy 0.32812 at epoch 5, saved
+2022-10-20 09:22:47: Start epoch 5:
+2022-10-20 09:23:05: Epoch [5]   Batch [0]    Speed   0.9 (+ 7) sample/sec  loss-ce = 1.04203, top1 = 0.68750, top5 = 0.93750  
+2022-10-20 09:24:33: Epoch [5]   time cost: 105.55 sec (0.03 h)
+2022-10-20 09:24:33: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0006.pth
+2022-10-20 09:24:33: Start evaluating epoch 5:
+2022-10-20 09:24:50: Epoch [5]   Batch [159]  Speed  18.8 (+11) sample/sec  loss-ce = 1.86499, top1 = 0.36875, top5 = 0.89687  
+2022-10-20 09:24:50: Current best epoch found with top5 accuracy 0.89687 at epoch 6, saved
+2022-10-20 09:24:50: Current best epoch found with top1 accuracy 0.36875 at epoch 6, saved
+2022-10-20 09:24:50: Start epoch 6:
+2022-10-20 09:25:07: Epoch [6]   Batch [0]    Speed   0.9 (+ 8) sample/sec  loss-ce = 0.55908, top1 = 0.87500, top5 = 1.00000  
+2022-10-20 09:26:35: Epoch [6]   time cost: 104.67 sec (0.03 h)
+2022-10-20 09:26:35: Start evaluating epoch 6:
+2022-10-20 09:26:52: Epoch [6]   Batch [159]  Speed  18.8 (+12) sample/sec  loss-ce = 1.92098, top1 = 0.33437, top5 = 0.89687  
+2022-10-20 09:26:52: Start epoch 7:
+2022-10-20 09:27:08: Epoch [7]   Batch [0]    Speed   1.0 (+ 8) sample/sec  loss-ce = 0.59470, top1 = 0.81250, top5 = 1.00000  
+2022-10-20 09:28:36: Epoch [7]   time cost: 104.03 sec (0.03 h)
+2022-10-20 09:28:36: Start evaluating epoch 7:
+2022-10-20 09:28:53: Epoch [7]   Batch [159]  Speed  19.1 (+11) sample/sec  loss-ce = 1.95307, top1 = 0.37812, top5 = 0.89062  
+2022-10-20 09:28:53: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0008.pth
+2022-10-20 09:28:53: Current best epoch found with top1 accuracy 0.37812 at epoch 8, saved
+2022-10-20 09:28:53: Start epoch 8:
+2022-10-20 09:29:10: Epoch [8]   Batch [0]    Speed   0.9 (+ 8) sample/sec  loss-ce = 0.68285, top1 = 0.75000, top5 = 1.00000  
+2022-10-20 09:30:38: Epoch [8]   time cost: 104.86 sec (0.03 h)
+2022-10-20 09:30:39: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0009.pth
+2022-10-20 09:30:39: Start evaluating epoch 8:
+2022-10-20 09:30:55: Epoch [8]   Batch [159]  Speed  19.1 (+11) sample/sec  loss-ce = 1.90660, top1 = 0.39062, top5 = 0.91875  
+2022-10-20 09:30:55: Current best epoch found with top5 accuracy 0.91875 at epoch 9, saved
+2022-10-20 09:30:55: Current best epoch found with top1 accuracy 0.39062 at epoch 9, saved
+2022-10-20 09:30:55: Start epoch 9:
+2022-10-20 09:31:14: Epoch [9]   Batch [0]    Speed   0.9 (+ 8) sample/sec  loss-ce = 0.37972, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 09:32:41: Epoch [9]   time cost: 106.03 sec (0.03 h)
+2022-10-20 09:32:41: Start evaluating epoch 9:
+2022-10-20 09:32:57: Epoch [9]   Batch [159]  Speed  20.3 (+10) sample/sec  loss-ce = 1.86628, top1 = 0.36875, top5 = 0.91250  
+2022-10-20 09:32:57: Start epoch 10:
+2022-10-20 09:33:13: Epoch [10]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.37785, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 09:34:41: Epoch [10]   time cost: 103.38 sec (0.03 h)
+2022-10-20 09:34:41: Start evaluating epoch 10:
+2022-10-20 09:34:56: Epoch [10]  Batch [159]  Speed  20.7 (+10) sample/sec  loss-ce = 1.84522, top1 = 0.40313, top5 = 0.90312  
+2022-10-20 09:34:57: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0011.pth
+2022-10-20 09:34:57: Current best epoch found with top1 accuracy 0.40313 at epoch 11, saved
+2022-10-20 09:34:57: Start epoch 11:
+2022-10-20 09:35:13: Epoch [11]  Batch [0]    Speed   1.0 (+ 8) sample/sec  loss-ce = 0.37678, top1 = 0.87500, top5 = 1.00000  
+2022-10-20 09:36:41: Epoch [11]   time cost: 104.01 sec (0.03 h)
+2022-10-20 09:36:41: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0012.pth
+2022-10-20 09:36:41: Start evaluating epoch 11:
+2022-10-20 09:36:56: Epoch [11]  Batch [159]  Speed  21.0 (+10) sample/sec  loss-ce = 1.82203, top1 = 0.46563, top5 = 0.92188  
+2022-10-20 09:36:56: Current best epoch found with top5 accuracy 0.92188 at epoch 12, saved
+2022-10-20 09:36:56: Current best epoch found with top1 accuracy 0.46563 at epoch 12, saved
+2022-10-20 09:36:56: Start epoch 12:
+2022-10-20 09:37:11: Epoch [12]  Batch [0]    Speed   1.1 (+ 8) sample/sec  loss-ce = 0.21164, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 09:38:39: Epoch [12]   time cost: 102.67 sec (0.03 h)
+2022-10-20 09:38:39: Start evaluating epoch 12:
+2022-10-20 09:38:55: Epoch [12]  Batch [159]  Speed  20.1 (+10) sample/sec  loss-ce = 1.78109, top1 = 0.44062, top5 = 0.90938  
+2022-10-20 09:38:55: Start epoch 13:
+2022-10-20 09:39:12: Epoch [13]  Batch [0]    Speed   1.0 (+ 8) sample/sec  loss-ce = 0.32721, top1 = 0.87500, top5 = 1.00000  
+2022-10-20 09:40:39: Epoch [13]   time cost: 104.31 sec (0.03 h)
+2022-10-20 09:40:39: Start evaluating epoch 13:
+2022-10-20 09:40:55: Epoch [13]  Batch [159]  Speed  20.8 (+10) sample/sec  loss-ce = 1.87389, top1 = 0.42188, top5 = 0.92812  
+2022-10-20 09:40:55: Current best epoch found with top5 accuracy 0.92812 at epoch 14, saved
+2022-10-20 09:40:55: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0014.pth
+2022-10-20 09:40:55: Start epoch 14:
+2022-10-20 09:41:11: Epoch [14]  Batch [0]    Speed   1.0 (+ 8) sample/sec  loss-ce = 0.39766, top1 = 0.87500, top5 = 1.00000  
+2022-10-20 09:42:38: Epoch [14]   time cost: 103.37 sec (0.03 h)
+2022-10-20 09:42:39: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0015.pth
+2022-10-20 09:42:39: Start evaluating epoch 14:
+2022-10-20 09:42:54: Epoch [14]  Batch [159]  Speed  20.6 (+10) sample/sec  loss-ce = 1.99036, top1 = 0.42812, top5 = 0.92500  
+2022-10-20 09:42:54: Start epoch 15:
+2022-10-20 09:43:10: Epoch [15]  Batch [0]    Speed   1.1 (+ 8) sample/sec  loss-ce = 0.12476, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 09:44:37: Epoch [15]   time cost: 102.81 sec (0.03 h)
+2022-10-20 09:44:37: Start evaluating epoch 15:
+2022-10-20 09:44:52: Epoch [15]  Batch [159]  Speed  21.1 (+ 9) sample/sec  loss-ce = 1.85513, top1 = 0.44688, top5 = 0.93437  
+2022-10-20 09:44:52: Current best epoch found with top5 accuracy 0.93437 at epoch 16, saved
+2022-10-20 09:44:53: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0016.pth
+2022-10-20 09:44:53: Start epoch 16:
+2022-10-20 09:45:09: Epoch [16]  Batch [0]    Speed   1.0 (+ 8) sample/sec  loss-ce = 0.22780, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 09:46:36: Epoch [16]   time cost: 103.67 sec (0.03 h)
+2022-10-20 09:46:36: Start evaluating epoch 16:
+2022-10-20 09:46:52: Epoch [16]  Batch [159]  Speed  20.2 (+10) sample/sec  loss-ce = 1.90489, top1 = 0.43438, top5 = 0.93750  
+2022-10-20 09:46:52: Current best epoch found with top5 accuracy 0.93750 at epoch 17, saved
+2022-10-20 09:46:53: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0017.pth
+2022-10-20 09:46:53: Start epoch 17:
+2022-10-20 09:47:07: Epoch [17]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.28297, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 09:48:35: Epoch [17]   time cost: 102.39 sec (0.03 h)
+2022-10-20 09:48:35: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0018.pth
+2022-10-20 09:48:35: Start evaluating epoch 17:
+2022-10-20 09:48:51: Epoch [17]  Batch [159]  Speed  20.1 (+10) sample/sec  loss-ce = 2.03816, top1 = 0.43125, top5 = 0.92500  
+2022-10-20 09:48:51: Start epoch 18:
+2022-10-20 09:49:07: Epoch [18]  Batch [0]    Speed   1.0 (+ 8) sample/sec  loss-ce = 0.26751, top1 = 0.87500, top5 = 1.00000  
+2022-10-20 09:50:35: Epoch [18]   time cost: 103.23 sec (0.03 h)
+2022-10-20 09:50:35: Start evaluating epoch 18:
+2022-10-20 09:50:50: Epoch [18]  Batch [159]  Speed  21.3 (+ 9) sample/sec  loss-ce = 2.02532, top1 = 0.41250, top5 = 0.93125  
+2022-10-20 09:50:50: Start epoch 19:
+2022-10-20 09:51:05: Epoch [19]  Batch [0]    Speed   1.1 (+ 8) sample/sec  loss-ce = 0.26847, top1 = 0.87500, top5 = 1.00000  
+2022-10-20 09:52:32: Epoch [19]   time cost: 102.55 sec (0.03 h)
+2022-10-20 09:52:32: Start evaluating epoch 19:
+2022-10-20 09:52:48: Epoch [19]  Batch [159]  Speed  21.2 (+ 9) sample/sec  loss-ce = 2.07107, top1 = 0.43125, top5 = 0.92188  
+2022-10-20 09:52:48: Start epoch 20:
+2022-10-20 09:53:02: Epoch [20]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.10075, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 09:54:30: Epoch [20]   time cost: 102.36 sec (0.03 h)
+2022-10-20 09:54:30: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0021.pth
+2022-10-20 09:54:30: Start evaluating epoch 20:
+2022-10-20 09:54:46: Epoch [20]  Batch [159]  Speed  21.0 (+ 9) sample/sec  loss-ce = 2.05000, top1 = 0.45625, top5 = 0.93125  
+2022-10-20 09:54:46: Start epoch 21:
+2022-10-20 09:55:00: Epoch [21]  Batch [0]    Speed   1.1 (+ 8) sample/sec  loss-ce = 0.23051, top1 = 0.93750, top5 = 0.93750  
+2022-10-20 09:56:28: Epoch [21]   time cost: 102.51 sec (0.03 h)
+2022-10-20 09:56:28: Start evaluating epoch 21:
+2022-10-20 09:56:43: Epoch [21]  Batch [159]  Speed  22.3 (+ 8) sample/sec  loss-ce = 1.90348, top1 = 0.47500, top5 = 0.92188  
+2022-10-20 09:56:43: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0022.pth
+2022-10-20 09:56:43: Current best epoch found with top1 accuracy 0.47500 at epoch 22, saved
+2022-10-20 09:56:43: Start epoch 22:
+2022-10-20 09:56:58: Epoch [22]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.26312, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 09:58:25: Epoch [22]   time cost: 102.45 sec (0.03 h)
+2022-10-20 09:58:25: Start evaluating epoch 22:
+2022-10-20 09:58:41: Epoch [22]  Batch [159]  Speed  20.9 (+10) sample/sec  loss-ce = 2.10876, top1 = 0.45937, top5 = 0.92500  
+2022-10-20 09:58:41: Start epoch 23:
+2022-10-20 09:58:56: Epoch [23]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.26611, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:00:24: Epoch [23]   time cost: 103.24 sec (0.03 h)
+2022-10-20 10:00:24: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0024.pth
+2022-10-20 10:00:24: Start evaluating epoch 23:
+2022-10-20 10:00:40: Epoch [23]  Batch [159]  Speed  20.8 (+10) sample/sec  loss-ce = 2.06160, top1 = 0.45937, top5 = 0.91875  
+2022-10-20 10:00:40: Start epoch 24:
+2022-10-20 10:00:55: Epoch [24]  Batch [0]    Speed   1.1 (+ 8) sample/sec  loss-ce = 0.14440, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:02:22: Epoch [24]   time cost: 102.58 sec (0.03 h)
+2022-10-20 10:02:22: Start evaluating epoch 24:
+2022-10-20 10:02:38: Epoch [24]  Batch [159]  Speed  20.3 (+10) sample/sec  loss-ce = 2.04315, top1 = 0.46250, top5 = 0.92812  
+2022-10-20 10:02:38: Start epoch 25:
+2022-10-20 10:02:54: Epoch [25]  Batch [0]    Speed   1.0 (+ 8) sample/sec  loss-ce = 0.09466, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:04:22: Epoch [25]   time cost: 103.86 sec (0.03 h)
+2022-10-20 10:04:22: Start evaluating epoch 25:
+2022-10-20 10:04:38: Epoch [25]  Batch [159]  Speed  20.9 (+10) sample/sec  loss-ce = 2.05967, top1 = 0.45312, top5 = 0.91875  
+2022-10-20 10:04:38: Start epoch 26:
+2022-10-20 10:04:54: Epoch [26]  Batch [0]    Speed   1.0 (+ 8) sample/sec  loss-ce = 0.13697, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 10:05:46: Iter: 1250, change learning rate to 1.00000e-03 for step [1250:2500)
+2022-10-20 10:06:21: Epoch [26]   time cost: 103.72 sec (0.03 h)
+2022-10-20 10:06:22: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0027.pth
+2022-10-20 10:06:22: Start evaluating epoch 26:
+2022-10-20 10:06:37: Epoch [26]  Batch [159]  Speed  21.0 (+ 9) sample/sec  loss-ce = 2.03308, top1 = 0.45937, top5 = 0.93125  
+2022-10-20 10:06:37: Start epoch 27:
+2022-10-20 10:06:52: Epoch [27]  Batch [0]    Speed   1.1 (+ 8) sample/sec  loss-ce = 0.13277, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 10:08:19: Epoch [27]   time cost: 102.41 sec (0.03 h)
+2022-10-20 10:08:19: Start evaluating epoch 27:
+2022-10-20 10:08:35: Epoch [27]  Batch [159]  Speed  21.2 (+ 9) sample/sec  loss-ce = 1.97050, top1 = 0.47187, top5 = 0.92812  
+2022-10-20 10:08:35: Start epoch 28:
+2022-10-20 10:08:50: Epoch [28]  Batch [0]    Speed   1.0 (+ 8) sample/sec  loss-ce = 0.25159, top1 = 0.87500, top5 = 1.00000  
+2022-10-20 10:10:17: Epoch [28]   time cost: 102.95 sec (0.03 h)
+2022-10-20 10:10:17: Start evaluating epoch 28:
+2022-10-20 10:10:35: Epoch [28]  Batch [159]  Speed  18.2 (+12) sample/sec  loss-ce = 1.99992, top1 = 0.46250, top5 = 0.92500  
+2022-10-20 10:10:35: Start epoch 29:
+2022-10-20 10:10:50: Epoch [29]  Batch [0]    Speed   1.1 (+ 8) sample/sec  loss-ce = 0.07800, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:12:18: Epoch [29]   time cost: 102.87 sec (0.03 h)
+2022-10-20 10:12:18: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0030.pth
+2022-10-20 10:12:18: Start evaluating epoch 29:
+2022-10-20 10:12:34: Epoch [29]  Batch [159]  Speed  20.7 (+10) sample/sec  loss-ce = 2.00682, top1 = 0.46875, top5 = 0.92812  
+2022-10-20 10:12:34: Start epoch 30:
+2022-10-20 10:12:49: Epoch [30]  Batch [0]    Speed   1.1 (+ 8) sample/sec  loss-ce = 0.05518, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:14:16: Epoch [30]   time cost: 102.52 sec (0.03 h)
+2022-10-20 10:14:16: Start evaluating epoch 30:
+2022-10-20 10:14:32: Epoch [30]  Batch [159]  Speed  20.9 (+ 9) sample/sec  loss-ce = 2.00797, top1 = 0.47187, top5 = 0.91875  
+2022-10-20 10:14:32: Start epoch 31:
+2022-10-20 10:14:47: Epoch [31]  Batch [0]    Speed   1.0 (+ 8) sample/sec  loss-ce = 0.07014, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:16:15: Epoch [31]   time cost: 103.12 sec (0.03 h)
+2022-10-20 10:16:15: Start evaluating epoch 31:
+2022-10-20 10:16:29: Epoch [31]  Batch [159]  Speed  23.0 (+ 8) sample/sec  loss-ce = 2.02296, top1 = 0.46250, top5 = 0.93750  
+2022-10-20 10:16:29: Start epoch 32:
+2022-10-20 10:16:44: Epoch [32]  Batch [0]    Speed   1.1 (+ 8) sample/sec  loss-ce = 0.11822, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 10:18:11: Epoch [32]   time cost: 102.26 sec (0.03 h)
+2022-10-20 10:18:11: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0033.pth
+2022-10-20 10:18:11: Start evaluating epoch 32:
+2022-10-20 10:18:25: Epoch [32]  Batch [159]  Speed  22.9 (+ 8) sample/sec  loss-ce = 1.95803, top1 = 0.46563, top5 = 0.93125  
+2022-10-20 10:18:25: Start epoch 33:
+2022-10-20 10:18:39: Epoch [33]  Batch [0]    Speed   1.2 (+ 7) sample/sec  loss-ce = 0.23938, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 10:20:07: Epoch [33]   time cost: 101.42 sec (0.03 h)
+2022-10-20 10:20:07: Start evaluating epoch 33:
+2022-10-20 10:20:21: Epoch [33]  Batch [159]  Speed  22.7 (+ 8) sample/sec  loss-ce = 1.99279, top1 = 0.47500, top5 = 0.92500  
+2022-10-20 10:20:21: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0034.pth
+2022-10-20 10:20:21: Current best epoch found with top1 accuracy 0.47500 at epoch 34, saved
+2022-10-20 10:20:21: Start epoch 34:
+2022-10-20 10:20:35: Epoch [34]  Batch [0]    Speed   1.2 (+ 7) sample/sec  loss-ce = 0.11317, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:22:03: Epoch [34]   time cost: 101.49 sec (0.03 h)
+2022-10-20 10:22:03: Start evaluating epoch 34:
+2022-10-20 10:22:17: Epoch [34]  Batch [159]  Speed  22.8 (+ 8) sample/sec  loss-ce = 2.03204, top1 = 0.46875, top5 = 0.92500  
+2022-10-20 10:22:17: Start epoch 35:
+2022-10-20 10:22:31: Epoch [35]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.16188, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:23:59: Epoch [35]   time cost: 101.59 sec (0.03 h)
+2022-10-20 10:23:59: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0036.pth
+2022-10-20 10:23:59: Start evaluating epoch 35:
+2022-10-20 10:24:13: Epoch [35]  Batch [159]  Speed  23.1 (+ 8) sample/sec  loss-ce = 2.00417, top1 = 0.46563, top5 = 0.92500  
+2022-10-20 10:24:13: Start epoch 36:
+2022-10-20 10:24:27: Epoch [36]  Batch [0]    Speed   1.2 (+ 7) sample/sec  loss-ce = 0.18077, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 10:25:54: Epoch [36]   time cost: 101.52 sec (0.03 h)
+2022-10-20 10:25:54: Start evaluating epoch 36:
+2022-10-20 10:26:08: Epoch [36]  Batch [159]  Speed  23.1 (+ 8) sample/sec  loss-ce = 2.02570, top1 = 0.45625, top5 = 0.92500  
+2022-10-20 10:26:08: Start epoch 37:
+2022-10-20 10:26:22: Epoch [37]  Batch [0]    Speed   1.2 (+ 7) sample/sec  loss-ce = 0.21926, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 10:27:50: Epoch [37]   time cost: 101.35 sec (0.03 h)
+2022-10-20 10:27:50: Start evaluating epoch 37:
+2022-10-20 10:28:04: Epoch [37]  Batch [159]  Speed  23.0 (+ 8) sample/sec  loss-ce = 1.97802, top1 = 0.47813, top5 = 0.92188  
+2022-10-20 10:28:04: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0038.pth
+2022-10-20 10:28:04: Current best epoch found with top1 accuracy 0.47813 at epoch 38, saved
+2022-10-20 10:28:04: Start epoch 38:
+2022-10-20 10:28:18: Epoch [38]  Batch [0]    Speed   1.2 (+ 7) sample/sec  loss-ce = 0.10347, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 10:29:46: Epoch [38]   time cost: 101.66 sec (0.03 h)
+2022-10-20 10:29:46: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0039.pth
+2022-10-20 10:29:46: Start evaluating epoch 38:
+2022-10-20 10:30:00: Epoch [38]  Batch [159]  Speed  22.4 (+ 8) sample/sec  loss-ce = 1.96632, top1 = 0.47187, top5 = 0.93125  
+2022-10-20 10:30:00: Start epoch 39:
+2022-10-20 10:30:14: Epoch [39]  Batch [0]    Speed   1.2 (+ 7) sample/sec  loss-ce = 0.11528, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:31:42: Epoch [39]   time cost: 101.38 sec (0.03 h)
+2022-10-20 10:31:42: Start evaluating epoch 39:
+2022-10-20 10:31:55: Epoch [39]  Batch [159]  Speed  23.6 (+ 7) sample/sec  loss-ce = 2.04939, top1 = 0.47813, top5 = 0.92500  
+2022-10-20 10:31:56: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0040.pth
+2022-10-20 10:31:56: Current best epoch found with top1 accuracy 0.47813 at epoch 40, saved
+2022-10-20 10:31:56: Start epoch 40:
+2022-10-20 10:32:10: Epoch [40]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.19368, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 10:33:37: Epoch [40]   time cost: 101.68 sec (0.03 h)
+2022-10-20 10:33:37: Start evaluating epoch 40:
+2022-10-20 10:33:52: Epoch [40]  Batch [159]  Speed  22.5 (+ 8) sample/sec  loss-ce = 1.96220, top1 = 0.46250, top5 = 0.93437  
+2022-10-20 10:33:52: Start epoch 41:
+2022-10-20 10:34:04: Epoch [41]  Batch [0]    Speed   1.3 (+ 7) sample/sec  loss-ce = 0.18378, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:35:32: Epoch [41]   time cost: 100.40 sec (0.03 h)
+2022-10-20 10:35:32: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0042.pth
+2022-10-20 10:35:32: Start evaluating epoch 41:
+2022-10-20 10:35:46: Epoch [41]  Batch [159]  Speed  23.0 (+ 8) sample/sec  loss-ce = 1.98467, top1 = 0.47500, top5 = 0.92812  
+2022-10-20 10:35:46: Start epoch 42:
+2022-10-20 10:36:00: Epoch [42]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.14675, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 10:37:28: Epoch [42]   time cost: 101.60 sec (0.03 h)
+2022-10-20 10:37:28: Start evaluating epoch 42:
+2022-10-20 10:37:42: Epoch [42]  Batch [159]  Speed  22.6 (+ 8) sample/sec  loss-ce = 1.95991, top1 = 0.47500, top5 = 0.93125  
+2022-10-20 10:37:42: Start epoch 43:
+2022-10-20 10:37:57: Epoch [43]  Batch [0]    Speed   1.1 (+ 8) sample/sec  loss-ce = 0.17347, top1 = 0.87500, top5 = 1.00000  
+2022-10-20 10:39:24: Epoch [43]   time cost: 102.34 sec (0.03 h)
+2022-10-20 10:39:24: Start evaluating epoch 43:
+2022-10-20 10:39:39: Epoch [43]  Batch [159]  Speed  22.8 (+ 8) sample/sec  loss-ce = 1.96384, top1 = 0.45312, top5 = 0.93125  
+2022-10-20 10:39:39: Start epoch 44:
+2022-10-20 10:39:52: Epoch [44]  Batch [0]    Speed   1.2 (+ 7) sample/sec  loss-ce = 0.20541, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 10:41:20: Epoch [44]   time cost: 101.36 sec (0.03 h)
+2022-10-20 10:41:20: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0045.pth
+2022-10-20 10:41:20: Start evaluating epoch 44:
+2022-10-20 10:41:34: Epoch [44]  Batch [159]  Speed  23.0 (+ 8) sample/sec  loss-ce = 2.03339, top1 = 0.45937, top5 = 0.93437  
+2022-10-20 10:41:34: Start epoch 45:
+2022-10-20 10:41:49: Epoch [45]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.10928, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:43:16: Epoch [45]   time cost: 102.02 sec (0.03 h)
+2022-10-20 10:43:16: Start evaluating epoch 45:
+2022-10-20 10:43:31: Epoch [45]  Batch [159]  Speed  22.7 (+ 8) sample/sec  loss-ce = 2.01522, top1 = 0.45312, top5 = 0.93437  
+2022-10-20 10:43:31: Start epoch 46:
+2022-10-20 10:43:45: Epoch [46]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.05290, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:45:12: Epoch [46]   time cost: 101.76 sec (0.03 h)
+2022-10-20 10:45:12: Start evaluating epoch 46:
+2022-10-20 10:45:26: Epoch [46]  Batch [159]  Speed  22.8 (+ 8) sample/sec  loss-ce = 2.02546, top1 = 0.45625, top5 = 0.92500  
+2022-10-20 10:45:26: Start epoch 47:
+2022-10-20 10:45:41: Epoch [47]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.06071, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:47:08: Epoch [47]   time cost: 101.86 sec (0.03 h)
+2022-10-20 10:47:09: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0048.pth
+2022-10-20 10:47:09: Start evaluating epoch 47:
+2022-10-20 10:47:23: Epoch [47]  Batch [159]  Speed  22.8 (+ 8) sample/sec  loss-ce = 1.96624, top1 = 0.46875, top5 = 0.93125  
+2022-10-20 10:47:23: Start epoch 48:
+2022-10-20 10:47:38: Epoch [48]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.05791, top1 = 1.00000, top5 = 1.00000  
+2022-10-20 10:49:06: Epoch [48]   time cost: 102.98 sec (0.03 h)
+2022-10-20 10:49:06: Start evaluating epoch 48:
+2022-10-20 10:49:20: Epoch [48]  Batch [159]  Speed  22.5 (+ 8) sample/sec  loss-ce = 1.99524, top1 = 0.46875, top5 = 0.93125  
+2022-10-20 10:49:20: Start epoch 49:
+2022-10-20 10:49:33: Epoch [49]  Batch [0]    Speed   1.2 (+ 7) sample/sec  loss-ce = 0.18701, top1 = 0.93750, top5 = 1.00000  
+2022-10-20 10:51:01: Epoch [49]   time cost: 101.19 sec (0.03 h)
+2022-10-20 10:51:01: Start evaluating epoch 49:
+2022-10-20 10:51:15: Epoch [49]  Batch [159]  Speed  22.7 (+ 8) sample/sec  loss-ce = 1.92726, top1 = 0.47187, top5 = 0.94063  
+2022-10-20 10:51:15: Current best epoch found with top5 accuracy 0.94063 at epoch 50, saved
+2022-10-20 10:51:16: Checkpoint (model & optimizer) saved to: ./exps/models/archive/ARID_v1_ep-0050.pth
+2022-10-20 10:51:16: Optimization done!

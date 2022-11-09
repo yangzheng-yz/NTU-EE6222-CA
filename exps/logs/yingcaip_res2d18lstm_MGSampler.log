@@ -1,0 +1,408 @@
+2022-10-25 09:13:27: Using pytorch 1.12.0+cu113 (['/media/mldadmin/home/s122mdg36_01/anaconda3/envs/torchgpu/lib/python3.7/site-packages/torch'])
+2022-10-25 09:13:27: Start training with args:
+{
+    "backend": "nccl",
+    "batch_size": 8,
+    "brighten_method": "ying_caip",
+    "clip_length": 16,
+    "dataset": "ARID",
+    "debug_mode": true,
+    "dist_url": "tcp://192.168.0.11:23456",
+    "end_epoch": 50,
+    "fine_tune": true,
+    "gpus": "0,1,2,3,4,5,6,7",
+    "is_dark": false,
+    "log_file": "./exps/logs/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_at-gpu36.log",
+    "lr_base": 0.01,
+    "lr_factor": 0.1,
+    "lr_steps": [
+        20000,
+        40000,
+        80000
+    ],
+    "model_dir": "./exps/models/archive",
+    "model_prefix": "./exps/models/archive/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark",
+    "network": "resnet18lstm",
+    "pretrained_2d": true,
+    "pretrained_3d": null,
+    "random_seed": 3407,
+    "resume_epoch": -1,
+    "save_frequency": 2,
+    "segments": 1,
+    "task_name": "ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark",
+    "train_frame_interval": 2,
+    "use_flow": false,
+    "use_segments": false,
+    "val_frame_interval": 2,
+    "world_size": 1
+}
+2022-10-25 09:13:27: Target dataset: 'ARID', configs: {'num_classes': 10}
+2022-10-25 09:13:28: loading network configs of: RESNET18LSTM
+2022-10-25 09:13:28: Preprocessing:: using default mean & std from Kinetics original.
+2022-10-25 09:13:28: data:: {'mean': [0.43216, 0.394666, 0.37645], 'std': [0.22803, 0.22145, 0.216989]}
+2022-10-25 09:13:28: VideoIter:: clip_length = 16, interval = [train: 2, val: 2], seed = 3507
+2022-10-25 09:13:28: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-10-25 09:13:28: VideoIter:: found 750 videos in `./dataset/ARID/train.txt'
+2022-10-25 09:13:28: VideoIter:: iterator initialized (phase: 'train', num: 750)
+2022-10-25 09:13:28: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-10-25 09:13:28: VideoIter:: found 320 videos in `./dataset/ARID/val.txt'
+2022-10-25 09:13:28: VideoIter:: iterator initialized (phase: 'test', num: 320)
+2022-10-25 09:13:32: Optimizer:: >> recuding the learning rate of 66 params: ['baseModel.conv1.weight', 'baseModel.bn1.weight', 'baseModel.bn1.bias', 'baseModel.layer1.0.conv1.weight', 'baseModel.layer1.0.bn1.weight', 'baseMode ... r4.1.bn2.weight', 'baseModel.layer4.1.bn2.bias', 'rnn.weight_ih_l0', 'rnn.weight_hh_l0', 'rnn.bias_ih_l0', 'rnn.bias_hh_l0', 'fc1.weight', 'fc1.bias']
+2022-10-25 09:13:32: Iter 0: start with learning rate: 1.00000e-02 (next lr step: 2500)
+2022-10-25 09:13:32: Start epoch 0:
+2022-10-25 09:13:59: Epoch [0]   Batch [0]    Speed   0.3 (+ 2) sample/sec  loss-ce = 2.37974, top1 = 0.00000, top5 = 0.25000  
+2022-10-25 09:15:18: Epoch [0]   Batch [50]   Speed   5.0 (+ 2) sample/sec  loss-ce = 2.30140, top1 = 0.14750, top5 = 0.53000  
+2022-10-25 09:16:27: Epoch [0]   time cost: 175.58 sec (0.05 h)
+2022-10-25 09:16:27: mkdir ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark
+2022-10-25 09:16:27: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0001.pth
+2022-10-25 09:16:27: Start evaluating epoch 0:
+2022-10-25 09:17:29: Epoch [0]   Batch [159]  Speed   5.3 (+ 5) sample/sec  loss-ce = 2.32100, top1 = 0.10000, top5 = 0.56875  
+2022-10-25 09:17:29: Current best epoch found with top5 accuracy 0.56875 at epoch 1, saved
+2022-10-25 09:17:29: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0001.pth
+2022-10-25 09:17:30: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0001.pth
+2022-10-25 09:17:30: Current best epoch found with top1 accuracy 0.10000 at epoch 1, saved
+2022-10-25 09:17:30: Start epoch 1:
+2022-10-25 09:18:03: Epoch [1]   Batch [0]    Speed   0.2 (+ 7) sample/sec  loss-ce = 2.28690, top1 = 0.12500, top5 = 0.50000  
+2022-10-25 09:19:26: Epoch [1]   Batch [50]   Speed   4.8 (+ 0) sample/sec  loss-ce = 2.25409, top1 = 0.14500, top5 = 0.59750  
+2022-10-25 09:20:38: Epoch [1]   time cost: 188.23 sec (0.05 h)
+2022-10-25 09:20:39: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0002.pth
+2022-10-25 09:20:39: Start evaluating epoch 1:
+2022-10-25 09:21:19: Epoch [1]   Batch [159]  Speed   8.0 (+ 5) sample/sec  loss-ce = 2.32682, top1 = 0.13125, top5 = 0.53750  
+2022-10-25 09:21:19: Current best epoch found with top1 accuracy 0.13125 at epoch 2, saved
+2022-10-25 09:21:19: Start epoch 2:
+2022-10-25 09:21:39: Epoch [2]   Batch [0]    Speed   0.4 (+ 5) sample/sec  loss-ce = 2.22010, top1 = 0.00000, top5 = 0.62500  
+2022-10-25 09:22:51: Epoch [2]   Batch [50]   Speed   5.6 (+ 1) sample/sec  loss-ce = 2.18930, top1 = 0.25750, top5 = 0.65250  
+2022-10-25 09:24:12: Epoch [2]   time cost: 172.94 sec (0.05 h)
+2022-10-25 09:24:12: Start evaluating epoch 2:
+2022-10-25 09:24:53: Epoch [2]   Batch [159]  Speed   7.7 (+ 4) sample/sec  loss-ce = 2.27207, top1 = 0.21250, top5 = 0.59688  
+2022-10-25 09:24:53: Current best epoch found with top5 accuracy 0.59688 at epoch 3, saved
+2022-10-25 09:24:54: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0003.pth
+2022-10-25 09:24:54: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0003.pth
+2022-10-25 09:24:54: Current best epoch found with top1 accuracy 0.21250 at epoch 3, saved
+2022-10-25 09:24:54: Start epoch 3:
+2022-10-25 09:25:23: Epoch [3]   Batch [0]    Speed   0.3 (+ 5) sample/sec  loss-ce = 2.05335, top1 = 0.37500, top5 = 0.75000  
+2022-10-25 09:26:33: Epoch [3]   Batch [50]   Speed   5.7 (+ 0) sample/sec  loss-ce = 2.10196, top1 = 0.27500, top5 = 0.75250  
+2022-10-25 09:27:40: Epoch [3]   time cost: 166.02 sec (0.05 h)
+2022-10-25 09:27:40: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0004.pth
+2022-10-25 09:27:40: Start evaluating epoch 3:
+2022-10-25 09:28:22: Epoch [3]   Batch [159]  Speed   7.7 (+ 5) sample/sec  loss-ce = 2.20145, top1 = 0.24063, top5 = 0.65625  
+2022-10-25 09:28:22: Current best epoch found with top5 accuracy 0.65625 at epoch 4, saved
+2022-10-25 09:28:22: Current best epoch found with top1 accuracy 0.24063 at epoch 4, saved
+2022-10-25 09:28:22: Start epoch 4:
+2022-10-25 09:28:53: Epoch [4]   Batch [0]    Speed   0.3 (+ 5) sample/sec  loss-ce = 1.87028, top1 = 0.62500, top5 = 1.00000  
+2022-10-25 09:30:06: Epoch [4]   Batch [50]   Speed   5.5 (+ 0) sample/sec  loss-ce = 1.97182, top1 = 0.38500, top5 = 0.83750  
+2022-10-25 09:31:18: Epoch [4]   time cost: 175.72 sec (0.05 h)
+2022-10-25 09:31:18: Start evaluating epoch 4:
+2022-10-25 09:32:09: Epoch [4]   Batch [159]  Speed   6.4 (+ 5) sample/sec  loss-ce = 2.08013, top1 = 0.25938, top5 = 0.73750  
+2022-10-25 09:32:09: Current best epoch found with top5 accuracy 0.73750 at epoch 5, saved
+2022-10-25 09:32:09: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0005.pth
+2022-10-25 09:32:10: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0005.pth
+2022-10-25 09:32:10: Current best epoch found with top1 accuracy 0.25938 at epoch 5, saved
+2022-10-25 09:32:10: Start epoch 5:
+2022-10-25 09:32:38: Epoch [5]   Batch [0]    Speed   0.3 (+ 4) sample/sec  loss-ce = 1.69615, top1 = 0.62500, top5 = 0.87500  
+2022-10-25 09:34:01: Epoch [5]   Batch [50]   Speed   4.8 (+ 1) sample/sec  loss-ce = 1.81476, top1 = 0.42500, top5 = 0.86250  
+2022-10-25 09:35:10: Epoch [5]   time cost: 180.86 sec (0.05 h)
+2022-10-25 09:35:11: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0006.pth
+2022-10-25 09:35:11: Start evaluating epoch 5:
+2022-10-25 09:35:49: Epoch [5]   Batch [159]  Speed   8.5 (+ 6) sample/sec  loss-ce = 2.00490, top1 = 0.28125, top5 = 0.74062  
+2022-10-25 09:35:49: Current best epoch found with top5 accuracy 0.74062 at epoch 6, saved
+2022-10-25 09:35:49: Current best epoch found with top1 accuracy 0.28125 at epoch 6, saved
+2022-10-25 09:35:49: Start epoch 6:
+2022-10-25 09:36:15: Epoch [6]   Batch [0]    Speed   0.3 (+ 6) sample/sec  loss-ce = 1.80149, top1 = 0.12500, top5 = 1.00000  
+2022-10-25 09:37:43: Epoch [6]   Batch [50]   Speed   4.5 (+ 2) sample/sec  loss-ce = 1.68716, top1 = 0.47000, top5 = 0.91750  
+2022-10-25 09:39:02: Epoch [6]   time cost: 193.51 sec (0.05 h)
+2022-10-25 09:39:02: Start evaluating epoch 6:
+2022-10-25 09:39:55: Epoch [6]   Batch [159]  Speed   6.1 (+ 6) sample/sec  loss-ce = 1.96557, top1 = 0.25938, top5 = 0.80000  
+2022-10-25 09:39:55: Current best epoch found with top5 accuracy 0.80000 at epoch 7, saved
+2022-10-25 09:39:55: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0007.pth
+2022-10-25 09:39:55: Start epoch 7:
+2022-10-25 09:40:28: Epoch [7]   Batch [0]    Speed   0.2 (+ 9) sample/sec  loss-ce = 1.49856, top1 = 0.50000, top5 = 0.87500  
+2022-10-25 09:41:56: Epoch [7]   Batch [50]   Speed   4.5 (+ 1) sample/sec  loss-ce = 1.53580, top1 = 0.53750, top5 = 0.94500  
+2022-10-25 09:43:12: Epoch [7]   time cost: 196.35 sec (0.05 h)
+2022-10-25 09:43:12: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0008.pth
+2022-10-25 09:43:12: Start evaluating epoch 7:
+2022-10-25 09:44:03: Epoch [7]   Batch [159]  Speed   6.3 (+ 6) sample/sec  loss-ce = 1.99749, top1 = 0.31250, top5 = 0.71250  
+2022-10-25 09:44:03: Current best epoch found with top1 accuracy 0.31250 at epoch 8, saved
+2022-10-25 09:44:03: Start epoch 8:
+2022-10-25 09:44:36: Epoch [8]   Batch [0]    Speed   0.2 (+ 4) sample/sec  loss-ce = 1.09888, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 09:45:54: Epoch [8]   Batch [50]   Speed   5.1 (+ 1) sample/sec  loss-ce = 1.31341, top1 = 0.62500, top5 = 0.97000  
+2022-10-25 09:47:08: Epoch [8]   time cost: 184.84 sec (0.05 h)
+2022-10-25 09:47:08: Start evaluating epoch 8:
+2022-10-25 09:47:45: Epoch [8]   Batch [159]  Speed   8.8 (+ 5) sample/sec  loss-ce = 1.86702, top1 = 0.34375, top5 = 0.83437  
+2022-10-25 09:47:45: Current best epoch found with top5 accuracy 0.83437 at epoch 9, saved
+2022-10-25 09:47:45: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0009.pth
+2022-10-25 09:47:46: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0009.pth
+2022-10-25 09:47:46: Current best epoch found with top1 accuracy 0.34375 at epoch 9, saved
+2022-10-25 09:47:46: Start epoch 9:
+2022-10-25 09:48:03: Epoch [9]   Batch [0]    Speed   0.5 (+ 4) sample/sec  loss-ce = 0.89257, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 09:49:11: Epoch [9]   Batch [50]   Speed   5.9 (+ 1) sample/sec  loss-ce = 1.17666, top1 = 0.66750, top5 = 0.97250  
+2022-10-25 09:50:29: Epoch [9]   time cost: 163.78 sec (0.05 h)
+2022-10-25 09:50:30: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0010.pth
+2022-10-25 09:50:30: Start evaluating epoch 9:
+2022-10-25 09:51:20: Epoch [9]   Batch [159]  Speed   6.4 (+ 4) sample/sec  loss-ce = 1.78506, top1 = 0.37188, top5 = 0.85000  
+2022-10-25 09:51:20: Current best epoch found with top5 accuracy 0.85000 at epoch 10, saved
+2022-10-25 09:51:20: Current best epoch found with top1 accuracy 0.37188 at epoch 10, saved
+2022-10-25 09:51:20: Start epoch 10:
+2022-10-25 09:51:32: Epoch [10]  Batch [0]    Speed   0.6 (+ 4) sample/sec  loss-ce = 1.23503, top1 = 0.62500, top5 = 1.00000  
+2022-10-25 09:52:38: Epoch [10]  Batch [50]   Speed   6.1 (+ 0) sample/sec  loss-ce = 1.06763, top1 = 0.69750, top5 = 0.98500  
+2022-10-25 09:53:39: Epoch [10]   time cost: 139.38 sec (0.04 h)
+2022-10-25 09:53:39: Start evaluating epoch 10:
+2022-10-25 09:54:35: Epoch [10]  Batch [159]  Speed   5.7 (+ 4) sample/sec  loss-ce = 1.83425, top1 = 0.36562, top5 = 0.86250  
+2022-10-25 09:54:35: Current best epoch found with top5 accuracy 0.86250 at epoch 11, saved
+2022-10-25 09:54:36: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0011.pth
+2022-10-25 09:54:36: Start epoch 11:
+2022-10-25 09:55:09: Epoch [11]  Batch [0]    Speed   0.2 (+ 4) sample/sec  loss-ce = 1.74906, top1 = 0.37500, top5 = 0.87500  
+2022-10-25 09:56:27: Epoch [11]  Batch [50]   Speed   5.1 (+ 0) sample/sec  loss-ce = 0.99158, top1 = 0.75000, top5 = 0.98250  
+2022-10-25 09:57:25: Epoch [11]   time cost: 169.00 sec (0.05 h)
+2022-10-25 09:57:25: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0012.pth
+2022-10-25 09:57:25: Start evaluating epoch 11:
+2022-10-25 09:58:23: Epoch [11]  Batch [159]  Speed   5.5 (+ 5) sample/sec  loss-ce = 2.05298, top1 = 0.36250, top5 = 0.79375  
+2022-10-25 09:58:23: Start epoch 12:
+2022-10-25 09:58:57: Epoch [12]  Batch [0]    Speed   0.2 (+ 4) sample/sec  loss-ce = 0.94106, top1 = 0.62500, top5 = 1.00000  
+2022-10-25 10:00:30: Epoch [12]  Batch [50]   Speed   4.3 (+ 0) sample/sec  loss-ce = 0.89103, top1 = 0.75750, top5 = 0.97500  
+2022-10-25 10:01:30: Epoch [12]   time cost: 187.14 sec (0.05 h)
+2022-10-25 10:01:30: Start evaluating epoch 12:
+2022-10-25 10:02:40: Epoch [12]  Batch [159]  Speed   4.6 (+ 5) sample/sec  loss-ce = 2.22628, top1 = 0.32188, top5 = 0.73125  
+2022-10-25 10:02:40: Start epoch 13:
+2022-10-25 10:03:16: Epoch [13]  Batch [0]    Speed   0.2 (+ 5) sample/sec  loss-ce = 0.70564, top1 = 0.75000, top5 = 1.00000  
+2022-10-25 10:04:40: Epoch [13]  Batch [50]   Speed   4.8 (+ 0) sample/sec  loss-ce = 0.86013, top1 = 0.73750, top5 = 0.98000  
+2022-10-25 10:05:43: Epoch [13]   time cost: 183.33 sec (0.05 h)
+2022-10-25 10:05:43: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0014.pth
+2022-10-25 10:05:43: Start evaluating epoch 13:
+2022-10-25 10:06:43: Epoch [13]  Batch [159]  Speed   5.4 (+ 4) sample/sec  loss-ce = 1.89451, top1 = 0.33437, top5 = 0.82188  
+2022-10-25 10:06:43: Start epoch 14:
+2022-10-25 10:07:01: Epoch [14]  Batch [0]    Speed   0.4 (+ 4) sample/sec  loss-ce = 0.27755, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:08:17: Epoch [14]  Batch [50]   Speed   5.2 (+ 1) sample/sec  loss-ce = 0.69993, top1 = 0.79500, top5 = 0.99250  
+2022-10-25 10:09:28: Epoch [14]   time cost: 165.20 sec (0.05 h)
+2022-10-25 10:09:28: Start evaluating epoch 14:
+2022-10-25 10:10:19: Epoch [14]  Batch [159]  Speed   6.4 (+ 6) sample/sec  loss-ce = 1.97894, top1 = 0.33750, top5 = 0.79688  
+2022-10-25 10:10:19: Start epoch 15:
+2022-10-25 10:10:38: Epoch [15]  Batch [0]    Speed   0.4 (+ 4) sample/sec  loss-ce = 0.52531, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:11:58: Epoch [15]  Batch [50]   Speed   5.0 (+ 1) sample/sec  loss-ce = 0.64759, top1 = 0.81750, top5 = 0.99250  
+2022-10-25 10:13:22: Epoch [15]   time cost: 183.80 sec (0.05 h)
+2022-10-25 10:13:22: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0016.pth
+2022-10-25 10:13:22: Start evaluating epoch 15:
+2022-10-25 10:14:13: Epoch [15]  Batch [159]  Speed   6.4 (+ 5) sample/sec  loss-ce = 1.98569, top1 = 0.35000, top5 = 0.79063  
+2022-10-25 10:14:13: Start epoch 16:
+2022-10-25 10:14:34: Epoch [16]  Batch [0]    Speed   0.4 (+ 8) sample/sec  loss-ce = 0.47054, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 10:16:03: Epoch [16]  Batch [50]   Speed   4.5 (+ 1) sample/sec  loss-ce = 0.54459, top1 = 0.85000, top5 = 0.99500  
+2022-10-25 10:17:22: Epoch [16]   time cost: 188.59 sec (0.05 h)
+2022-10-25 10:17:22: Start evaluating epoch 16:
+2022-10-25 10:17:57: Epoch [16]  Batch [159]  Speed   9.0 (+ 5) sample/sec  loss-ce = 1.99469, top1 = 0.35313, top5 = 0.81250  
+2022-10-25 10:17:57: Start epoch 17:
+2022-10-25 10:18:24: Epoch [17]  Batch [0]    Speed   0.3 (+ 6) sample/sec  loss-ce = 0.57403, top1 = 0.75000, top5 = 1.00000  
+2022-10-25 10:19:36: Epoch [17]  Batch [50]   Speed   5.5 (+ 1) sample/sec  loss-ce = 0.51487, top1 = 0.85500, top5 = 0.99000  
+2022-10-25 10:20:44: Epoch [17]   time cost: 166.61 sec (0.05 h)
+2022-10-25 10:20:44: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0018.pth
+2022-10-25 10:20:44: Start evaluating epoch 17:
+2022-10-25 10:21:51: Epoch [17]  Batch [159]  Speed   4.8 (+ 4) sample/sec  loss-ce = 2.58057, top1 = 0.25312, top5 = 0.75625  
+2022-10-25 10:21:51: Start epoch 18:
+2022-10-25 10:22:16: Epoch [18]  Batch [0]    Speed   0.3 (+ 4) sample/sec  loss-ce = 0.27755, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:23:27: Epoch [18]  Batch [50]   Speed   5.6 (+ 0) sample/sec  loss-ce = 0.51470, top1 = 0.83250, top5 = 0.99000  
+2022-10-25 10:24:24: Epoch [18]   time cost: 152.67 sec (0.04 h)
+2022-10-25 10:24:24: Start evaluating epoch 18:
+2022-10-25 10:25:31: Epoch [18]  Batch [159]  Speed   4.8 (+ 4) sample/sec  loss-ce = 2.29114, top1 = 0.32188, top5 = 0.75313  
+2022-10-25 10:25:31: Start epoch 19:
+2022-10-25 10:25:58: Epoch [19]  Batch [0]    Speed   0.3 (+ 4) sample/sec  loss-ce = 0.59771, top1 = 0.62500, top5 = 1.00000  
+2022-10-25 10:27:18: Epoch [19]  Batch [50]   Speed   5.0 (+ 0) sample/sec  loss-ce = 0.39387, top1 = 0.90500, top5 = 0.99750  
+2022-10-25 10:28:08: Epoch [19]   time cost: 156.88 sec (0.04 h)
+2022-10-25 10:28:08: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0020.pth
+2022-10-25 10:28:08: Start evaluating epoch 19:
+2022-10-25 10:29:10: Epoch [19]  Batch [159]  Speed   5.2 (+ 5) sample/sec  loss-ce = 2.28241, top1 = 0.33125, top5 = 0.77187  
+2022-10-25 10:29:10: Start epoch 20:
+2022-10-25 10:29:40: Epoch [20]  Batch [0]    Speed   0.3 (+ 7) sample/sec  loss-ce = 0.16601, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:31:02: Epoch [20]  Batch [50]   Speed   4.9 (+ 0) sample/sec  loss-ce = 0.47340, top1 = 0.87750, top5 = 0.98750  
+2022-10-25 10:32:08: Epoch [20]   time cost: 178.58 sec (0.05 h)
+2022-10-25 10:32:08: Start evaluating epoch 20:
+2022-10-25 10:33:06: Epoch [20]  Batch [159]  Speed   5.6 (+ 5) sample/sec  loss-ce = 2.19648, top1 = 0.29375, top5 = 0.81563  
+2022-10-25 10:33:06: Start epoch 21:
+2022-10-25 10:33:40: Epoch [21]  Batch [0]    Speed   0.2 (+ 5) sample/sec  loss-ce = 0.54613, top1 = 0.75000, top5 = 1.00000  
+2022-10-25 10:35:05: Epoch [21]  Batch [50]   Speed   4.7 (+ 1) sample/sec  loss-ce = 0.37223, top1 = 0.89500, top5 = 0.99500  
+2022-10-25 10:36:12: Epoch [21]   time cost: 186.11 sec (0.05 h)
+2022-10-25 10:36:12: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0022.pth
+2022-10-25 10:36:12: Start evaluating epoch 21:
+2022-10-25 10:37:18: Epoch [21]  Batch [159]  Speed   4.9 (+ 5) sample/sec  loss-ce = 2.77426, top1 = 0.25000, top5 = 0.72500  
+2022-10-25 10:37:18: Start epoch 22:
+2022-10-25 10:37:47: Epoch [22]  Batch [0]    Speed   0.3 (+ 5) sample/sec  loss-ce = 0.42687, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 10:39:05: Epoch [22]  Batch [50]   Speed   5.2 (+ 0) sample/sec  loss-ce = 0.29914, top1 = 0.93500, top5 = 0.99750  
+2022-10-25 10:40:18: Epoch [22]   time cost: 179.31 sec (0.05 h)
+2022-10-25 10:40:18: Start evaluating epoch 22:
+2022-10-25 10:41:10: Epoch [22]  Batch [159]  Speed   6.1 (+ 5) sample/sec  loss-ce = 2.53105, top1 = 0.30938, top5 = 0.76250  
+2022-10-25 10:41:10: Start epoch 23:
+2022-10-25 10:41:31: Epoch [23]  Batch [0]    Speed   0.4 (+ 6) sample/sec  loss-ce = 0.25510, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 10:42:50: Epoch [23]  Batch [50]   Speed   5.0 (+ 1) sample/sec  loss-ce = 0.38546, top1 = 0.88500, top5 = 0.99500  
+2022-10-25 10:44:11: Epoch [23]   time cost: 180.50 sec (0.05 h)
+2022-10-25 10:44:11: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0024.pth
+2022-10-25 10:44:11: Start evaluating epoch 23:
+2022-10-25 10:44:38: Epoch [23]  Batch [159]  Speed  11.8 (+ 2) sample/sec  loss-ce = 2.69399, top1 = 0.27813, top5 = 0.73438  
+2022-10-25 10:44:38: Start epoch 24:
+2022-10-25 10:44:56: Epoch [24]  Batch [0]    Speed   0.4 (+ 6) sample/sec  loss-ce = 0.07698, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:46:05: Epoch [24]  Batch [50]   Speed   5.8 (+ 0) sample/sec  loss-ce = 0.31937, top1 = 0.91250, top5 = 0.99500  
+2022-10-25 10:47:20: Epoch [24]   time cost: 162.19 sec (0.05 h)
+2022-10-25 10:47:20: Start evaluating epoch 24:
+2022-10-25 10:48:16: Epoch [24]  Batch [159]  Speed   5.8 (+ 5) sample/sec  loss-ce = 2.31571, top1 = 0.32188, top5 = 0.81563  
+2022-10-25 10:48:16: Start epoch 25:
+2022-10-25 10:48:38: Epoch [25]  Batch [0]    Speed   0.4 (+ 5) sample/sec  loss-ce = 0.12216, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:49:35: Epoch [25]  Batch [50]   Speed   7.0 (+ 0) sample/sec  loss-ce = 0.40031, top1 = 0.88500, top5 = 0.98500  
+2022-10-25 10:50:20: Epoch [25]   time cost: 124.75 sec (0.03 h)
+2022-10-25 10:50:21: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0026.pth
+2022-10-25 10:50:21: Start evaluating epoch 25:
+2022-10-25 10:51:11: Epoch [25]  Batch [159]  Speed   6.4 (+ 6) sample/sec  loss-ce = 2.33384, top1 = 0.34687, top5 = 0.81250  
+2022-10-25 10:51:11: Start epoch 26:
+2022-10-25 10:51:37: Epoch [26]  Batch [0]    Speed   0.3 (+ 8) sample/sec  loss-ce = 0.53905, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 10:52:50: Epoch [26]  Batch [50]   Speed   5.4 (+ 1) sample/sec  loss-ce = 0.25402, top1 = 0.93500, top5 = 0.99750  
+2022-10-25 10:52:56: Iter: 2500, change learning rate to 1.00000e-03 for step [2500:5000)
+2022-10-25 10:53:33: Epoch [26]   time cost: 141.29 sec (0.04 h)
+2022-10-25 10:53:33: Start evaluating epoch 26:
+2022-10-25 10:54:30: Epoch [26]  Batch [159]  Speed   5.6 (+ 5) sample/sec  loss-ce = 2.63325, top1 = 0.29063, top5 = 0.79063  
+2022-10-25 10:54:30: Start epoch 27:
+2022-10-25 10:54:56: Epoch [27]  Batch [0]    Speed   0.3 (+ 4) sample/sec  loss-ce = 0.03655, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 10:56:15: Epoch [27]  Batch [50]   Speed   5.1 (+ 0) sample/sec  loss-ce = 0.23949, top1 = 0.94750, top5 = 1.00000  
+2022-10-25 10:56:54: Epoch [27]   time cost: 144.55 sec (0.04 h)
+2022-10-25 10:56:55: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0028.pth
+2022-10-25 10:56:55: Start evaluating epoch 27:
+2022-10-25 10:57:52: Epoch [27]  Batch [159]  Speed   5.6 (+ 6) sample/sec  loss-ce = 2.52960, top1 = 0.30312, top5 = 0.79688  
+2022-10-25 10:57:52: Start epoch 28:
+2022-10-25 10:58:18: Epoch [28]  Batch [0]    Speed   0.3 (+ 5) sample/sec  loss-ce = 0.31840, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 10:59:31: Epoch [28]  Batch [50]   Speed   5.5 (+ 0) sample/sec  loss-ce = 0.23255, top1 = 0.94750, top5 = 1.00000  
+2022-10-25 11:00:23: Epoch [28]   time cost: 150.92 sec (0.04 h)
+2022-10-25 11:00:23: Start evaluating epoch 28:
+2022-10-25 11:01:11: Epoch [28]  Batch [159]  Speed   6.7 (+ 7) sample/sec  loss-ce = 2.68954, top1 = 0.29688, top5 = 0.76562  
+2022-10-25 11:01:11: Start epoch 29:
+2022-10-25 11:01:35: Epoch [29]  Batch [0]    Speed   0.3 (+ 7) sample/sec  loss-ce = 0.17225, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:02:46: Epoch [29]  Batch [50]   Speed   5.7 (+ 0) sample/sec  loss-ce = 0.23866, top1 = 0.94250, top5 = 0.99750  
+2022-10-25 11:03:42: Epoch [29]   time cost: 151.43 sec (0.04 h)
+2022-10-25 11:03:42: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0030.pth
+2022-10-25 11:03:42: Start evaluating epoch 29:
+2022-10-25 11:04:17: Epoch [29]  Batch [159]  Speed   9.3 (+ 5) sample/sec  loss-ce = 2.38364, top1 = 0.29688, top5 = 0.83125  
+2022-10-25 11:04:17: Start epoch 30:
+2022-10-25 11:04:43: Epoch [30]  Batch [0]    Speed   0.3 (+ 6) sample/sec  loss-ce = 0.13624, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:05:48: Epoch [30]  Batch [50]   Speed   6.2 (+ 1) sample/sec  loss-ce = 0.24529, top1 = 0.94500, top5 = 0.99750  
+2022-10-25 11:06:44: Epoch [30]   time cost: 147.28 sec (0.04 h)
+2022-10-25 11:06:44: Start evaluating epoch 30:
+2022-10-25 11:07:35: Epoch [30]  Batch [159]  Speed   6.4 (+ 5) sample/sec  loss-ce = 2.52321, top1 = 0.31562, top5 = 0.79688  
+2022-10-25 11:07:35: Start epoch 31:
+2022-10-25 11:08:00: Epoch [31]  Batch [0]    Speed   0.3 (+ 4) sample/sec  loss-ce = 0.05552, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:08:54: Epoch [31]  Batch [50]   Speed   7.4 (+ 0) sample/sec  loss-ce = 0.21402, top1 = 0.95000, top5 = 0.99750  
+2022-10-25 11:09:51: Epoch [31]   time cost: 136.06 sec (0.04 h)
+2022-10-25 11:09:51: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0032.pth
+2022-10-25 11:09:51: Start evaluating epoch 31:
+2022-10-25 11:10:45: Epoch [31]  Batch [159]  Speed   5.9 (+ 5) sample/sec  loss-ce = 2.87111, top1 = 0.28750, top5 = 0.76250  
+2022-10-25 11:10:45: Start epoch 32:
+2022-10-25 11:11:06: Epoch [32]  Batch [0]    Speed   0.4 (+ 6) sample/sec  loss-ce = 0.14458, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:12:01: Epoch [32]  Batch [50]   Speed   7.3 (+ 0) sample/sec  loss-ce = 0.20897, top1 = 0.94750, top5 = 0.99500  
+2022-10-25 11:12:48: Epoch [32]   time cost: 123.19 sec (0.03 h)
+2022-10-25 11:12:48: Start evaluating epoch 32:
+2022-10-25 11:13:41: Epoch [32]  Batch [159]  Speed   6.1 (+ 6) sample/sec  loss-ce = 2.40222, top1 = 0.35313, top5 = 0.81563  
+2022-10-25 11:13:41: Start epoch 33:
+2022-10-25 11:14:05: Epoch [33]  Batch [0]    Speed   0.3 (+ 5) sample/sec  loss-ce = 0.19275, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:15:15: Epoch [33]  Batch [50]   Speed   5.7 (+ 1) sample/sec  loss-ce = 0.20040, top1 = 0.94750, top5 = 0.99750  
+2022-10-25 11:15:57: Epoch [33]   time cost: 136.76 sec (0.04 h)
+2022-10-25 11:15:58: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0034.pth
+2022-10-25 11:15:58: Start evaluating epoch 33:
+2022-10-25 11:16:46: Epoch [33]  Batch [159]  Speed   6.7 (+ 7) sample/sec  loss-ce = 2.45549, top1 = 0.32812, top5 = 0.78125  
+2022-10-25 11:16:46: Start epoch 34:
+2022-10-25 11:17:16: Epoch [34]  Batch [0]    Speed   0.3 (+ 6) sample/sec  loss-ce = 0.20572, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:18:29: Epoch [34]  Batch [50]   Speed   5.5 (+ 0) sample/sec  loss-ce = 0.22967, top1 = 0.94750, top5 = 0.99500  
+2022-10-25 11:19:26: Epoch [34]   time cost: 159.88 sec (0.04 h)
+2022-10-25 11:19:26: Start evaluating epoch 34:
+2022-10-25 11:20:21: Epoch [34]  Batch [159]  Speed   5.8 (+ 6) sample/sec  loss-ce = 2.43791, top1 = 0.31562, top5 = 0.80000  
+2022-10-25 11:20:21: Start epoch 35:
+2022-10-25 11:20:42: Epoch [35]  Batch [0]    Speed   0.4 (+ 7) sample/sec  loss-ce = 0.30078, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:21:46: Epoch [35]  Batch [50]   Speed   6.3 (+ 1) sample/sec  loss-ce = 0.25889, top1 = 0.92500, top5 = 0.99750  
+2022-10-25 11:22:50: Epoch [35]   time cost: 148.94 sec (0.04 h)
+2022-10-25 11:22:50: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0036.pth
+2022-10-25 11:22:50: Start evaluating epoch 35:
+2022-10-25 11:23:36: Epoch [35]  Batch [159]  Speed   7.0 (+ 6) sample/sec  loss-ce = 2.52400, top1 = 0.34375, top5 = 0.78125  
+2022-10-25 11:23:36: Start epoch 36:
+2022-10-25 11:23:50: Epoch [36]  Batch [0]    Speed   0.6 (+ 9) sample/sec  loss-ce = 0.09929, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:25:00: Epoch [36]  Batch [50]   Speed   5.7 (+ 3) sample/sec  loss-ce = 0.20337, top1 = 0.95500, top5 = 0.99750  
+2022-10-25 11:26:07: Epoch [36]   time cost: 150.61 sec (0.04 h)
+2022-10-25 11:26:07: Start evaluating epoch 36:
+2022-10-25 11:26:32: Epoch [36]  Batch [159]  Speed  12.7 (+ 4) sample/sec  loss-ce = 2.68170, top1 = 0.33750, top5 = 0.72500  
+2022-10-25 11:26:32: Start epoch 37:
+2022-10-25 11:26:44: Epoch [37]  Batch [0]    Speed   0.7 (+ 6) sample/sec  loss-ce = 0.23082, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:27:47: Epoch [37]  Batch [50]   Speed   6.3 (+ 1) sample/sec  loss-ce = 0.18502, top1 = 0.95750, top5 = 1.00000  
+2022-10-25 11:28:44: Epoch [37]   time cost: 132.19 sec (0.04 h)
+2022-10-25 11:28:44: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0038.pth
+2022-10-25 11:28:44: Start evaluating epoch 37:
+2022-10-25 11:29:36: Epoch [37]  Batch [159]  Speed   6.2 (+ 5) sample/sec  loss-ce = 2.56863, top1 = 0.30000, top5 = 0.82188  
+2022-10-25 11:29:36: Start epoch 38:
+2022-10-25 11:30:07: Epoch [38]  Batch [0]    Speed   0.3 (+ 6) sample/sec  loss-ce = 0.24888, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:31:04: Epoch [38]  Batch [50]   Speed   7.0 (+ 0) sample/sec  loss-ce = 0.22462, top1 = 0.94250, top5 = 1.00000  
+2022-10-25 11:31:42: Epoch [38]   time cost: 126.06 sec (0.04 h)
+2022-10-25 11:31:42: Start evaluating epoch 38:
+2022-10-25 11:32:40: Epoch [38]  Batch [159]  Speed   5.6 (+ 5) sample/sec  loss-ce = 2.65793, top1 = 0.29688, top5 = 0.77187  
+2022-10-25 11:32:40: Start epoch 39:
+2022-10-25 11:33:07: Epoch [39]  Batch [0]    Speed   0.3 (+ 5) sample/sec  loss-ce = 0.13141, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:34:19: Epoch [39]  Batch [50]   Speed   5.6 (+ 0) sample/sec  loss-ce = 0.18181, top1 = 0.96000, top5 = 0.99750  
+2022-10-25 11:34:55: Epoch [39]   time cost: 134.81 sec (0.04 h)
+2022-10-25 11:34:55: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0040.pth
+2022-10-25 11:34:55: Start evaluating epoch 39:
+2022-10-25 11:35:49: Epoch [39]  Batch [159]  Speed   6.0 (+ 6) sample/sec  loss-ce = 2.69014, top1 = 0.26875, top5 = 0.83750  
+2022-10-25 11:35:49: Start epoch 40:
+2022-10-25 11:36:12: Epoch [40]  Batch [0]    Speed   0.4 (+ 6) sample/sec  loss-ce = 0.14955, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:37:16: Epoch [40]  Batch [50]   Speed   6.2 (+ 0) sample/sec  loss-ce = 0.23512, top1 = 0.95000, top5 = 0.99250  
+2022-10-25 11:38:12: Epoch [40]   time cost: 143.02 sec (0.04 h)
+2022-10-25 11:38:12: Start evaluating epoch 40:
+2022-10-25 11:39:00: Epoch [40]  Batch [159]  Speed   6.7 (+ 6) sample/sec  loss-ce = 2.54715, top1 = 0.32188, top5 = 0.80312  
+2022-10-25 11:39:00: Start epoch 41:
+2022-10-25 11:39:23: Epoch [41]  Batch [0]    Speed   0.3 (+ 8) sample/sec  loss-ce = 0.26030, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:40:16: Epoch [41]  Batch [50]   Speed   7.5 (+ 2) sample/sec  loss-ce = 0.22733, top1 = 0.94000, top5 = 0.99500  
+2022-10-25 11:41:02: Epoch [41]   time cost: 122.06 sec (0.03 h)
+2022-10-25 11:41:03: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0042.pth
+2022-10-25 11:41:03: Start evaluating epoch 41:
+2022-10-25 11:41:43: Epoch [41]  Batch [159]  Speed   8.0 (+ 9) sample/sec  loss-ce = 2.66525, top1 = 0.33125, top5 = 0.78750  
+2022-10-25 11:41:43: Start epoch 42:
+2022-10-25 11:42:04: Epoch [42]  Batch [0]    Speed   0.4 (+ 8) sample/sec  loss-ce = 0.72662, top1 = 0.75000, top5 = 1.00000  
+2022-10-25 11:42:57: Epoch [42]  Batch [50]   Speed   7.5 (+ 3) sample/sec  loss-ce = 0.20863, top1 = 0.95000, top5 = 1.00000  
+2022-10-25 11:43:44: Epoch [42]   time cost: 120.55 sec (0.03 h)
+2022-10-25 11:43:44: Start evaluating epoch 42:
+2022-10-25 11:44:30: Epoch [42]  Batch [159]  Speed   7.0 (+ 7) sample/sec  loss-ce = 2.70282, top1 = 0.31875, top5 = 0.76250  
+2022-10-25 11:44:30: Start epoch 43:
+2022-10-25 11:44:48: Epoch [43]  Batch [0]    Speed   0.4 (+ 6) sample/sec  loss-ce = 0.40092, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:45:34: Epoch [43]  Batch [50]   Speed   8.7 (+ 1) sample/sec  loss-ce = 0.15408, top1 = 0.96500, top5 = 0.99750  
+2022-10-25 11:46:18: Epoch [43]   time cost: 107.86 sec (0.03 h)
+2022-10-25 11:46:18: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0044.pth
+2022-10-25 11:46:18: Start evaluating epoch 43:
+2022-10-25 11:47:04: Epoch [43]  Batch [159]  Speed   7.0 (+ 8) sample/sec  loss-ce = 2.44180, top1 = 0.31875, top5 = 0.83125  
+2022-10-25 11:47:04: Start epoch 44:
+2022-10-25 11:47:25: Epoch [44]  Batch [0]    Speed   0.4 (+ 8) sample/sec  loss-ce = 0.23545, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:48:19: Epoch [44]  Batch [50]   Speed   7.5 (+ 1) sample/sec  loss-ce = 0.18175, top1 = 0.95500, top5 = 1.00000  
+2022-10-25 11:48:50: Epoch [44]   time cost: 105.62 sec (0.03 h)
+2022-10-25 11:48:50: Start evaluating epoch 44:
+2022-10-25 11:49:34: Epoch [44]  Batch [159]  Speed   7.3 (+ 9) sample/sec  loss-ce = 2.42197, top1 = 0.32500, top5 = 0.80937  
+2022-10-25 11:49:34: Start epoch 45:
+2022-10-25 11:49:56: Epoch [45]  Batch [0]    Speed   0.4 (+11) sample/sec  loss-ce = 0.14654, top1 = 0.87500, top5 = 1.00000  
+2022-10-25 11:50:55: Epoch [45]  Batch [50]   Speed   6.7 (+ 0) sample/sec  loss-ce = 0.19577, top1 = 0.94500, top5 = 0.99750  
+2022-10-25 11:51:32: Epoch [45]   time cost: 117.82 sec (0.03 h)
+2022-10-25 11:51:32: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0046.pth
+2022-10-25 11:51:32: Start evaluating epoch 45:
+2022-10-25 11:52:18: Epoch [45]  Batch [159]  Speed   7.0 (+ 8) sample/sec  loss-ce = 2.38510, top1 = 0.35000, top5 = 0.79688  
+2022-10-25 11:52:18: Start epoch 46:
+2022-10-25 11:52:37: Epoch [46]  Batch [0]    Speed   0.4 (+11) sample/sec  loss-ce = 0.10774, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:53:35: Epoch [46]  Batch [50]   Speed   6.8 (+ 1) sample/sec  loss-ce = 0.17087, top1 = 0.96750, top5 = 0.99750  
+2022-10-25 11:54:16: Epoch [46]   time cost: 117.63 sec (0.03 h)
+2022-10-25 11:54:16: Start evaluating epoch 46:
+2022-10-25 11:54:55: Epoch [46]  Batch [159]  Speed   8.2 (+10) sample/sec  loss-ce = 2.85432, top1 = 0.31875, top5 = 0.73125  
+2022-10-25 11:54:55: Start epoch 47:
+2022-10-25 11:55:16: Epoch [47]  Batch [0]    Speed   0.4 (+10) sample/sec  loss-ce = 0.05640, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:56:08: Epoch [47]  Batch [50]   Speed   7.8 (+ 2) sample/sec  loss-ce = 0.20408, top1 = 0.95000, top5 = 1.00000  
+2022-10-25 11:56:53: Epoch [47]   time cost: 117.92 sec (0.03 h)
+2022-10-25 11:56:53: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0048.pth
+2022-10-25 11:56:53: Start evaluating epoch 47:
+2022-10-25 11:57:40: Epoch [47]  Batch [159]  Speed   6.9 (+ 8) sample/sec  loss-ce = 2.59157, top1 = 0.30000, top5 = 0.78750  
+2022-10-25 11:57:40: Start epoch 48:
+2022-10-25 11:57:58: Epoch [48]  Batch [0]    Speed   0.4 (+ 6) sample/sec  loss-ce = 0.03257, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 11:58:50: Epoch [48]  Batch [50]   Speed   7.6 (+ 1) sample/sec  loss-ce = 0.18369, top1 = 0.95500, top5 = 0.99750  
+2022-10-25 11:59:35: Epoch [48]   time cost: 114.91 sec (0.03 h)
+2022-10-25 11:59:35: Start evaluating epoch 48:
+2022-10-25 12:00:22: Epoch [48]  Batch [159]  Speed   6.8 (+ 9) sample/sec  loss-ce = 2.53621, top1 = 0.32812, top5 = 0.81875  
+2022-10-25 12:00:22: Start epoch 49:
+2022-10-25 12:00:44: Epoch [49]  Batch [0]    Speed   0.4 (+14) sample/sec  loss-ce = 0.10191, top1 = 1.00000, top5 = 1.00000  
+2022-10-25 12:01:37: Epoch [49]  Batch [50]   Speed   7.4 (+ 1) sample/sec  loss-ce = 0.13867, top1 = 0.98000, top5 = 1.00000  
+2022-10-25 12:02:07: Epoch [49]   time cost: 105.81 sec (0.03 h)
+2022-10-25 12:02:08: Checkpoint (model & optimizer) saved to: ./exps/models/archive_ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark/ying_caip_arid-res2d18lstm-ori_mgsampler-is_not_dark_ep-0050.pth
+2022-10-25 12:02:08: Start evaluating epoch 49:
+2022-10-25 12:02:40: Epoch [49]  Batch [159]  Speed  10.0 (+13) sample/sec  loss-ce = 2.56056, top1 = 0.30312, top5 = 0.82500  
+2022-10-25 12:02:40: Optimization done!

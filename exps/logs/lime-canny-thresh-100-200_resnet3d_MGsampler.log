@@ -1,0 +1,528 @@
+2022-10-30 13:19:25: Using pytorch 1.12.0+cu113 (['/media/mldadmin/home/s122mdg36_01/anaconda3/envs/torchgpu/lib/python3.7/site-packages/torch'])
+2022-10-30 13:19:25: Start training with args:
+{
+    "backend": "nccl",
+    "batch_size": 8,
+    "brighten_method": "lime_canny_100_200",
+    "clip_length": 16,
+    "dataset": "ARID",
+    "debug_mode": true,
+    "dist_url": "tcp://192.168.0.11:23456",
+    "end_epoch": 50,
+    "fine_tune": true,
+    "gpus": "0,1,2,3,4,5,6,7",
+    "is_dark": false,
+    "log_file": "./exps/logs/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_at-gpu36.log",
+    "lr_base": 0.01,
+    "lr_factor": 0.1,
+    "lr_steps": [
+        20000,
+        40000,
+        80000
+    ],
+    "model_dir": "./exps/models/archive",
+    "model_prefix": "./exps/models/archive/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200",
+    "network": "resnet",
+    "pretrained_2d": true,
+    "pretrained_3d": null,
+    "random_seed": 3407,
+    "resume_epoch": -1,
+    "save_frequency": 2,
+    "segments": 1,
+    "task_name": "arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200",
+    "train_frame_interval": 2,
+    "use_flow": false,
+    "use_segments": false,
+    "val_frame_interval": 2,
+    "world_size": 1
+}
+2022-10-30 13:19:25: Target dataset: 'ARID', configs: {'num_classes': 10}
+2022-10-30 13:19:26: Initializer:: 'BasicStem' is uninitialized.
+2022-10-30 13:19:26: Initializer:: 'AdaptiveAvgPool3d' is uninitialized.
+2022-10-30 13:19:26: Initializer:: 'VideoResNet' is uninitialized.
+2022-10-30 13:19:26: Network:: graph initialized, loading pretrained model: `/media/mldadmin/home/s122mdg36_01/caipei/assignment1/solutions/ARID_v1/network/pretrained/r3d_18-b3b3357e.pth'
+2022-10-30 13:19:26: There are layers in current network not initialized by pretrained
+2022-10-30 13:19:26: >> Failed to load: ['fc.weight', 'fc.bias']
+2022-10-30 13:19:26: loading network configs of: RESNET
+2022-10-30 13:19:26: Preprocessing:: using default mean & std from Kinetics original.
+2022-10-30 13:19:26: data:: {'mean': [0.43216, 0.394666, 0.37645], 'std': [0.22803, 0.22145, 0.216989]}
+2022-10-30 13:19:26: VideoIter:: clip_length = 16, interval = [train: 2, val: 2], seed = 3507
+2022-10-30 13:19:26: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-10-30 13:19:26: VideoIter:: found 750 videos in `./dataset/ARID/train.txt'
+2022-10-30 13:19:26: VideoIter:: iterator initialized (phase: 'train', num: 750)
+2022-10-30 13:19:26: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-10-30 13:20:35: Using pytorch 1.12.0+cu113 (['/media/mldadmin/home/s122mdg36_01/anaconda3/envs/torchgpu/lib/python3.7/site-packages/torch'])
+2022-10-30 13:20:35: Start training with args:
+{
+    "backend": "nccl",
+    "batch_size": 8,
+    "brighten_method": "lime_canny_100_200",
+    "clip_length": 16,
+    "dataset": "ARID",
+    "debug_mode": true,
+    "dist_url": "tcp://192.168.0.11:23456",
+    "end_epoch": 50,
+    "fine_tune": true,
+    "gpus": "0,1,2,3,4,5,6,7",
+    "is_dark": false,
+    "log_file": "./exps/logs/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_at-gpu36.log",
+    "lr_base": 0.01,
+    "lr_factor": 0.1,
+    "lr_steps": [
+        20000,
+        40000,
+        80000
+    ],
+    "model_dir": "./exps/models/archive",
+    "model_prefix": "./exps/models/archive/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200",
+    "network": "resnet",
+    "pretrained_2d": true,
+    "pretrained_3d": null,
+    "random_seed": 3407,
+    "resume_epoch": -1,
+    "save_frequency": 2,
+    "segments": 1,
+    "task_name": "arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200",
+    "train_frame_interval": 2,
+    "use_flow": false,
+    "use_segments": false,
+    "val_frame_interval": 2,
+    "world_size": 1
+}
+2022-10-30 13:20:35: Target dataset: 'ARID', configs: {'num_classes': 10}
+2022-10-30 13:20:36: Initializer:: 'BasicStem' is uninitialized.
+2022-10-30 13:20:36: Initializer:: 'AdaptiveAvgPool3d' is uninitialized.
+2022-10-30 13:20:36: Initializer:: 'VideoResNet' is uninitialized.
+2022-10-30 13:20:36: Network:: graph initialized, loading pretrained model: `/media/mldadmin/home/s122mdg36_01/caipei/assignment1/solutions/ARID_v1/network/pretrained/r3d_18-b3b3357e.pth'
+2022-10-30 13:20:36: There are layers in current network not initialized by pretrained
+2022-10-30 13:20:36: >> Failed to load: ['fc.weight', 'fc.bias']
+2022-10-30 13:20:36: loading network configs of: RESNET
+2022-10-30 13:20:36: Preprocessing:: using default mean & std from Kinetics original.
+2022-10-30 13:20:36: data:: {'mean': [0.43216, 0.394666, 0.37645], 'std': [0.22803, 0.22145, 0.216989]}
+2022-10-30 13:20:36: VideoIter:: clip_length = 16, interval = [train: 2, val: 2], seed = 3507
+2022-10-30 13:20:36: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-10-30 13:20:36: VideoIter:: found 750 videos in `./dataset/ARID/train.txt'
+2022-10-30 13:20:36: VideoIter:: iterator initialized (phase: 'train', num: 750)
+2022-10-30 13:20:36: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-10-30 13:20:36: VideoIter:: found 320 videos in `./dataset/ARID/val.txt'
+2022-10-30 13:20:36: VideoIter:: iterator initialized (phase: 'test', num: 320)
+2022-10-30 13:20:37: Optimizer:: >> recuding the learning rate of 62 params: ['resnet.stem.0.weight', 'resnet.stem.1.weight', 'resnet.stem.1.bias', 'resnet.layer1.0.conv1.0.weight', 'resnet.layer1.0.conv1.1.weight', 'resnet.lay ... nv1.1.bias', 'resnet.layer4.1.conv2.0.weight', 'resnet.layer4.1.conv2.1.weight', 'resnet.layer4.1.conv2.1.bias', 'resnet.fc.weight', 'resnet.fc.bias']
+2022-10-30 13:20:37: Iter 0: start with learning rate: 1.00000e-02 (next lr step: 2500)
+2022-10-30 13:20:37: Start epoch 0:
+2022-10-30 13:20:45: Epoch [0]   Batch [0]    Speed   1.0 (+ 3) sample/sec  loss-ce = 2.43886, top1 = 0.00000, top5 = 0.62500  
+2022-10-30 13:21:28: Using pytorch 1.12.0+cu113 (['/media/mldadmin/home/s122mdg36_01/anaconda3/envs/torchgpu/lib/python3.7/site-packages/torch'])
+2022-10-30 13:21:28: Start training with args:
+{
+    "backend": "nccl",
+    "batch_size": 8,
+    "brighten_method": "lime_canny_100_200",
+    "clip_length": 16,
+    "dataset": "ARID",
+    "debug_mode": true,
+    "dist_url": "tcp://192.168.0.11:23456",
+    "end_epoch": 50,
+    "fine_tune": true,
+    "gpus": "0,1,2,3,4,5,6,7",
+    "is_dark": false,
+    "log_file": "./exps/logs/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_at-gpu36.log",
+    "lr_base": 0.01,
+    "lr_factor": 0.1,
+    "lr_steps": [
+        20000,
+        40000,
+        80000
+    ],
+    "model_dir": "./exps/models/archive",
+    "model_prefix": "./exps/models/archive/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200",
+    "network": "resnet",
+    "pretrained_2d": true,
+    "pretrained_3d": null,
+    "random_seed": 3407,
+    "resume_epoch": -1,
+    "save_frequency": 2,
+    "segments": 1,
+    "task_name": "arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200",
+    "train_frame_interval": 2,
+    "use_flow": false,
+    "use_segments": false,
+    "val_frame_interval": 2,
+    "world_size": 1
+}
+2022-10-30 13:21:28: Target dataset: 'ARID', configs: {'num_classes': 10}
+2022-10-30 13:21:29: Initializer:: 'BasicStem' is uninitialized.
+2022-10-30 13:21:29: Initializer:: 'AdaptiveAvgPool3d' is uninitialized.
+2022-10-30 13:21:29: Initializer:: 'VideoResNet' is uninitialized.
+2022-10-30 13:21:29: Network:: graph initialized, loading pretrained model: `/media/mldadmin/home/s122mdg36_01/caipei/assignment1/solutions/ARID_v1/network/pretrained/r3d_18-b3b3357e.pth'
+2022-10-30 13:21:29: There are layers in current network not initialized by pretrained
+2022-10-30 13:21:29: >> Failed to load: ['fc.weight', 'fc.bias']
+2022-10-30 13:21:29: loading network configs of: RESNET
+2022-10-30 13:21:29: Preprocessing:: using default mean & std from Kinetics original.
+2022-10-30 13:21:29: data:: {'mean': [0.43216, 0.394666, 0.37645], 'std': [0.22803, 0.22145, 0.216989]}
+2022-10-30 13:21:29: VideoIter:: clip_length = 16, interval = [train: 2, val: 2], seed = 3507
+2022-10-30 13:21:29: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-10-30 13:21:29: VideoIter:: found 750 videos in `./dataset/ARID/train.txt'
+2022-10-30 13:21:29: VideoIter:: iterator initialized (phase: 'train', num: 750)
+2022-10-30 13:21:29: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-10-30 13:21:29: VideoIter:: found 320 videos in `./dataset/ARID/val.txt'
+2022-10-30 13:21:29: VideoIter:: iterator initialized (phase: 'test', num: 320)
+2022-10-30 13:21:30: Optimizer:: >> recuding the learning rate of 62 params: ['resnet.stem.0.weight', 'resnet.stem.1.weight', 'resnet.stem.1.bias', 'resnet.layer1.0.conv1.0.weight', 'resnet.layer1.0.conv1.1.weight', 'resnet.lay ... nv1.1.bias', 'resnet.layer4.1.conv2.0.weight', 'resnet.layer4.1.conv2.1.weight', 'resnet.layer4.1.conv2.1.bias', 'resnet.fc.weight', 'resnet.fc.bias']
+2022-10-30 13:21:30: Iter 0: start with learning rate: 1.00000e-02 (next lr step: 2500)
+2022-10-30 13:21:30: Start epoch 0:
+2022-10-30 13:21:39: Epoch [0]   Batch [0]    Speed   0.9 (+ 3) sample/sec  loss-ce = 2.43886, top1 = 0.00000, top5 = 0.62500  
+2022-10-30 13:22:26: Epoch [0]   Batch [50]   Speed   8.5 (+ 0) sample/sec  loss-ce = 2.22639, top1 = 0.18250, top5 = 0.68750  
+2022-10-30 13:23:08: Epoch [0]   time cost: 98.09 sec (0.03 h)
+2022-10-30 13:23:08: mkdir ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200
+2022-10-30 13:23:08: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0001.pth
+2022-10-30 13:23:08: Start evaluating epoch 0:
+2022-10-30 13:23:24: Epoch [0]   Batch [159]  Speed  20.4 (+ 9) sample/sec  loss-ce = 2.20333, top1 = 0.23438, top5 = 0.68750  
+2022-10-30 13:23:24: Current best epoch found with top5 accuracy 0.68750 at epoch 1, saved
+2022-10-30 13:23:26: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0001.pth
+2022-10-30 13:23:31: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0001.pth
+2022-10-30 13:23:31: Current best epoch found with top1 accuracy 0.23438 at epoch 1, saved
+2022-10-30 13:23:31: Start epoch 1:
+2022-10-30 13:23:39: Epoch [1]   Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 1.64938, top1 = 0.50000, top5 = 0.87500  
+2022-10-30 13:24:27: Epoch [1]   Batch [50]   Speed   8.2 (+ 0) sample/sec  loss-ce = 1.54145, top1 = 0.45250, top5 = 0.91250  
+2022-10-30 13:25:09: Epoch [1]   time cost: 97.65 sec (0.03 h)
+2022-10-30 13:25:09: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0002.pth
+2022-10-30 13:25:09: Start evaluating epoch 1:
+2022-10-30 13:25:25: Epoch [1]   Batch [159]  Speed  20.4 (+ 9) sample/sec  loss-ce = 2.02835, top1 = 0.32188, top5 = 0.80312  
+2022-10-30 13:25:25: Current best epoch found with top5 accuracy 0.80312 at epoch 2, saved
+2022-10-30 13:25:25: Current best epoch found with top1 accuracy 0.32188 at epoch 2, saved
+2022-10-30 13:25:25: Start epoch 2:
+2022-10-30 13:25:33: Epoch [2]   Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 1.05781, top1 = 0.75000, top5 = 0.87500  
+2022-10-30 13:26:21: Epoch [2]   Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 1.11841, top1 = 0.62500, top5 = 0.97500  
+2022-10-30 13:27:03: Epoch [2]   time cost: 97.68 sec (0.03 h)
+2022-10-30 13:27:03: Start evaluating epoch 2:
+2022-10-30 13:27:18: Epoch [2]   Batch [159]  Speed  20.6 (+ 9) sample/sec  loss-ce = 1.85845, top1 = 0.37188, top5 = 0.88125  
+2022-10-30 13:27:18: Current best epoch found with top5 accuracy 0.88125 at epoch 3, saved
+2022-10-30 13:27:19: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0003.pth
+2022-10-30 13:27:20: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0003.pth
+2022-10-30 13:27:20: Current best epoch found with top1 accuracy 0.37188 at epoch 3, saved
+2022-10-30 13:27:20: Start epoch 3:
+2022-10-30 13:27:28: Epoch [3]   Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.93920, top1 = 0.87500, top5 = 1.00000  
+2022-10-30 13:28:16: Epoch [3]   Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.81846, top1 = 0.72250, top5 = 0.99250  
+2022-10-30 13:28:58: Epoch [3]   time cost: 97.67 sec (0.03 h)
+2022-10-30 13:28:58: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0004.pth
+2022-10-30 13:28:58: Start evaluating epoch 3:
+2022-10-30 13:29:14: Epoch [3]   Batch [159]  Speed  20.7 (+ 9) sample/sec  loss-ce = 1.81181, top1 = 0.40000, top5 = 0.89062  
+2022-10-30 13:29:14: Current best epoch found with top5 accuracy 0.89062 at epoch 4, saved
+2022-10-30 13:29:14: Current best epoch found with top1 accuracy 0.40000 at epoch 4, saved
+2022-10-30 13:29:14: Start epoch 4:
+2022-10-30 13:29:22: Epoch [4]   Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.79474, top1 = 0.75000, top5 = 1.00000  
+2022-10-30 13:30:09: Epoch [4]   Batch [50]   Speed   8.4 (+ 0) sample/sec  loss-ce = 0.62869, top1 = 0.81000, top5 = 0.99500  
+2022-10-30 13:30:51: Epoch [4]   time cost: 96.99 sec (0.03 h)
+2022-10-30 13:30:51: Start evaluating epoch 4:
+2022-10-30 13:31:06: Epoch [4]   Batch [159]  Speed  20.7 (+ 9) sample/sec  loss-ce = 1.88292, top1 = 0.39687, top5 = 0.90312  
+2022-10-30 13:31:06: Current best epoch found with top5 accuracy 0.90312 at epoch 5, saved
+2022-10-30 13:31:07: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0005.pth
+2022-10-30 13:31:07: Start epoch 5:
+2022-10-30 13:31:14: Epoch [5]   Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.57364, top1 = 0.87500, top5 = 1.00000  
+2022-10-30 13:32:02: Epoch [5]   Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.52743, top1 = 0.85250, top5 = 0.99500  
+2022-10-30 13:32:43: Epoch [5]   time cost: 96.86 sec (0.03 h)
+2022-10-30 13:32:44: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0006.pth
+2022-10-30 13:32:44: Start evaluating epoch 5:
+2022-10-30 13:32:59: Epoch [5]   Batch [159]  Speed  20.5 (+ 9) sample/sec  loss-ce = 1.84146, top1 = 0.41563, top5 = 0.90000  
+2022-10-30 13:32:59: Current best epoch found with top1 accuracy 0.41563 at epoch 6, saved
+2022-10-30 13:32:59: Start epoch 6:
+2022-10-30 13:33:08: Epoch [6]   Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.25918, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 13:33:56: Epoch [6]   Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.44485, top1 = 0.87750, top5 = 0.99500  
+2022-10-30 13:34:37: Epoch [6]   time cost: 97.83 sec (0.03 h)
+2022-10-30 13:34:37: Start evaluating epoch 6:
+2022-10-30 13:34:53: Epoch [6]   Batch [159]  Speed  20.8 (+ 9) sample/sec  loss-ce = 1.88498, top1 = 0.41250, top5 = 0.91563  
+2022-10-30 13:34:53: Current best epoch found with top5 accuracy 0.91563 at epoch 7, saved
+2022-10-30 13:34:53: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0007.pth
+2022-10-30 13:34:53: Start epoch 7:
+2022-10-30 13:35:01: Epoch [7]   Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.29734, top1 = 0.87500, top5 = 1.00000  
+2022-10-30 13:35:49: Epoch [7]   Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.42274, top1 = 0.88750, top5 = 0.99250  
+2022-10-30 13:36:30: Epoch [7]   time cost: 97.24 sec (0.03 h)
+2022-10-30 13:36:31: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0008.pth
+2022-10-30 13:36:31: Start evaluating epoch 7:
+2022-10-30 13:36:47: Epoch [7]   Batch [159]  Speed  20.0 (+10) sample/sec  loss-ce = 1.92076, top1 = 0.40625, top5 = 0.91875  
+2022-10-30 13:36:47: Current best epoch found with top5 accuracy 0.91875 at epoch 8, saved
+2022-10-30 13:36:47: Start epoch 8:
+2022-10-30 13:36:56: Epoch [8]   Batch [0]    Speed   0.8 (+ 8) sample/sec  loss-ce = 0.49051, top1 = 0.75000, top5 = 1.00000  
+2022-10-30 13:37:44: Epoch [8]   Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.34247, top1 = 0.91500, top5 = 0.99500  
+2022-10-30 13:38:26: Epoch [8]   time cost: 99.68 sec (0.03 h)
+2022-10-30 13:38:26: Start evaluating epoch 8:
+2022-10-30 13:38:43: Epoch [8]   Batch [159]  Speed  18.7 (+11) sample/sec  loss-ce = 1.91684, top1 = 0.45000, top5 = 0.91250  
+2022-10-30 13:38:44: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0009.pth
+2022-10-30 13:38:44: Current best epoch found with top1 accuracy 0.45000 at epoch 9, saved
+2022-10-30 13:38:44: Start epoch 9:
+2022-10-30 13:38:51: Epoch [9]   Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.12636, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 13:39:40: Epoch [9]   Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.33551, top1 = 0.90250, top5 = 0.99750  
+2022-10-30 13:40:21: Epoch [9]   time cost: 97.51 sec (0.03 h)
+2022-10-30 13:40:22: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0010.pth
+2022-10-30 13:40:22: Start evaluating epoch 9:
+2022-10-30 13:40:37: Epoch [9]   Batch [159]  Speed  20.7 (+ 9) sample/sec  loss-ce = 2.07771, top1 = 0.40000, top5 = 0.91250  
+2022-10-30 13:40:37: Start epoch 10:
+2022-10-30 13:40:45: Epoch [10]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.34117, top1 = 0.87500, top5 = 1.00000  
+2022-10-30 13:41:33: Epoch [10]  Batch [50]   Speed   8.4 (+ 0) sample/sec  loss-ce = 0.20465, top1 = 0.95250, top5 = 1.00000  
+2022-10-30 13:42:14: Epoch [10]   time cost: 96.93 sec (0.03 h)
+2022-10-30 13:42:14: Start evaluating epoch 10:
+2022-10-30 13:42:30: Epoch [10]  Batch [159]  Speed  20.6 (+ 9) sample/sec  loss-ce = 2.17372, top1 = 0.40625, top5 = 0.89375  
+2022-10-30 13:42:30: Start epoch 11:
+2022-10-30 13:42:37: Epoch [11]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.24106, top1 = 0.87500, top5 = 1.00000  
+2022-10-30 13:43:26: Epoch [11]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.19263, top1 = 0.93750, top5 = 1.00000  
+2022-10-30 13:44:07: Epoch [11]   time cost: 97.22 sec (0.03 h)
+2022-10-30 13:44:07: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0012.pth
+2022-10-30 13:44:07: Start evaluating epoch 11:
+2022-10-30 13:44:23: Epoch [11]  Batch [159]  Speed  20.4 (+10) sample/sec  loss-ce = 2.13526, top1 = 0.40937, top5 = 0.92812  
+2022-10-30 13:44:23: Current best epoch found with top5 accuracy 0.92812 at epoch 12, saved
+2022-10-30 13:44:23: Start epoch 12:
+2022-10-30 13:44:31: Epoch [12]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.25850, top1 = 0.87500, top5 = 1.00000  
+2022-10-30 13:45:19: Epoch [12]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.21823, top1 = 0.93250, top5 = 1.00000  
+2022-10-30 13:46:01: Epoch [12]   time cost: 97.78 sec (0.03 h)
+2022-10-30 13:46:01: Start evaluating epoch 12:
+2022-10-30 13:46:16: Epoch [12]  Batch [159]  Speed  20.7 (+ 9) sample/sec  loss-ce = 2.06552, top1 = 0.43438, top5 = 0.92812  
+2022-10-30 13:46:16: Start epoch 13:
+2022-10-30 13:46:24: Epoch [13]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.19363, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 13:47:12: Epoch [13]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.19466, top1 = 0.94750, top5 = 0.99750  
+2022-10-30 13:47:53: Epoch [13]   time cost: 96.87 sec (0.03 h)
+2022-10-30 13:47:53: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0014.pth
+2022-10-30 13:47:53: Start evaluating epoch 13:
+2022-10-30 13:48:09: Epoch [13]  Batch [159]  Speed  20.6 (+ 9) sample/sec  loss-ce = 2.02483, top1 = 0.44375, top5 = 0.91875  
+2022-10-30 13:48:09: Start epoch 14:
+2022-10-30 13:48:17: Epoch [14]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.05452, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 13:49:05: Epoch [14]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.17689, top1 = 0.95500, top5 = 1.00000  
+2022-10-30 13:49:46: Epoch [14]   time cost: 97.37 sec (0.03 h)
+2022-10-30 13:49:46: Start evaluating epoch 14:
+2022-10-30 13:50:02: Epoch [14]  Batch [159]  Speed  20.8 (+ 9) sample/sec  loss-ce = 2.27751, top1 = 0.43438, top5 = 0.91250  
+2022-10-30 13:50:02: Start epoch 15:
+2022-10-30 13:50:10: Epoch [15]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.07840, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 13:50:58: Epoch [15]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.19804, top1 = 0.93500, top5 = 1.00000  
+2022-10-30 13:51:40: Epoch [15]   time cost: 97.63 sec (0.03 h)
+2022-10-30 13:51:40: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0016.pth
+2022-10-30 13:51:40: Start evaluating epoch 15:
+2022-10-30 13:51:56: Epoch [15]  Batch [159]  Speed  20.4 (+10) sample/sec  loss-ce = 2.28739, top1 = 0.43125, top5 = 0.90000  
+2022-10-30 13:51:56: Start epoch 16:
+2022-10-30 13:52:03: Epoch [16]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.08970, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 13:52:51: Epoch [16]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.13559, top1 = 0.97500, top5 = 1.00000  
+2022-10-30 13:53:33: Epoch [16]   time cost: 97.17 sec (0.03 h)
+2022-10-30 13:53:33: Start evaluating epoch 16:
+2022-10-30 13:53:49: Epoch [16]  Batch [159]  Speed  20.5 (+ 9) sample/sec  loss-ce = 2.26199, top1 = 0.43438, top5 = 0.91875  
+2022-10-30 13:53:49: Start epoch 17:
+2022-10-30 13:53:57: Epoch [17]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.09910, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 13:54:45: Epoch [17]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.11391, top1 = 0.97750, top5 = 1.00000  
+2022-10-30 13:55:26: Epoch [17]   time cost: 97.92 sec (0.03 h)
+2022-10-30 13:55:27: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0018.pth
+2022-10-30 13:55:27: Start evaluating epoch 17:
+2022-10-30 13:55:42: Epoch [17]  Batch [159]  Speed  20.8 (+ 9) sample/sec  loss-ce = 2.12458, top1 = 0.44688, top5 = 0.93750  
+2022-10-30 13:55:42: Current best epoch found with top5 accuracy 0.93750 at epoch 18, saved
+2022-10-30 13:55:42: Start epoch 18:
+2022-10-30 13:55:50: Epoch [18]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.04469, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 13:56:38: Epoch [18]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.13053, top1 = 0.96750, top5 = 1.00000  
+2022-10-30 13:57:20: Epoch [18]   time cost: 97.51 sec (0.03 h)
+2022-10-30 13:57:20: Start evaluating epoch 18:
+2022-10-30 13:57:36: Epoch [18]  Batch [159]  Speed  20.3 (+ 9) sample/sec  loss-ce = 2.26965, top1 = 0.44688, top5 = 0.92188  
+2022-10-30 13:57:36: Start epoch 19:
+2022-10-30 13:57:43: Epoch [19]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.31265, top1 = 0.87500, top5 = 1.00000  
+2022-10-30 13:58:31: Epoch [19]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.09058, top1 = 0.98750, top5 = 1.00000  
+2022-10-30 13:59:12: Epoch [19]   time cost: 96.78 sec (0.03 h)
+2022-10-30 13:59:13: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0020.pth
+2022-10-30 13:59:13: Start evaluating epoch 19:
+2022-10-30 13:59:28: Epoch [19]  Batch [159]  Speed  20.6 (+ 9) sample/sec  loss-ce = 2.24991, top1 = 0.42812, top5 = 0.90938  
+2022-10-30 13:59:28: Start epoch 20:
+2022-10-30 13:59:36: Epoch [20]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.01108, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:00:24: Epoch [20]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.09245, top1 = 0.98000, top5 = 0.99750  
+2022-10-30 14:01:06: Epoch [20]   time cost: 97.62 sec (0.03 h)
+2022-10-30 14:01:06: Start evaluating epoch 20:
+2022-10-30 14:01:21: Epoch [20]  Batch [159]  Speed  20.7 (+ 9) sample/sec  loss-ce = 2.10566, top1 = 0.47500, top5 = 0.92500  
+2022-10-30 14:01:22: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0021.pth
+2022-10-30 14:01:22: Current best epoch found with top1 accuracy 0.47500 at epoch 21, saved
+2022-10-30 14:01:22: Start epoch 21:
+2022-10-30 14:01:28: Epoch [21]  Batch [0]    Speed   1.2 (+ 7) sample/sec  loss-ce = 0.12821, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:02:17: Epoch [21]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.10563, top1 = 0.97250, top5 = 1.00000  
+2022-10-30 14:02:58: Epoch [21]   time cost: 96.84 sec (0.03 h)
+2022-10-30 14:02:59: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0022.pth
+2022-10-30 14:02:59: Start evaluating epoch 21:
+2022-10-30 14:03:14: Epoch [21]  Batch [159]  Speed  20.7 (+ 9) sample/sec  loss-ce = 2.26964, top1 = 0.41250, top5 = 0.92500  
+2022-10-30 14:03:14: Start epoch 22:
+2022-10-30 14:03:22: Epoch [22]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.01383, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:04:10: Epoch [22]  Batch [50]   Speed   8.4 (+ 0) sample/sec  loss-ce = 0.09387, top1 = 0.98000, top5 = 1.00000  
+2022-10-30 14:04:51: Epoch [22]   time cost: 96.87 sec (0.03 h)
+2022-10-30 14:04:51: Start evaluating epoch 22:
+2022-10-30 14:05:07: Epoch [22]  Batch [159]  Speed  20.7 (+ 9) sample/sec  loss-ce = 2.36683, top1 = 0.42500, top5 = 0.93437  
+2022-10-30 14:05:07: Start epoch 23:
+2022-10-30 14:05:14: Epoch [23]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.01433, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:06:03: Epoch [23]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.09174, top1 = 0.97750, top5 = 1.00000  
+2022-10-30 14:06:44: Epoch [23]   time cost: 97.64 sec (0.03 h)
+2022-10-30 14:06:45: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0024.pth
+2022-10-30 14:06:45: Start evaluating epoch 23:
+2022-10-30 14:07:00: Epoch [23]  Batch [159]  Speed  20.5 (+ 9) sample/sec  loss-ce = 2.14804, top1 = 0.44375, top5 = 0.91250  
+2022-10-30 14:07:00: Start epoch 24:
+2022-10-30 14:07:08: Epoch [24]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.19966, top1 = 0.87500, top5 = 1.00000  
+2022-10-30 14:07:56: Epoch [24]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.06556, top1 = 0.98250, top5 = 1.00000  
+2022-10-30 14:08:38: Epoch [24]   time cost: 97.25 sec (0.03 h)
+2022-10-30 14:08:38: Start evaluating epoch 24:
+2022-10-30 14:08:53: Epoch [24]  Batch [159]  Speed  20.3 (+ 9) sample/sec  loss-ce = 2.30870, top1 = 0.42812, top5 = 0.93125  
+2022-10-30 14:08:53: Start epoch 25:
+2022-10-30 14:09:01: Epoch [25]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.04176, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:09:49: Epoch [25]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.09041, top1 = 0.98000, top5 = 1.00000  
+2022-10-30 14:10:31: Epoch [25]   time cost: 97.10 sec (0.03 h)
+2022-10-30 14:10:31: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0026.pth
+2022-10-30 14:10:31: Start evaluating epoch 25:
+2022-10-30 14:10:46: Epoch [25]  Batch [159]  Speed  20.7 (+ 9) sample/sec  loss-ce = 2.20296, top1 = 0.44688, top5 = 0.90938  
+2022-10-30 14:10:46: Start epoch 26:
+2022-10-30 14:10:54: Epoch [26]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.05793, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:11:42: Epoch [26]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.05251, top1 = 0.99500, top5 = 1.00000  
+2022-10-30 14:11:47: Iter: 2500, change learning rate to 1.00000e-03 for step [2500:5000)
+2022-10-30 14:12:24: Epoch [26]   time cost: 97.37 sec (0.03 h)
+2022-10-30 14:12:24: Start evaluating epoch 26:
+2022-10-30 14:12:39: Epoch [26]  Batch [159]  Speed  20.8 (+ 9) sample/sec  loss-ce = 2.17539, top1 = 0.46250, top5 = 0.94063  
+2022-10-30 14:12:39: Current best epoch found with top5 accuracy 0.94063 at epoch 27, saved
+2022-10-30 14:12:40: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0027.pth
+2022-10-30 14:12:40: Start epoch 27:
+2022-10-30 14:12:47: Epoch [27]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.01427, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:13:36: Epoch [27]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.09018, top1 = 0.97750, top5 = 1.00000  
+2022-10-30 14:14:17: Epoch [27]   time cost: 97.82 sec (0.03 h)
+2022-10-30 14:14:18: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0028.pth
+2022-10-30 14:14:18: Start evaluating epoch 27:
+2022-10-30 14:14:33: Epoch [27]  Batch [159]  Speed  20.7 (+ 9) sample/sec  loss-ce = 2.13349, top1 = 0.47187, top5 = 0.93125  
+2022-10-30 14:14:33: Start epoch 28:
+2022-10-30 14:14:41: Epoch [28]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.37157, top1 = 0.87500, top5 = 1.00000  
+2022-10-30 14:15:29: Epoch [28]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.07441, top1 = 0.97750, top5 = 1.00000  
+2022-10-30 14:16:11: Epoch [28]   time cost: 97.93 sec (0.03 h)
+2022-10-30 14:16:11: Start evaluating epoch 28:
+2022-10-30 14:16:27: Epoch [28]  Batch [159]  Speed  20.6 (+ 9) sample/sec  loss-ce = 2.15820, top1 = 0.47813, top5 = 0.93125  
+2022-10-30 14:16:27: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0029.pth
+2022-10-30 14:16:27: Current best epoch found with top1 accuracy 0.47813 at epoch 29, saved
+2022-10-30 14:16:27: Start epoch 29:
+2022-10-30 14:16:35: Epoch [29]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.07068, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:17:23: Epoch [29]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.05651, top1 = 0.99500, top5 = 1.00000  
+2022-10-30 14:18:04: Epoch [29]   time cost: 97.29 sec (0.03 h)
+2022-10-30 14:18:05: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0030.pth
+2022-10-30 14:18:05: Start evaluating epoch 29:
+2022-10-30 14:18:20: Epoch [29]  Batch [159]  Speed  20.6 (+ 9) sample/sec  loss-ce = 2.14955, top1 = 0.48438, top5 = 0.92812  
+2022-10-30 14:18:20: Current best epoch found with top1 accuracy 0.48438 at epoch 30, saved
+2022-10-30 14:18:20: Start epoch 30:
+2022-10-30 14:18:28: Epoch [30]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.01378, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:19:16: Epoch [30]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.07158, top1 = 0.98500, top5 = 1.00000  
+2022-10-30 14:19:58: Epoch [30]   time cost: 97.42 sec (0.03 h)
+2022-10-30 14:19:58: Start evaluating epoch 30:
+2022-10-30 14:20:13: Epoch [30]  Batch [159]  Speed  20.9 (+ 9) sample/sec  loss-ce = 2.20883, top1 = 0.45937, top5 = 0.93125  
+2022-10-30 14:20:13: Start epoch 31:
+2022-10-30 14:20:21: Epoch [31]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.02522, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:21:09: Epoch [31]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.04114, top1 = 0.99500, top5 = 1.00000  
+2022-10-30 14:21:50: Epoch [31]   time cost: 97.08 sec (0.03 h)
+2022-10-30 14:21:50: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0032.pth
+2022-10-30 14:21:50: Start evaluating epoch 31:
+2022-10-30 14:22:06: Epoch [31]  Batch [159]  Speed  20.5 (+ 9) sample/sec  loss-ce = 2.14826, top1 = 0.47187, top5 = 0.94063  
+2022-10-30 14:22:06: Start epoch 32:
+2022-10-30 14:22:14: Epoch [32]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.00289, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:23:02: Epoch [32]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.06960, top1 = 0.98250, top5 = 1.00000  
+2022-10-30 14:23:43: Epoch [32]   time cost: 97.31 sec (0.03 h)
+2022-10-30 14:23:43: Start evaluating epoch 32:
+2022-10-30 14:23:59: Epoch [32]  Batch [159]  Speed  20.3 (+10) sample/sec  loss-ce = 2.17426, top1 = 0.46875, top5 = 0.92188  
+2022-10-30 14:23:59: Start epoch 33:
+2022-10-30 14:24:07: Epoch [33]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.01221, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:24:55: Epoch [33]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.06028, top1 = 0.98500, top5 = 1.00000  
+2022-10-30 14:25:37: Epoch [33]   time cost: 97.37 sec (0.03 h)
+2022-10-30 14:25:37: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0034.pth
+2022-10-30 14:25:37: Start evaluating epoch 33:
+2022-10-30 14:25:53: Epoch [33]  Batch [159]  Speed  20.5 (+ 9) sample/sec  loss-ce = 2.13451, top1 = 0.46875, top5 = 0.92812  
+2022-10-30 14:25:53: Start epoch 34:
+2022-10-30 14:26:01: Epoch [34]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.05436, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:26:49: Epoch [34]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.05172, top1 = 0.98750, top5 = 1.00000  
+2022-10-30 14:27:30: Epoch [34]   time cost: 97.53 sec (0.03 h)
+2022-10-30 14:27:30: Start evaluating epoch 34:
+2022-10-30 14:27:46: Epoch [34]  Batch [159]  Speed  20.7 (+ 9) sample/sec  loss-ce = 2.28118, top1 = 0.46250, top5 = 0.92188  
+2022-10-30 14:27:46: Start epoch 35:
+2022-10-30 14:27:54: Epoch [35]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.11902, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:28:42: Epoch [35]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.05591, top1 = 0.99000, top5 = 1.00000  
+2022-10-30 14:29:23: Epoch [35]   time cost: 97.70 sec (0.03 h)
+2022-10-30 14:29:24: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0036.pth
+2022-10-30 14:29:24: Start evaluating epoch 35:
+2022-10-30 14:29:39: Epoch [35]  Batch [159]  Speed  20.5 (+ 9) sample/sec  loss-ce = 2.18743, top1 = 0.46875, top5 = 0.93125  
+2022-10-30 14:29:39: Start epoch 36:
+2022-10-30 14:29:47: Epoch [36]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.07495, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:30:36: Epoch [36]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.05513, top1 = 0.99000, top5 = 1.00000  
+2022-10-30 14:31:17: Epoch [36]   time cost: 97.69 sec (0.03 h)
+2022-10-30 14:31:17: Start evaluating epoch 36:
+2022-10-30 14:31:33: Epoch [36]  Batch [159]  Speed  20.6 (+ 9) sample/sec  loss-ce = 2.27379, top1 = 0.46875, top5 = 0.92188  
+2022-10-30 14:31:33: Start epoch 37:
+2022-10-30 14:31:40: Epoch [37]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.02573, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:32:28: Epoch [37]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.05837, top1 = 0.98750, top5 = 1.00000  
+2022-10-30 14:33:10: Epoch [37]   time cost: 97.06 sec (0.03 h)
+2022-10-30 14:33:10: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0038.pth
+2022-10-30 14:33:10: Start evaluating epoch 37:
+2022-10-30 14:33:25: Epoch [37]  Batch [159]  Speed  20.8 (+ 9) sample/sec  loss-ce = 2.19598, top1 = 0.46563, top5 = 0.92812  
+2022-10-30 14:33:25: Start epoch 38:
+2022-10-30 14:33:33: Epoch [38]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.24514, top1 = 0.87500, top5 = 1.00000  
+2022-10-30 14:34:21: Epoch [38]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.05616, top1 = 0.98750, top5 = 1.00000  
+2022-10-30 14:35:03: Epoch [38]   time cost: 97.13 sec (0.03 h)
+2022-10-30 14:35:03: Start evaluating epoch 38:
+2022-10-30 14:35:18: Epoch [38]  Batch [159]  Speed  20.5 (+ 9) sample/sec  loss-ce = 2.21078, top1 = 0.47187, top5 = 0.93125  
+2022-10-30 14:35:18: Start epoch 39:
+2022-10-30 14:35:26: Epoch [39]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.00747, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:36:14: Epoch [39]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.06595, top1 = 0.98500, top5 = 1.00000  
+2022-10-30 14:36:56: Epoch [39]   time cost: 97.34 sec (0.03 h)
+2022-10-30 14:36:56: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0040.pth
+2022-10-30 14:36:56: Start evaluating epoch 39:
+2022-10-30 14:37:11: Epoch [39]  Batch [159]  Speed  20.8 (+ 9) sample/sec  loss-ce = 2.26139, top1 = 0.47813, top5 = 0.92188  
+2022-10-30 14:37:11: Start epoch 40:
+2022-10-30 14:37:20: Epoch [40]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.07431, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:38:08: Epoch [40]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.05949, top1 = 0.98750, top5 = 1.00000  
+2022-10-30 14:38:49: Epoch [40]   time cost: 97.99 sec (0.03 h)
+2022-10-30 14:38:49: Start evaluating epoch 40:
+2022-10-30 14:39:05: Epoch [40]  Batch [159]  Speed  20.4 (+ 9) sample/sec  loss-ce = 2.28510, top1 = 0.44375, top5 = 0.92500  
+2022-10-30 14:39:05: Start epoch 41:
+2022-10-30 14:39:12: Epoch [41]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.01617, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:40:00: Epoch [41]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.04434, top1 = 0.99250, top5 = 1.00000  
+2022-10-30 14:40:42: Epoch [41]   time cost: 96.49 sec (0.03 h)
+2022-10-30 14:40:42: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0042.pth
+2022-10-30 14:40:42: Start evaluating epoch 41:
+2022-10-30 14:40:58: Epoch [41]  Batch [159]  Speed  20.7 (+ 9) sample/sec  loss-ce = 2.24878, top1 = 0.45625, top5 = 0.93125  
+2022-10-30 14:40:58: Start epoch 42:
+2022-10-30 14:41:05: Epoch [42]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.05448, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:41:53: Epoch [42]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.06016, top1 = 0.98750, top5 = 1.00000  
+2022-10-30 14:42:35: Epoch [42]   time cost: 97.30 sec (0.03 h)
+2022-10-30 14:42:35: Start evaluating epoch 42:
+2022-10-30 14:42:50: Epoch [42]  Batch [159]  Speed  20.6 (+ 9) sample/sec  loss-ce = 2.22204, top1 = 0.46563, top5 = 0.92500  
+2022-10-30 14:42:50: Start epoch 43:
+2022-10-30 14:42:59: Epoch [43]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.02480, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:43:47: Epoch [43]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.04688, top1 = 0.99250, top5 = 1.00000  
+2022-10-30 14:44:28: Epoch [43]   time cost: 97.62 sec (0.03 h)
+2022-10-30 14:44:28: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0044.pth
+2022-10-30 14:44:28: Start evaluating epoch 43:
+2022-10-30 14:44:44: Epoch [43]  Batch [159]  Speed  20.7 (+ 9) sample/sec  loss-ce = 2.15656, top1 = 0.47500, top5 = 0.92812  
+2022-10-30 14:44:44: Start epoch 44:
+2022-10-30 14:44:52: Epoch [44]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.27045, top1 = 0.87500, top5 = 1.00000  
+2022-10-30 14:45:40: Epoch [44]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.04162, top1 = 0.99500, top5 = 1.00000  
+2022-10-30 14:46:21: Epoch [44]   time cost: 97.24 sec (0.03 h)
+2022-10-30 14:46:21: Start evaluating epoch 44:
+2022-10-30 14:46:37: Epoch [44]  Batch [159]  Speed  20.8 (+ 9) sample/sec  loss-ce = 2.23705, top1 = 0.46875, top5 = 0.92812  
+2022-10-30 14:46:37: Start epoch 45:
+2022-10-30 14:46:45: Epoch [45]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.17921, top1 = 0.87500, top5 = 1.00000  
+2022-10-30 14:47:33: Epoch [45]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.04018, top1 = 0.99500, top5 = 1.00000  
+2022-10-30 14:48:14: Epoch [45]   time cost: 97.69 sec (0.03 h)
+2022-10-30 14:48:15: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0046.pth
+2022-10-30 14:48:15: Start evaluating epoch 45:
+2022-10-30 14:48:30: Epoch [45]  Batch [159]  Speed  20.5 (+ 9) sample/sec  loss-ce = 2.33738, top1 = 0.45937, top5 = 0.92188  
+2022-10-30 14:48:30: Start epoch 46:
+2022-10-30 14:48:38: Epoch [46]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.04266, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:49:26: Epoch [46]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.04250, top1 = 0.99500, top5 = 1.00000  
+2022-10-30 14:50:08: Epoch [46]   time cost: 97.63 sec (0.03 h)
+2022-10-30 14:50:08: Start evaluating epoch 46:
+2022-10-30 14:50:24: Epoch [46]  Batch [159]  Speed  20.4 (+ 9) sample/sec  loss-ce = 2.27772, top1 = 0.46875, top5 = 0.92188  
+2022-10-30 14:50:24: Start epoch 47:
+2022-10-30 14:50:32: Epoch [47]  Batch [0]    Speed   0.9 (+ 7) sample/sec  loss-ce = 0.09556, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:51:20: Epoch [47]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.05564, top1 = 0.99000, top5 = 1.00000  
+2022-10-30 14:52:02: Epoch [47]   time cost: 97.87 sec (0.03 h)
+2022-10-30 14:52:02: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0048.pth
+2022-10-30 14:52:02: Start evaluating epoch 47:
+2022-10-30 14:52:18: Epoch [47]  Batch [159]  Speed  20.7 (+ 9) sample/sec  loss-ce = 2.14672, top1 = 0.47500, top5 = 0.92500  
+2022-10-30 14:52:18: Start epoch 48:
+2022-10-30 14:52:25: Epoch [48]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.06766, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:53:14: Epoch [48]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.08012, top1 = 0.97750, top5 = 0.99750  
+2022-10-30 14:53:55: Epoch [48]   time cost: 97.48 sec (0.03 h)
+2022-10-30 14:53:55: Start evaluating epoch 48:
+2022-10-30 14:54:11: Epoch [48]  Batch [159]  Speed  20.5 (+ 9) sample/sec  loss-ce = 2.19683, top1 = 0.47813, top5 = 0.93437  
+2022-10-30 14:54:11: Start epoch 49:
+2022-10-30 14:54:18: Epoch [49]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.12494, top1 = 1.00000, top5 = 1.00000  
+2022-10-30 14:55:06: Epoch [49]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.06032, top1 = 0.99250, top5 = 1.00000  
+2022-10-30 14:55:48: Epoch [49]   time cost: 97.29 sec (0.03 h)
+2022-10-30 14:55:48: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200/arid-resnet3d-18-MGsample-canny-is-not-dark-weights_1.3_0.5-canny_thresh_100_200_ep-0050.pth
+2022-10-30 14:55:48: Start evaluating epoch 49:
+2022-10-30 14:56:04: Epoch [49]  Batch [159]  Speed  20.5 (+ 9) sample/sec  loss-ce = 2.14283, top1 = 0.49375, top5 = 0.92500  
+2022-10-30 14:56:04: Current best epoch found with top1 accuracy 0.49375 at epoch 50, saved
+2022-10-30 14:56:04: Optimization done!

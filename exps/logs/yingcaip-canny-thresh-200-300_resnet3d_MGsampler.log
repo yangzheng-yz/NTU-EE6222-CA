@@ -1,0 +1,409 @@
+2022-11-07 03:52:15: Using pytorch 1.12.0+cu113 (['/media/mldadmin/home/s122mdg36_01/anaconda3/envs/torchgpu/lib/python3.7/site-packages/torch'])
+2022-11-07 03:52:15: Start training with args:
+{
+    "backend": "nccl",
+    "batch_size": 8,
+    "brighten_method": "ying_caip_canny_200_300",
+    "clip_length": 16,
+    "dataset": "ARID",
+    "debug_mode": true,
+    "dist_url": "tcp://192.168.0.11:23456",
+    "end_epoch": 50,
+    "fine_tune": true,
+    "gpus": "0,1,2,3,4,5,6,7",
+    "is_dark": false,
+    "log_file": "./exps/logs/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_at-gpu36.log",
+    "lr_base": 0.01,
+    "lr_factor": 0.1,
+    "lr_steps": [
+        20000,
+        40000,
+        80000
+    ],
+    "model_dir": "./exps/models/archive",
+    "model_prefix": "./exps/models/archive/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300",
+    "network": "resnet",
+    "pretrained_2d": true,
+    "pretrained_3d": null,
+    "random_seed": 3407,
+    "resume_epoch": -1,
+    "save_frequency": 2,
+    "segments": 1,
+    "task_name": "arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300",
+    "train_frame_interval": 2,
+    "use_flow": false,
+    "use_segments": false,
+    "val_frame_interval": 2,
+    "world_size": 1
+}
+2022-11-07 03:52:15: Target dataset: 'ARID', configs: {'num_classes': 10}
+2022-11-07 03:52:15: Initializer:: 'BasicStem' is uninitialized.
+2022-11-07 03:52:15: Initializer:: 'AdaptiveAvgPool3d' is uninitialized.
+2022-11-07 03:52:15: Initializer:: 'VideoResNet' is uninitialized.
+2022-11-07 03:52:15: Network:: graph initialized, loading pretrained model: `/media/mldadmin/home/s122mdg36_01/caipei/assignment1/solutions/ARID_v1/network/pretrained/r3d_18-b3b3357e.pth'
+2022-11-07 03:52:15: There are layers in current network not initialized by pretrained
+2022-11-07 03:52:15: >> Failed to load: ['fc.weight', 'fc.bias']
+2022-11-07 03:52:15: loading network configs of: RESNET
+2022-11-07 03:52:15: Preprocessing:: using default mean & std from Kinetics original.
+2022-11-07 03:52:15: data:: {'mean': [0.43216, 0.394666, 0.37645], 'std': [0.22803, 0.22145, 0.216989]}
+2022-11-07 03:52:15: VideoIter:: clip_length = 16, interval = [train: 2, val: 2], seed = 3507
+2022-11-07 03:52:15: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-11-07 03:52:15: VideoIter:: found 750 videos in `./dataset/ARID/train.txt'
+2022-11-07 03:52:15: VideoIter:: iterator initialized (phase: 'train', num: 750)
+2022-11-07 03:52:15: VideoIter:: >> `check_video' is off, `tolerant_corrupted_video' is automatically activated.
+2022-11-07 03:52:15: VideoIter:: found 320 videos in `./dataset/ARID/val.txt'
+2022-11-07 03:52:15: VideoIter:: iterator initialized (phase: 'test', num: 320)
+2022-11-07 03:52:18: Optimizer:: >> recuding the learning rate of 62 params: ['resnet.stem.0.weight', 'resnet.stem.1.weight', 'resnet.stem.1.bias', 'resnet.layer1.0.conv1.0.weight', 'resnet.layer1.0.conv1.1.weight', 'resnet.lay ... nv1.1.bias', 'resnet.layer4.1.conv2.0.weight', 'resnet.layer4.1.conv2.1.weight', 'resnet.layer4.1.conv2.1.bias', 'resnet.fc.weight', 'resnet.fc.bias']
+2022-11-07 03:52:18: Iter 0: start with learning rate: 1.00000e-02 (next lr step: 2500)
+2022-11-07 03:52:18: Start epoch 0:
+2022-11-07 03:52:31: Epoch [0]   Batch [0]    Speed   0.6 (+ 1) sample/sec  loss-ce = 2.47789, top1 = 0.00000, top5 = 0.50000  
+2022-11-07 03:54:15: Epoch [0]   Batch [50]   Speed   3.8 (+ 0) sample/sec  loss-ce = 2.27161, top1 = 0.18750, top5 = 0.64500  
+2022-11-07 03:55:27: Epoch [0]   time cost: 189.56 sec (0.05 h)
+2022-11-07 03:55:27: mkdir ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300
+2022-11-07 03:55:28: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0001.pth
+2022-11-07 03:55:28: Start evaluating epoch 0:
+2022-11-07 03:55:55: Epoch [0]   Batch [159]  Speed  11.9 (+ 3) sample/sec  loss-ce = 2.27638, top1 = 0.21250, top5 = 0.67812  
+2022-11-07 03:55:55: Current best epoch found with top5 accuracy 0.67812 at epoch 1, saved
+2022-11-07 03:55:56: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0001.pth
+2022-11-07 03:55:58: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0001.pth
+2022-11-07 03:55:58: Current best epoch found with top1 accuracy 0.21250 at epoch 1, saved
+2022-11-07 03:55:58: Start epoch 1:
+2022-11-07 03:56:08: Epoch [1]   Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 1.97935, top1 = 0.37500, top5 = 0.75000  
+2022-11-07 03:57:52: Epoch [1]   Batch [50]   Speed   3.9 (+ 0) sample/sec  loss-ce = 1.79786, top1 = 0.38000, top5 = 0.86250  
+2022-11-07 03:59:07: Epoch [1]   time cost: 189.28 sec (0.05 h)
+2022-11-07 03:59:07: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0002.pth
+2022-11-07 03:59:07: Start evaluating epoch 1:
+2022-11-07 03:59:33: Epoch [1]   Batch [159]  Speed  12.5 (+ 2) sample/sec  loss-ce = 2.15699, top1 = 0.31562, top5 = 0.74687  
+2022-11-07 03:59:33: Current best epoch found with top5 accuracy 0.74687 at epoch 2, saved
+2022-11-07 03:59:33: Current best epoch found with top1 accuracy 0.31562 at epoch 2, saved
+2022-11-07 03:59:33: Start epoch 2:
+2022-11-07 03:59:45: Epoch [2]   Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 1.56806, top1 = 0.75000, top5 = 0.87500  
+2022-11-07 04:01:28: Epoch [2]   Batch [50]   Speed   3.9 (+ 0) sample/sec  loss-ce = 1.36711, top1 = 0.54250, top5 = 0.93750  
+2022-11-07 04:02:45: Epoch [2]   time cost: 192.03 sec (0.05 h)
+2022-11-07 04:02:45: Start evaluating epoch 2:
+2022-11-07 04:03:10: Epoch [2]   Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 2.45890, top1 = 0.22500, top5 = 0.76250  
+2022-11-07 04:03:10: Current best epoch found with top5 accuracy 0.76250 at epoch 3, saved
+2022-11-07 04:03:10: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0003.pth
+2022-11-07 04:03:10: Start epoch 3:
+2022-11-07 04:03:21: Epoch [3]   Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 1.56910, top1 = 0.37500, top5 = 1.00000  
+2022-11-07 04:05:04: Epoch [3]   Batch [50]   Speed   3.9 (+ 0) sample/sec  loss-ce = 1.12004, top1 = 0.64250, top5 = 0.96750  
+2022-11-07 04:06:20: Epoch [3]   time cost: 189.72 sec (0.05 h)
+2022-11-07 04:06:20: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0004.pth
+2022-11-07 04:06:20: Start evaluating epoch 3:
+2022-11-07 04:06:45: Epoch [3]   Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 2.32483, top1 = 0.29063, top5 = 0.77812  
+2022-11-07 04:06:45: Current best epoch found with top5 accuracy 0.77812 at epoch 4, saved
+2022-11-07 04:06:45: Start epoch 4:
+2022-11-07 04:06:56: Epoch [4]   Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.95637, top1 = 0.75000, top5 = 1.00000  
+2022-11-07 04:08:39: Epoch [4]   Batch [50]   Speed   3.9 (+ 0) sample/sec  loss-ce = 0.92930, top1 = 0.73250, top5 = 0.97250  
+2022-11-07 04:09:54: Epoch [4]   time cost: 189.19 sec (0.05 h)
+2022-11-07 04:09:54: Start evaluating epoch 4:
+2022-11-07 04:10:19: Epoch [4]   Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 2.40411, top1 = 0.26250, top5 = 0.80625  
+2022-11-07 04:10:19: Current best epoch found with top5 accuracy 0.80625 at epoch 5, saved
+2022-11-07 04:10:20: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0005.pth
+2022-11-07 04:10:20: Start epoch 5:
+2022-11-07 04:10:30: Epoch [5]   Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 1.23645, top1 = 0.50000, top5 = 0.87500  
+2022-11-07 04:12:13: Epoch [5]   Batch [50]   Speed   3.9 (+ 0) sample/sec  loss-ce = 0.78540, top1 = 0.76000, top5 = 0.98000  
+2022-11-07 04:13:29: Epoch [5]   time cost: 189.46 sec (0.05 h)
+2022-11-07 04:13:30: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0006.pth
+2022-11-07 04:13:30: Start evaluating epoch 5:
+2022-11-07 04:13:54: Epoch [5]   Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 2.51117, top1 = 0.33437, top5 = 0.78750  
+2022-11-07 04:13:54: Current best epoch found with top1 accuracy 0.33437 at epoch 6, saved
+2022-11-07 04:13:54: Start epoch 6:
+2022-11-07 04:14:06: Epoch [6]   Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.53516, top1 = 0.87500, top5 = 1.00000  
+2022-11-07 04:15:49: Epoch [6]   Batch [50]   Speed   3.9 (+ 0) sample/sec  loss-ce = 0.70249, top1 = 0.79000, top5 = 0.98250  
+2022-11-07 04:17:05: Epoch [6]   time cost: 190.50 sec (0.05 h)
+2022-11-07 04:17:05: Start evaluating epoch 6:
+2022-11-07 04:17:30: Epoch [6]   Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 2.50969, top1 = 0.32188, top5 = 0.77812  
+2022-11-07 04:17:30: Start epoch 7:
+2022-11-07 04:17:41: Epoch [7]   Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.78267, top1 = 0.62500, top5 = 1.00000  
+2022-11-07 04:19:24: Epoch [7]   Batch [50]   Speed   3.9 (+ 0) sample/sec  loss-ce = 0.66738, top1 = 0.78000, top5 = 0.98750  
+2022-11-07 04:20:40: Epoch [7]   time cost: 190.19 sec (0.05 h)
+2022-11-07 04:20:41: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0008.pth
+2022-11-07 04:20:41: Start evaluating epoch 7:
+2022-11-07 04:21:06: Epoch [7]   Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 2.66831, top1 = 0.32188, top5 = 0.79063  
+2022-11-07 04:21:06: Start epoch 8:
+2022-11-07 04:21:17: Epoch [8]   Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.68939, top1 = 0.87500, top5 = 1.00000  
+2022-11-07 04:23:00: Epoch [8]   Batch [50]   Speed   3.9 (+ 0) sample/sec  loss-ce = 0.50740, top1 = 0.86500, top5 = 0.99250  
+2022-11-07 04:24:17: Epoch [8]   time cost: 191.62 sec (0.05 h)
+2022-11-07 04:24:17: Start evaluating epoch 8:
+2022-11-07 04:24:42: Epoch [8]   Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 2.58430, top1 = 0.28750, top5 = 0.80937  
+2022-11-07 04:24:42: Current best epoch found with top5 accuracy 0.80937 at epoch 9, saved
+2022-11-07 04:24:42: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0009.pth
+2022-11-07 04:24:42: Start epoch 9:
+2022-11-07 04:24:53: Epoch [9]   Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.40430, top1 = 0.87500, top5 = 1.00000  
+2022-11-07 04:26:36: Epoch [9]   Batch [50]   Speed   3.9 (+ 0) sample/sec  loss-ce = 0.46196, top1 = 0.87250, top5 = 0.99500  
+2022-11-07 04:27:53: Epoch [9]   time cost: 190.27 sec (0.05 h)
+2022-11-07 04:27:53: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0010.pth
+2022-11-07 04:27:53: Start evaluating epoch 9:
+2022-11-07 04:28:18: Epoch [9]   Batch [159]  Speed  12.7 (+ 2) sample/sec  loss-ce = 2.63414, top1 = 0.30938, top5 = 0.78750  
+2022-11-07 04:28:18: Start epoch 10:
+2022-11-07 04:28:29: Epoch [10]  Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.59609, top1 = 0.75000, top5 = 1.00000  
+2022-11-07 04:30:10: Epoch [10]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.37253, top1 = 0.89750, top5 = 0.99500  
+2022-11-07 04:31:29: Epoch [10]   time cost: 190.18 sec (0.05 h)
+2022-11-07 04:31:29: Start evaluating epoch 10:
+2022-11-07 04:31:53: Epoch [10]  Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 2.63095, top1 = 0.33750, top5 = 0.81563  
+2022-11-07 04:31:53: Current best epoch found with top5 accuracy 0.81563 at epoch 11, saved
+2022-11-07 04:31:54: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0011.pth
+2022-11-07 04:31:55: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0011.pth
+2022-11-07 04:31:55: Current best epoch found with top1 accuracy 0.33750 at epoch 11, saved
+2022-11-07 04:31:55: Start epoch 11:
+2022-11-07 04:32:06: Epoch [11]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.22027, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 04:33:46: Epoch [11]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.31927, top1 = 0.90500, top5 = 1.00000  
+2022-11-07 04:35:05: Epoch [11]   time cost: 189.88 sec (0.05 h)
+2022-11-07 04:35:05: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0012.pth
+2022-11-07 04:35:05: Start evaluating epoch 11:
+2022-11-07 04:35:30: Epoch [11]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 2.74705, top1 = 0.34063, top5 = 0.80937  
+2022-11-07 04:35:30: Current best epoch found with top1 accuracy 0.34063 at epoch 12, saved
+2022-11-07 04:35:30: Start epoch 12:
+2022-11-07 04:35:40: Epoch [12]  Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.45232, top1 = 0.87500, top5 = 1.00000  
+2022-11-07 04:37:20: Epoch [12]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.37437, top1 = 0.89500, top5 = 0.99500  
+2022-11-07 04:38:39: Epoch [12]   time cost: 188.89 sec (0.05 h)
+2022-11-07 04:38:39: Start evaluating epoch 12:
+2022-11-07 04:39:04: Epoch [12]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 2.84847, top1 = 0.29063, top5 = 0.79375  
+2022-11-07 04:39:04: Start epoch 13:
+2022-11-07 04:39:15: Epoch [13]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.32151, top1 = 0.87500, top5 = 1.00000  
+2022-11-07 04:40:55: Epoch [13]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.31297, top1 = 0.92750, top5 = 0.99000  
+2022-11-07 04:42:14: Epoch [13]   time cost: 190.03 sec (0.05 h)
+2022-11-07 04:42:14: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0014.pth
+2022-11-07 04:42:14: Start evaluating epoch 13:
+2022-11-07 04:42:39: Epoch [13]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.01363, top1 = 0.33750, top5 = 0.79375  
+2022-11-07 04:42:39: Start epoch 14:
+2022-11-07 04:42:50: Epoch [14]  Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.62623, top1 = 0.75000, top5 = 1.00000  
+2022-11-07 04:44:30: Epoch [14]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.33873, top1 = 0.89750, top5 = 0.99250  
+2022-11-07 04:45:48: Epoch [14]   time cost: 188.72 sec (0.05 h)
+2022-11-07 04:45:48: Start evaluating epoch 14:
+2022-11-07 04:46:13: Epoch [14]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 2.98366, top1 = 0.28750, top5 = 0.80312  
+2022-11-07 04:46:13: Start epoch 15:
+2022-11-07 04:46:25: Epoch [15]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.22220, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 04:48:04: Epoch [15]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.30210, top1 = 0.90750, top5 = 0.99750  
+2022-11-07 04:49:23: Epoch [15]   time cost: 189.48 sec (0.05 h)
+2022-11-07 04:49:23: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0016.pth
+2022-11-07 04:49:23: Start evaluating epoch 15:
+2022-11-07 04:49:48: Epoch [15]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 2.69821, top1 = 0.36250, top5 = 0.79375  
+2022-11-07 04:49:48: Current best epoch found with top1 accuracy 0.36250 at epoch 16, saved
+2022-11-07 04:49:48: Start epoch 16:
+2022-11-07 04:49:59: Epoch [16]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.25703, top1 = 0.87500, top5 = 1.00000  
+2022-11-07 04:51:39: Epoch [16]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.25284, top1 = 0.93750, top5 = 0.99500  
+2022-11-07 04:52:57: Epoch [16]   time cost: 189.36 sec (0.05 h)
+2022-11-07 04:52:57: Start evaluating epoch 16:
+2022-11-07 04:53:23: Epoch [16]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 2.75920, top1 = 0.35000, top5 = 0.80937  
+2022-11-07 04:53:23: Start epoch 17:
+2022-11-07 04:53:33: Epoch [17]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.23238, top1 = 0.87500, top5 = 1.00000  
+2022-11-07 04:55:13: Epoch [17]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.20497, top1 = 0.94250, top5 = 0.99750  
+2022-11-07 04:56:31: Epoch [17]   time cost: 188.40 sec (0.05 h)
+2022-11-07 04:56:31: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0018.pth
+2022-11-07 04:56:31: Start evaluating epoch 17:
+2022-11-07 04:56:56: Epoch [17]  Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 2.99659, top1 = 0.35000, top5 = 0.79375  
+2022-11-07 04:56:56: Start epoch 18:
+2022-11-07 04:57:07: Epoch [18]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.77749, top1 = 0.62500, top5 = 1.00000  
+2022-11-07 04:58:47: Epoch [18]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.25409, top1 = 0.92750, top5 = 0.99500  
+2022-11-07 05:00:06: Epoch [18]   time cost: 189.77 sec (0.05 h)
+2022-11-07 05:00:06: Start evaluating epoch 18:
+2022-11-07 05:00:31: Epoch [18]  Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 3.04505, top1 = 0.34687, top5 = 0.78125  
+2022-11-07 05:00:31: Start epoch 19:
+2022-11-07 05:00:41: Epoch [19]  Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.18662, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:02:20: Epoch [19]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.21629, top1 = 0.92750, top5 = 0.99750  
+2022-11-07 05:03:39: Epoch [19]   time cost: 188.11 sec (0.05 h)
+2022-11-07 05:03:39: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0020.pth
+2022-11-07 05:03:39: Start evaluating epoch 19:
+2022-11-07 05:04:04: Epoch [19]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 2.91552, top1 = 0.29688, top5 = 0.81250  
+2022-11-07 05:04:04: Start epoch 20:
+2022-11-07 05:04:16: Epoch [20]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.20324, top1 = 0.87500, top5 = 1.00000  
+2022-11-07 05:05:55: Epoch [20]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.20381, top1 = 0.94000, top5 = 1.00000  
+2022-11-07 05:07:14: Epoch [20]   time cost: 189.52 sec (0.05 h)
+2022-11-07 05:07:14: Start evaluating epoch 20:
+2022-11-07 05:07:39: Epoch [20]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.12972, top1 = 0.30000, top5 = 0.79063  
+2022-11-07 05:07:39: Start epoch 21:
+2022-11-07 05:07:49: Epoch [21]  Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.42842, top1 = 0.87500, top5 = 1.00000  
+2022-11-07 05:09:28: Epoch [21]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.17176, top1 = 0.94250, top5 = 1.00000  
+2022-11-07 05:10:47: Epoch [21]   time cost: 187.84 sec (0.05 h)
+2022-11-07 05:10:47: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0022.pth
+2022-11-07 05:10:47: Start evaluating epoch 21:
+2022-11-07 05:11:12: Epoch [21]  Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 3.13661, top1 = 0.29688, top5 = 0.80312  
+2022-11-07 05:11:12: Start epoch 22:
+2022-11-07 05:11:24: Epoch [22]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.08309, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:13:04: Epoch [22]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.20121, top1 = 0.94250, top5 = 0.99750  
+2022-11-07 05:14:22: Epoch [22]   time cost: 189.91 sec (0.05 h)
+2022-11-07 05:14:22: Start evaluating epoch 22:
+2022-11-07 05:14:47: Epoch [22]  Batch [159]  Speed  12.7 (+ 2) sample/sec  loss-ce = 3.02690, top1 = 0.29063, top5 = 0.81875  
+2022-11-07 05:14:47: Current best epoch found with top5 accuracy 0.81875 at epoch 23, saved
+2022-11-07 05:14:48: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0023.pth
+2022-11-07 05:14:48: Start epoch 23:
+2022-11-07 05:14:58: Epoch [23]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.03989, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:16:38: Epoch [23]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.14040, top1 = 0.97000, top5 = 1.00000  
+2022-11-07 05:17:56: Epoch [23]   time cost: 188.51 sec (0.05 h)
+2022-11-07 05:17:56: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0024.pth
+2022-11-07 05:17:56: Start evaluating epoch 23:
+2022-11-07 05:18:22: Epoch [23]  Batch [159]  Speed  12.7 (+ 2) sample/sec  loss-ce = 3.01042, top1 = 0.33437, top5 = 0.83750  
+2022-11-07 05:18:22: Current best epoch found with top5 accuracy 0.83750 at epoch 24, saved
+2022-11-07 05:18:22: Start epoch 24:
+2022-11-07 05:18:32: Epoch [24]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.03001, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:20:12: Epoch [24]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.16519, top1 = 0.95750, top5 = 0.99500  
+2022-11-07 05:21:30: Epoch [24]   time cost: 188.38 sec (0.05 h)
+2022-11-07 05:21:30: Start evaluating epoch 24:
+2022-11-07 05:21:55: Epoch [24]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.15336, top1 = 0.30625, top5 = 0.82188  
+2022-11-07 05:21:55: Start epoch 25:
+2022-11-07 05:22:06: Epoch [25]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.04875, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:23:45: Epoch [25]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.16123, top1 = 0.95750, top5 = 0.99750  
+2022-11-07 05:25:04: Epoch [25]   time cost: 188.58 sec (0.05 h)
+2022-11-07 05:25:04: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0026.pth
+2022-11-07 05:25:04: Start evaluating epoch 25:
+2022-11-07 05:25:29: Epoch [25]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.25127, top1 = 0.30000, top5 = 0.78125  
+2022-11-07 05:25:29: Start epoch 26:
+2022-11-07 05:25:40: Epoch [26]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.06078, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:27:20: Epoch [26]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.13624, top1 = 0.96500, top5 = 1.00000  
+2022-11-07 05:27:30: Iter: 2500, change learning rate to 1.00000e-03 for step [2500:5000)
+2022-11-07 05:28:39: Epoch [26]   time cost: 189.51 sec (0.05 h)
+2022-11-07 05:28:39: Start evaluating epoch 26:
+2022-11-07 05:29:04: Epoch [26]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.14477, top1 = 0.29688, top5 = 0.80937  
+2022-11-07 05:29:04: Start epoch 27:
+2022-11-07 05:29:15: Epoch [27]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.07442, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:30:54: Epoch [27]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.15125, top1 = 0.96000, top5 = 0.99750  
+2022-11-07 05:32:13: Epoch [27]   time cost: 188.80 sec (0.05 h)
+2022-11-07 05:32:13: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0028.pth
+2022-11-07 05:32:13: Start evaluating epoch 27:
+2022-11-07 05:32:38: Epoch [27]  Batch [159]  Speed  12.7 (+ 2) sample/sec  loss-ce = 3.16415, top1 = 0.30625, top5 = 0.80312  
+2022-11-07 05:32:38: Start epoch 28:
+2022-11-07 05:32:49: Epoch [28]  Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.39687, top1 = 0.87500, top5 = 1.00000  
+2022-11-07 05:34:28: Epoch [28]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.09364, top1 = 0.98250, top5 = 1.00000  
+2022-11-07 05:35:47: Epoch [28]   time cost: 188.74 sec (0.05 h)
+2022-11-07 05:35:47: Start evaluating epoch 28:
+2022-11-07 05:36:12: Epoch [28]  Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 3.07568, top1 = 0.30938, top5 = 0.82500  
+2022-11-07 05:36:12: Start epoch 29:
+2022-11-07 05:36:22: Epoch [29]  Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.08631, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:38:02: Epoch [29]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.15223, top1 = 0.96500, top5 = 0.99500  
+2022-11-07 05:39:20: Epoch [29]   time cost: 188.13 sec (0.05 h)
+2022-11-07 05:39:20: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0030.pth
+2022-11-07 05:39:20: Start evaluating epoch 29:
+2022-11-07 05:39:45: Epoch [29]  Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 3.10807, top1 = 0.30625, top5 = 0.81875  
+2022-11-07 05:39:45: Start epoch 30:
+2022-11-07 05:39:56: Epoch [30]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.02519, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:41:36: Epoch [30]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.09367, top1 = 0.98000, top5 = 0.99750  
+2022-11-07 05:42:54: Epoch [30]   time cost: 188.91 sec (0.05 h)
+2022-11-07 05:42:54: Start evaluating epoch 30:
+2022-11-07 05:43:19: Epoch [30]  Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 3.22485, top1 = 0.31250, top5 = 0.80937  
+2022-11-07 05:43:19: Start epoch 31:
+2022-11-07 05:43:30: Epoch [31]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.09920, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:45:10: Epoch [31]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.08957, top1 = 0.97250, top5 = 1.00000  
+2022-11-07 05:46:28: Epoch [31]   time cost: 189.31 sec (0.05 h)
+2022-11-07 05:46:29: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0032.pth
+2022-11-07 05:46:29: Start evaluating epoch 31:
+2022-11-07 05:46:54: Epoch [31]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.14678, top1 = 0.31875, top5 = 0.81250  
+2022-11-07 05:46:54: Start epoch 32:
+2022-11-07 05:47:05: Epoch [32]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.06286, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:48:44: Epoch [32]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.12976, top1 = 0.96500, top5 = 0.99750  
+2022-11-07 05:50:03: Epoch [32]   time cost: 188.95 sec (0.05 h)
+2022-11-07 05:50:03: Start evaluating epoch 32:
+2022-11-07 05:50:28: Epoch [32]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.00910, top1 = 0.33125, top5 = 0.82500  
+2022-11-07 05:50:28: Start epoch 33:
+2022-11-07 05:50:38: Epoch [33]  Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.10190, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:52:17: Epoch [33]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.11393, top1 = 0.97500, top5 = 0.99750  
+2022-11-07 05:53:36: Epoch [33]   time cost: 187.96 sec (0.05 h)
+2022-11-07 05:53:36: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0034.pth
+2022-11-07 05:53:36: Start evaluating epoch 33:
+2022-11-07 05:54:01: Epoch [33]  Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 3.09671, top1 = 0.32188, top5 = 0.82812  
+2022-11-07 05:54:01: Start epoch 34:
+2022-11-07 05:54:12: Epoch [34]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.11050, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:55:51: Epoch [34]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.10653, top1 = 0.97750, top5 = 1.00000  
+2022-11-07 05:57:10: Epoch [34]   time cost: 188.64 sec (0.05 h)
+2022-11-07 05:57:10: Start evaluating epoch 34:
+2022-11-07 05:57:35: Epoch [34]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.09911, top1 = 0.30938, top5 = 0.81875  
+2022-11-07 05:57:35: Start epoch 35:
+2022-11-07 05:57:46: Epoch [35]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.11299, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 05:59:25: Epoch [35]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.08153, top1 = 0.98750, top5 = 1.00000  
+2022-11-07 06:00:44: Epoch [35]   time cost: 189.43 sec (0.05 h)
+2022-11-07 06:00:45: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0036.pth
+2022-11-07 06:00:45: Start evaluating epoch 35:
+2022-11-07 06:01:09: Epoch [35]  Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 3.01993, top1 = 0.30938, top5 = 0.82500  
+2022-11-07 06:01:09: Start epoch 36:
+2022-11-07 06:01:20: Epoch [36]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.12291, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 06:03:00: Epoch [36]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.08943, top1 = 0.98000, top5 = 1.00000  
+2022-11-07 06:04:18: Epoch [36]   time cost: 189.00 sec (0.05 h)
+2022-11-07 06:04:18: Start evaluating epoch 36:
+2022-11-07 06:04:44: Epoch [36]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.13112, top1 = 0.33437, top5 = 0.82500  
+2022-11-07 06:04:44: Start epoch 37:
+2022-11-07 06:04:54: Epoch [37]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.13970, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 06:06:34: Epoch [37]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.08856, top1 = 0.97250, top5 = 1.00000  
+2022-11-07 06:07:52: Epoch [37]   time cost: 188.56 sec (0.05 h)
+2022-11-07 06:07:53: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0038.pth
+2022-11-07 06:07:53: Start evaluating epoch 37:
+2022-11-07 06:08:17: Epoch [37]  Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 3.11547, top1 = 0.31875, top5 = 0.82500  
+2022-11-07 06:08:17: Start epoch 38:
+2022-11-07 06:08:28: Epoch [38]  Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.12545, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 06:10:07: Epoch [38]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.14180, top1 = 0.96000, top5 = 1.00000  
+2022-11-07 06:11:27: Epoch [38]   time cost: 189.64 sec (0.05 h)
+2022-11-07 06:11:27: Start evaluating epoch 38:
+2022-11-07 06:11:52: Epoch [38]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.19505, top1 = 0.29688, top5 = 0.82188  
+2022-11-07 06:11:52: Start epoch 39:
+2022-11-07 06:12:03: Epoch [39]  Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.06043, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 06:13:42: Epoch [39]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.09468, top1 = 0.98500, top5 = 1.00000  
+2022-11-07 06:15:01: Epoch [39]   time cost: 188.84 sec (0.05 h)
+2022-11-07 06:15:01: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0040.pth
+2022-11-07 06:15:01: Start evaluating epoch 39:
+2022-11-07 06:15:27: Epoch [39]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.09092, top1 = 0.31562, top5 = 0.81563  
+2022-11-07 06:15:27: Start epoch 40:
+2022-11-07 06:15:38: Epoch [40]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.02415, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 06:17:17: Epoch [40]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.08446, top1 = 0.98000, top5 = 1.00000  
+2022-11-07 06:18:36: Epoch [40]   time cost: 188.91 sec (0.05 h)
+2022-11-07 06:18:36: Start evaluating epoch 40:
+2022-11-07 06:19:01: Epoch [40]  Batch [159]  Speed  12.7 (+ 2) sample/sec  loss-ce = 3.08980, top1 = 0.32812, top5 = 0.80937  
+2022-11-07 06:19:01: Start epoch 41:
+2022-11-07 06:19:10: Epoch [41]  Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.02584, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 06:20:50: Epoch [41]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.08325, top1 = 0.98250, top5 = 1.00000  
+2022-11-07 06:22:08: Epoch [41]   time cost: 187.56 sec (0.05 h)
+2022-11-07 06:22:09: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0042.pth
+2022-11-07 06:22:09: Start evaluating epoch 41:
+2022-11-07 06:22:34: Epoch [41]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.09538, top1 = 0.30312, top5 = 0.81875  
+2022-11-07 06:22:34: Start epoch 42:
+2022-11-07 06:22:44: Epoch [42]  Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.08201, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 06:24:23: Epoch [42]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.09098, top1 = 0.98500, top5 = 0.99750  
+2022-11-07 06:25:41: Epoch [42]   time cost: 187.39 sec (0.05 h)
+2022-11-07 06:25:41: Start evaluating epoch 42:
+2022-11-07 06:26:06: Epoch [42]  Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 3.14414, top1 = 0.31562, top5 = 0.81875  
+2022-11-07 06:26:06: Start epoch 43:
+2022-11-07 06:26:17: Epoch [43]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.01770, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 06:27:57: Epoch [43]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.08859, top1 = 0.97750, top5 = 1.00000  
+2022-11-07 06:29:15: Epoch [43]   time cost: 188.91 sec (0.05 h)
+2022-11-07 06:29:15: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0044.pth
+2022-11-07 06:29:15: Start evaluating epoch 43:
+2022-11-07 06:29:41: Epoch [43]  Batch [159]  Speed  12.7 (+ 2) sample/sec  loss-ce = 3.09056, top1 = 0.31875, top5 = 0.82500  
+2022-11-07 06:29:41: Start epoch 44:
+2022-11-07 06:29:52: Epoch [44]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.25726, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 06:31:31: Epoch [44]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.07533, top1 = 0.97750, top5 = 1.00000  
+2022-11-07 06:32:50: Epoch [44]   time cost: 189.17 sec (0.05 h)
+2022-11-07 06:32:50: Start evaluating epoch 44:
+2022-11-07 06:33:15: Epoch [44]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.10901, top1 = 0.32500, top5 = 0.81875  
+2022-11-07 06:33:15: Start epoch 45:
+2022-11-07 06:33:25: Epoch [45]  Batch [0]    Speed   0.8 (+ 3) sample/sec  loss-ce = 0.37755, top1 = 0.87500, top5 = 1.00000  
+2022-11-07 06:35:04: Epoch [45]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.09225, top1 = 0.97750, top5 = 0.99750  
+2022-11-07 06:36:23: Epoch [45]   time cost: 187.78 sec (0.05 h)
+2022-11-07 06:36:23: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0046.pth
+2022-11-07 06:36:23: Start evaluating epoch 45:
+2022-11-07 06:36:48: Epoch [45]  Batch [159]  Speed  12.8 (+ 2) sample/sec  loss-ce = 3.20434, top1 = 0.30938, top5 = 0.79375  
+2022-11-07 06:36:48: Start epoch 46:
+2022-11-07 06:36:59: Epoch [46]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.05884, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 06:38:39: Epoch [46]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.08307, top1 = 0.98250, top5 = 1.00000  
+2022-11-07 06:39:58: Epoch [46]   time cost: 189.78 sec (0.05 h)
+2022-11-07 06:39:58: Start evaluating epoch 46:
+2022-11-07 06:40:23: Epoch [46]  Batch [159]  Speed  12.9 (+ 2) sample/sec  loss-ce = 3.19251, top1 = 0.30625, top5 = 0.80937  
+2022-11-07 06:40:23: Start epoch 47:
+2022-11-07 06:40:33: Epoch [47]  Batch [0]    Speed   0.7 (+ 3) sample/sec  loss-ce = 0.06689, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 06:42:12: Epoch [47]  Batch [50]   Speed   4.0 (+ 0) sample/sec  loss-ce = 0.11594, top1 = 0.97250, top5 = 0.99500  
+2022-11-07 06:43:00: Epoch [47]   time cost: 157.11 sec (0.04 h)
+2022-11-07 06:43:00: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0048.pth
+2022-11-07 06:43:00: Start evaluating epoch 47:
+2022-11-07 06:43:15: Epoch [47]  Batch [159]  Speed  21.3 (+ 9) sample/sec  loss-ce = 3.14981, top1 = 0.30938, top5 = 0.80000  
+2022-11-07 06:43:15: Start epoch 48:
+2022-11-07 06:43:23: Epoch [48]  Batch [0]    Speed   1.0 (+ 7) sample/sec  loss-ce = 0.14754, top1 = 0.87500, top5 = 1.00000  
+2022-11-07 06:44:12: Epoch [48]  Batch [50]   Speed   8.2 (+ 0) sample/sec  loss-ce = 0.15475, top1 = 0.96000, top5 = 0.99500  
+2022-11-07 06:44:54: Epoch [48]   time cost: 98.85 sec (0.03 h)
+2022-11-07 06:44:54: Start evaluating epoch 48:
+2022-11-07 06:45:09: Epoch [48]  Batch [159]  Speed  21.4 (+ 8) sample/sec  loss-ce = 3.14526, top1 = 0.31250, top5 = 0.82812  
+2022-11-07 06:45:09: Start epoch 49:
+2022-11-07 06:45:16: Epoch [49]  Batch [0]    Speed   1.1 (+ 7) sample/sec  loss-ce = 0.16927, top1 = 1.00000, top5 = 1.00000  
+2022-11-07 06:46:05: Epoch [49]  Batch [50]   Speed   8.3 (+ 0) sample/sec  loss-ce = 0.11656, top1 = 0.98000, top5 = 0.99750  
+2022-11-07 06:46:46: Epoch [49]   time cost: 97.36 sec (0.03 h)
+2022-11-07 06:46:47: Checkpoint (model & optimizer) saved to: ./exps/models/archive_arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300/arid-resnet3d-18-MGsample-ying_caip_canny_thresh_200_300_ep-0050.pth
+2022-11-07 06:46:47: Start evaluating epoch 49:
+2022-11-07 06:47:02: Epoch [49]  Batch [159]  Speed  21.1 (+ 8) sample/sec  loss-ce = 3.02209, top1 = 0.32500, top5 = 0.81563  
+2022-11-07 06:47:02: Optimization done!
